@@ -1,0 +1,59 @@
+% =============================================================================
+%  List of Symbols
+% =============================================================================
+\cleardoublepage
+\chapter*{List of Symbols}
+\addcontentsline{toc}{chapter}{List of Symbols}
+\thispagestyle{plain}
+\markboth{List of Symbols}{}
+
+\begin{longtable}{@{}p{0.22\textwidth}p{0.72\textwidth}@{}}
+    \toprule
+    \textbf{Symbol} & \textbf{Meaning (units)}\\
+    \midrule
+    \endfirsthead
+    \toprule
+    \textbf{Symbol} & \textbf{Meaning (units)}\\
+    \midrule
+    \endhead
+    \bottomrule
+    \endlastfoot
+    $A$           & Surface area of a particle (\si{\milli\metre\squared})\\
+    $\Ach$        & Convex-hull surface area (\si{\milli\metre\squared})\\
+    $a,b,c$       & Semi-axes of best-fit ellipsoid (\si{\milli\metre}),
+                    $a\ge b\ge c$\\
+    $C$           & Convexity $= V/\Vch$ (dimensionless)\\
+    $D$           & Mould internal diameter (\si{\milli\metre})\\
+    $\Deq$        & Equivalent spherical diameter
+                    $=\left(6V/\pi\right)^{1/3}$ (\si{\milli\metre})\\
+    $\dmax$       & Maximum particle size in a gradation (\si{\milli\metre})\\
+    $E$           & Elongation $= I/L$ (dimensionless)\\
+    $F$           & Flatness $= S/I$ (dimensionless)\\
+    $g$           & Gravitational acceleration,
+                    \SI{9.81}{\metre\per\second\squared}\\
+    $h$           & Drop height of hammer
+                    (\si{\milli\metre} or \si{\metre})\\
+    $I$           & Intermediate bounding-box dimension (\si{\milli\metre})\\
+    $\Ke$         & Kinetic energy of hammer at impact $= mgh$
+                    (\si{\joule})\\
+    $L$           & Long bounding-box dimension (\si{\milli\metre})\\
+    $L/S$         & Aspect ratio (dimensionless)\\
+    $(L+I)/(2S)$  & Flatness index (dimensionless)\\
+    $m$           & Hammer mass (\si{\kilogram})\\
+    $N$           & Number of blows (dimensionless)\\
+    $n$           & Sample size (dimensionless)\\
+    $p$           & Statistical $p$-value (dimensionless)\\
+    $R$           & Roundness descriptor (dimensionless, scanner-specific)\\
+    $S$           & Short bounding-box dimension (\si{\milli\metre})\\
+    $t$           & Student's $t$-statistic (dimensionless)\\
+    $V$           & Volume of a particle (\si{\milli\metre\cubed})\\
+    $\Vch$        & Convex-hull volume (\si{\milli\metre\cubed})\\
+    $\sigma$      & Nominal contact stress at specimen surface
+                    (\si{\kilo\pascal})\\
+    $\Delta X$    & Change in descriptor $X = X_{\text{after}} -
+                    X_{\text{before}}$\\
+    $\%\Delta X$  & Percentage change in $X = \Delta X / X_{\text{before}}
+                    \times 100$\\
+    $\Psi$        & Sphericity
+                    $= \pi^{1/3}\,(6V)^{2/3}/A$ (Wadell, 1932)\\
+\end{longtable}

@@ -1,0 +1,19 @@
+# LaTeX build artefacts
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.nav
+*.snm
+*.vrb
+*.xdv
+
+# Keep the compiled PDF in the repo so reviewers can see the output
+# without rebuilding (delete this line if you prefer to ignore main.pdf)

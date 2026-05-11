@@ -1,0 +1,263 @@
+% =============================================================================
+%  CHAPTER 5 - RESULTS OF MORPHOLOGICAL ANALYSIS
+% =============================================================================
+\chapter{Results of Morphological Analysis}
+\label{chap:morph-results}
+
+This chapter reports the results of the paired three-dimensional
+morphological analysis of the 45 tracer particles---five per
+configuration across the nine configurations of the experimental
+programme. The chapter is organised in four sections.
+Section~\ref{sec:morph-volume} reports the per-particle volume-change
+distribution and identifies a small set of outlier particles using the
+Tukey inter-quartile-range criterion.
+Section~\ref{sec:morph-shape} reports the paired evolution of four
+principal shape descriptors---sphericity, convexity, angularity, and
+roundness---before and after the impact loading.
+Section~\ref{sec:morph-discussion} examines the global pattern of mean
+change across all twenty-two morphological descriptors using two heat
+maps.
+
+\section{Per-particle volume change and outlier identification}
+\label{sec:morph-volume}
+
+Across the 45 particles the \dV{} distribution has a first quartile of
+$-\SI{1.21}{\percent}$, a third quartile of $-\SI{0.09}{\percent}$, and an
+inter-quartile range (IQR) of \SI{1.12}{\percent}. Applying the standard
+Tukey $1.5\times\mathrm{IQR}$ fence to identify outliers yields a lower
+fence at $-\SI{2.89}{\percent}$ and an upper fence at
+$+\SI{1.59}{\percent}$. Six particles fall below the lower fence and are
+flagged as outliers; no particle falls above the upper fence.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.85\textwidth]{image30.png}
+    \caption{Per-particle relative volume change \dV{} (horizontal axis)
+             plotted against per-particle relative sphericity change
+             \dPsi{} (vertical axis), for all 45 tracer particles, with
+             outliers (Mode~B) identified by the Tukey
+             $1.5\times\mathrm{IQR}$ fence.}
+    \label{fig:morph-volume-scatter}
+\end{figure}
+
+The Mode~A / Mode~B classification used to describe these two
+populations is retained as a labelling convenience throughout this
+chapter---Mode~A refers to the 39 inlier particles (within the Tukey
+fence) and Mode~B refers to the six outlier particles outside it---but no
+further mechanistic content is read into the labels themselves. The
+remainder of the chapter reports the morphological response of the
+inlier population and treats the outliers as a separately identified set
+whose contribution to each descriptor is quoted but not averaged into the
+inlier statistics.
+
+\begin{table}[ht]
+\centering
+\caption{Per-test summary of the volume-change response.
+         $n_{\mathrm{in}}$ = inlier count, $n_{\mathrm{out}}$ = outlier
+         count, mean \dV{} and median \dV{} computed on the Mode~A
+         (inlier) population.}
+\label{tab:morph-volume}
+\begin{tabular}{@{}ccccccc@{}}
+    \toprule
+    \textbf{Test} & \textbf{Configuration}
+    & $n_{\mathrm{in}}$ & $n_{\mathrm{out}}$
+    & \textbf{Mean \dV{}} & \textbf{Median \dV{}}\\
+    \midrule
+    T1 & PUBM-FB-300 & 5 & 0 & $-0.18$ & $-0.20$\\
+    T2 & RUBM-FB-450 & 5 & 0 & $-0.10$ & $-0.09$\\
+    T3 & UR-FB-300   & 5 & 0 & $-0.44$ & $-0.44$\\
+    T4 & UR-RB-450   & 3 & 2 & $-0.87$ & $-1.24$\\
+    T5 & RUBM-RB-450 & 4 & 1 & $-0.84$ & $-0.25$\\
+    T6 & PUBM-RB-450 & 4 & 1 & $-0.30$ & $-0.07$\\
+    T7 & UR-RB-450   & 4 & 1 & $-0.71$ & $-0.45$\\
+    T8 & RUBM-RB-300 & 4 & 1 & $-0.58$ & $-0.04$\\
+    T9 & PUBM-RB-300 & 5 & 0 & $-0.18$ & $-0.15$\\
+    \bottomrule
+\end{tabular}
+\end{table}
+
+\section{Shape evolution: sphericity, convexity, angularity and roundness}
+\label{sec:morph-shape}
+
+\subsection{Angularity}
+\label{sec:morph-angularity}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.85\textwidth]{image31.png}
+    \caption{Angularity index before vs.\ after the impact-loading test
+             for all 45 tracer particles. The angularity values reported
+             here are negative scalars; less-negative (closer to zero)
+             values indicate smoother corners.}
+    \label{fig:morph-angularity}
+\end{figure}
+
+The mechanistic interpretation is that the angularity descriptor is
+sensitive to local surface curvature and is therefore strongly affected
+by the choice of which corner gets preferentially abraded on a given
+particle. A particle with two sharp corners may lose only one of them
+under twenty blows; the remaining corner is captured by the
+maximum-curvature feature in the post-test scan and the descriptor
+records little change, or even a small increase if the remaining corner
+becomes more pronounced relative to the now-smoothed neighbour. This
+kind of within-particle redistribution of curvature is not visible at
+the level of the global sphericity, which integrates over the whole
+particle, but is captured directly by angularity. The scatter in
+Figure~\ref{fig:morph-angularity} therefore does not contradict the
+smoothing-by-abrasion picture established by sphericity; it adds the
+observation that the smoothing is locally selective, not uniformly
+distributed across all corners of all particles.
+
+\subsection{Sphericity}
+\label{sec:morph-sphericity}
+
+The sphericity---the classical Wadell descriptor (Wadell, 1932)---is the
+single most informative shape descriptor for diagnosing corner
+abrasion. A particle that loses its sharp corners without otherwise
+changing shape becomes more spherical.
+Figure~\ref{fig:morph-sphericity} plots the paired
+sphericity---$\Psi_{\text{after}}$ on the vertical axis against
+$\Psi_{\text{before}}$ on the horizontal axis---for all 45 tracer
+particles. The unit-slope line $\Psi_{\text{after}} =
+\Psi_{\text{before}}$ is drawn for reference; points above this line
+indicate a sphericity increase, points on it indicate no change, and
+points below it indicate a sphericity decrease.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.85\textwidth]{image32.png}
+    \caption{Sphericity before vs.\ after the impact-loading test, for
+             all 45 tracer particles.}
+    \label{fig:morph-sphericity}
+\end{figure}
+
+The systematic displacement of the points above the unit-slope line is
+the single most consistent finding of this chapter. The mean paired
+sphericity change across all 45 particles is $\Delta\Psi = +0.0100$, and
+the paired $t$-test against the null of zero mean change yields $t =
+3.23$, $p = 0.002$. Restricting attention to the 39 inlier particles
+only, the mean change is $\Delta\Psi = +0.0041$ and the $t$-statistic is
+\num{6.05} with $p < 10^{-6}$. The smaller mean for the inliers reflects
+the fact that the outlier particles, after their fragmentation, are
+individually more spherical than they were before; their removal
+slightly reduces the average rise but, more importantly, sharpens the
+significance of the rise considerably because the within-population
+variance falls. The conclusion is that sphericity rises in essentially
+every particle regardless of configuration. Corner abrasion is therefore
+a universal response to the drop-weight impact protocol, and no
+configuration in the matrix---including the best-performing T1
+(PUBM-FB-300)---eliminates it. This is consistent with the
+abrasion-driven rounding observed in cyclic loading by Qian et~al.\
+(2014) and Guo et~al.\ (2018) and in drop-weight impact loading by
+Koohmishi and Palassi (2020).
+
+\subsection{Convexity}
+\label{sec:morph-convexity}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.85\textwidth]{image33.png}
+    \caption{Convexity $C = V/\Vch$ before vs.\ after the
+             impact-loading test, for all 45 tracer particles. Layout and
+             statistics as for Figure~\ref{fig:morph-sphericity}.}
+    \label{fig:morph-convexity}
+\end{figure}
+
+\subsection{Roundness}
+\label{sec:morph-roundness}
+
+Angularity and roundness are the two principal descriptors of the
+sharpness of corner-and-edge features on a particle. Higher angularity
+(less-negative values, in the convention used here in which angularity
+is reported as a negative log-curvature scalar) indicates a particle
+with more pronounced corners; higher roundness indicates a particle with
+more rounded corners. Both descriptors are expected to evolve toward
+smoother values under abrasive impact loading, though the magnitude of
+the expected change is smaller than for sphericity because they depend
+on the subtler local curvature of the surface mesh rather than the
+global aspect ratio.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.85\textwidth]{image34.png}
+    \caption{Roundness before vs.\ after the impact-loading test, for all
+             45 tracer particles.}
+    \label{fig:morph-roundness}
+\end{figure}
+
+The roundness response is mixed. The mean paired change is $+0.038$
+across all 45 particles ($t = 0.67$, $p = 0.51$), and $+0.058$ across
+the 39 inliers ($t = 1.00$, $p = 0.32$). Like angularity, roundness is
+sensitive to local corner curvature and reflects the selective nature of
+corner abrasion. Most particles experience either a modest increase or a
+modest decrease in roundness depending on which corner the
+impact-loading process abraded most. The sphericity-and-convexity rise
+reported above is the more reliable population-level diagnostic of the
+abrasion process; the angularity-and-roundness scatter reports the
+corresponding particle-level heterogeneity.
+
+\section{Discussion: heat-map synthesis}
+\label{sec:morph-discussion}
+
+The morphological script computes twenty-two descriptors per mesh, of
+which the four reported in Section~\ref{sec:morph-shape} are the
+principal shape descriptors. To provide a global view of the pattern of
+mean change across all configurations and a wider set of descriptors,
+Figure~\ref{fig:morph-heatmap} collects the mean per-particle
+\%-change of fourteen descriptors across the nine tests in two
+side-by-side heat maps. Outlier particles are removed before the means
+are computed; the visualisation is therefore a Mode-A (inlier) picture of
+the morphological response. Panel~(a) shows the size and primary shape
+descriptors, which have a comparatively narrow dynamic range (less than
+$\pm \SI{2.5}{\percent}$); panel~(b) shows the roundness and shape-ratio
+descriptors, which span a wider range (up to about
+$\pm \SI{80}{\percent}$).
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.95\textwidth]{image35.png}
+    \caption{Heat maps of mean per-particle \%-change in fourteen
+             morphological descriptors across the nine tests, with
+             outlier particles removed. Panel~(a): size and primary
+             shape descriptors. Panel~(b): roundness and shape-ratio
+             descriptors.}
+    \label{fig:morph-heatmap}
+\end{figure}
+
+Three patterns are visible in panel~(a) of Figure~\ref{fig:morph-heatmap}.
+First, all the size descriptors (volume, surface area, convex-hull
+volume, convex-hull surface, equivalent diameter) are uniformly negative
+across the nine configurations. The sign-uniformity is mechanistically
+reassuring: inlier particles do not gain mass under impact loading. The
+magnitude of the size loss tracks the ranking of
+Table~\ref{tab:morph-volume}, with the rigid-base \SI{450}{\milli\metre}
+tests T4, T5, and T7 showing the largest size losses. Second, sphericity
+and convexity are uniformly positive across the nine configurations,
+consistent with the universal abrasion-driven rounding established in
+Section~\ref{sec:morph-shape}. Third, the surface-texture-index column
+shows small but mixed-sign changes (between $-\SI{0.42}{\percent}$ and
+$+\SI{0.17}{\percent}$), with no clear configuration-level pattern; this
+descriptor is sensitive to the highest-frequency mesh asperities and is
+dominated by scan-to-scan reconstruction noise rather than the
+impact-loading signal.
+
+Panel~(b) of Figure~\ref{fig:morph-heatmap} reports the roundness and
+shape-ratio descriptors, which exhibit a much larger dynamic range. The
+angularity column in particular spans from $-\SI{25}{\percent}$ at T5
+to $+\SI{79}{\percent}$ at T9---a span of more than 100 percentage
+points across the nine configurations. The sign of the angularity change
+does not group obviously by base condition or by drop height: T1, T4,
+T6, T8, and T9 are all positive (sharper after the test, in the
+convention adopted here); T2, T3, T5, and T7 are negative (smoother).
+The roundness column shows the same mixed-sign pattern, with the
+largest positive value occurring at T9 ($+\SI{27}{\percent}$) and the
+largest negative value at T5 ($-\SI{13}{\percent}$). The aspect-ratio
+and flatness columns are similarly heterogeneous. The mixed-sign pattern
+of these descriptors confirms the observation made in
+Section~\ref{sec:morph-shape} about angularity: corner abrasion is
+selectively rather than uniformly distributed across the corners of
+each particle, and the population-level mean of these locally-sensitive
+descriptors is therefore not a reliable diagnostic of the
+configuration-level damage. The size descriptors and the global shape
+descriptors (sphericity and convexity) of panel~(a) are the more robust
+diagnostics.

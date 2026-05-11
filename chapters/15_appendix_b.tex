@@ -1,0 +1,113 @@
+% =============================================================================
+%  APPENDIX B - PYTHON MORPHOLOGICAL ANALYSIS SCRIPT
+% =============================================================================
+\chapter{Python Morphological Analysis Script}
+\label{chap:appB}
+
+This appendix records the Python morphological-analysis script. The
+script reads STL meshes from a pre-test folder and a post-test folder,
+performs the four-check mesh quality-control gate, computes the
+twenty-two morphological descriptors, pairs the pre-test and post-test
+meshes by filename, computes the per-particle changes, and exports the
+complete dataset to a multi-sheet Excel workbook.
+
+\section{Software environment}
+\label{sec:appB-env}
+
+\begin{itemize}[leftmargin=*]
+    \item Python~\num{3.10} or later (tested on 3.12).
+    \item \texttt{trimesh}~$\ge$\num{4.0} --- STL input, mesh integrity
+          checks, convex hull.
+    \item \texttt{numpy}~$\ge$\num{1.24} --- numerical operations on
+          descriptor arrays.
+    \item \texttt{pandas}~$\ge$\num{2.0} --- DataFrame handling for the
+          paired dataset.
+    \item \texttt{openpyxl} --- Excel workbook output.
+    \item \texttt{scipy} --- linear algebra and statistics.
+    \item \texttt{numpy-stl} --- legacy STL-format compatibility layer.
+\end{itemize}
+
+Installation is via the pip toolchain:
+\begin{verbatim}
+pip install trimesh numpy pandas openpyxl scipy numpy-stl
+\end{verbatim}
+
+\section{Pipeline script --- \texttt{ballast\_analyzer.py}}
+\label{sec:appB-script}
+
+The complete pipeline script is archived as \texttt{ballast\_analyzer.py}.
+The script is approximately \num{450} lines of commented Python. The
+core descriptor-extraction loop is reproduced below in abridged form.
+
+\begin{lstlisting}[caption={Core extraction logic of
+\texttt{ballast\_analyzer.py}.},label={lst:ballast-analyzer}]
+import os, trimesh, numpy as np, pandas as pd
+
+# ---------- Four-check quality gate ----------
+def mesh_ok(mesh):
+    return (mesh.is_watertight
+            and mesh.body_count == 1
+            and mesh.volume > 10_000
+            and mesh.volume < 250_000)
+
+# ---------- Descriptor extraction ----------
+def extract_descriptors(stl_path):
+    m = trimesh.load(stl_path)
+    if not mesh_ok(m):
+        raise ValueError(f"{stl_path}: mesh QC failed")
+
+    V, A = m.volume, m.area
+    ch = m.convex_hull
+    V_ch, A_ch = ch.volume, ch.area
+
+    # Principal dimensions from oriented bounding box
+    obb = m.bounding_box_oriented.extents          # [S, I, L]
+    S, I, L = sorted(obb)
+
+    # Sphericity (Wadell, 1932)
+    Psi = (np.pi ** (1/3)) * ((6 * V) ** (2/3)) / A
+
+    # Convexity
+    C = V / V_ch
+
+    # Form descriptors
+    F, E, AR = S/I, I/L, L/S
+    FI = (L + I) / (2 * S)
+
+    # Surface texture
+    T = A / A_ch
+    D_eq = (6 * V / np.pi) ** (1/3)
+
+    return dict(V=V, A=A, D_eq=D_eq, S=S, I=I, L=L,
+                V_ch=V_ch, A_ch=A_ch, Psi=Psi, C=C,
+                F=F, E=E, AR=AR, FI=FI, T=T)
+
+# ---------- Pair before & after, write workbook ----------
+def run(before_dir, after_dir, out_xlsx):
+    rows_b, rows_a = [], []
+    for fn in sorted(os.listdir(before_dir)):
+        if not fn.endswith(".stl"):
+            continue
+        d_b = extract_descriptors(os.path.join(before_dir, fn))
+        d_a = extract_descriptors(os.path.join(after_dir,  fn))
+        d_b["Particle"] = fn.replace(".stl", "")
+        d_a["Particle"] = fn.replace(".stl", "")
+        rows_b.append(d_b)
+        rows_a.append(d_a)
+
+    df_b = pd.DataFrame(rows_b).set_index("Particle")
+    df_a = pd.DataFrame(rows_a).set_index("Particle")
+    df_delta = df_a - df_b
+    df_pct   = 100 * df_delta / df_b
+
+    with pd.ExcelWriter(out_xlsx) as xw:
+        df_b.to_excel(xw,     "Before Test")
+        df_a.to_excel(xw,     "After Test")
+        df_delta.to_excel(xw, "Changes (After-Before)")
+        df_pct.to_excel(xw,   "Percent Changes")
+\end{lstlisting}
+
+\vfill
+\begin{center}
+\emph{--- End of thesis ---}
+\end{center}

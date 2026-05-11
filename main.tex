@@ -1,15 +1,183 @@
-\documentclass{article}
+% =============================================================================
+%  ASSESSMENT OF RAILROAD BALLAST DEGRADATION UNDER MODIFIED DROP-WEIGHT
+%  IMPACT LOADING CONDITIONS AND IMAGE-BASED MORPHOLOGICAL ANALYSIS
+%
+%  A B.Tech. Thesis - Gati Shakti Vishwavidyalaya, Vadodara
+%  Authors: Durgesh Kumar Legha (2270007) & Sandeep Patel (2280043)
+%  Supervisor: Dr. Dinesh Gundavaram
+%
+%  Compilation: pdflatex -> bibtex (optional) -> pdflatex -> pdflatex
+% =============================================================================
+\documentclass[12pt,a4paper,oneside]{report}
 
-\title{My First LaTeX Document}
-\author{Durgesh Kumar}
-\date{\today}
+% -----------------------------------------------------------------------------
+%  Page geometry & basic typography
+% -----------------------------------------------------------------------------
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=3.2cm,right=2.5cm,headheight=15pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{microtype}
+\usepackage{setspace}
+\onehalfspacing
 
+% -----------------------------------------------------------------------------
+%  Maths, science, units
+% -----------------------------------------------------------------------------
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{mathtools}
+\usepackage{siunitx}
+\sisetup{
+    detect-all,
+    per-mode=symbol,
+    inter-unit-product=\ensuremath{\,\cdot\,},
+    range-phrase=--,
+    range-units=single
+}
+\DeclareSIUnit\tonne{t}
+
+% -----------------------------------------------------------------------------
+%  Tables, figures, captions
+% -----------------------------------------------------------------------------
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{rotating}
+\usepackage{adjustbox}
+\usepackage{makecell}
+\renewcommand{\arraystretch}{1.15}
+
+\usepackage[font=small,labelfont=bf,format=plain,justification=centering,
+            labelsep=period]{caption}
+\usepackage{subcaption}
+
+% -----------------------------------------------------------------------------
+%  Cross-references, hyperlinks, bibliography
+% -----------------------------------------------------------------------------
+\usepackage[hidelinks,bookmarksopen,bookmarksopenlevel=1]{hyperref}
+\hypersetup{
+    colorlinks=false,
+    pdftitle={Assessment of Railroad Ballast Degradation under Modified
+              Drop-Weight Impact Loading Conditions and Image-Based
+              Morphological Analysis},
+    pdfauthor={Durgesh Kumar Legha and Sandeep Patel},
+    pdfsubject={B.Tech. Thesis, Gati Shakti Vishwavidyalaya},
+    pdfkeywords={ballast, drop-weight impact, 3D morphology, RDSO,
+                 Indian Railways, fouling index}
+}
+\usepackage[noabbrev,capitalise]{cleveref}
+
+% -----------------------------------------------------------------------------
+%  Lists, headers, code, miscellaneous
+% -----------------------------------------------------------------------------
+\usepackage{enumitem}
+\setlist{itemsep=2pt,topsep=4pt}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyhead[L]{\nouppercase{\leftmark}}
+\fancyhead[R]{\thepage}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}}
+
+\usepackage{xcolor}
+\definecolor{codebg}{HTML}{F7F7F7}
+\definecolor{codekw}{HTML}{0033B3}
+\definecolor{codestr}{HTML}{067D17}
+\definecolor{codecom}{HTML}{8C8C8C}
+
+\usepackage{listings}
+\lstdefinestyle{pythonstyle}{
+    language=Python,
+    backgroundcolor=\color{codebg},
+    basicstyle=\footnotesize\ttfamily,
+    keywordstyle=\color{codekw}\bfseries,
+    stringstyle=\color{codestr},
+    commentstyle=\color{codecom}\itshape,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    numbersep=8pt,
+    frame=single,
+    framesep=4pt,
+    breaklines=true,
+    breakatwhitespace=true,
+    showstringspaces=false,
+    tabsize=4,
+    captionpos=b
+}
+\lstset{style=pythonstyle}
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+    {\normalfont\Huge\bfseries}
+    {\chaptertitlename\ \thechapter}{18pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{-30pt}{20pt}
+
+% -----------------------------------------------------------------------------
+%  Convenience macros
+% -----------------------------------------------------------------------------
+\newcommand{\FIIN}{\ensuremath{\mathit{FI}_{\mathrm{IN}}}}
+\newcommand{\PoneM}{\ensuremath{P_{0.075}}}
+\newcommand{\PtwoM}{\ensuremath{P_{20}}}
+\newcommand{\Ke}{\ensuremath{K_{e}}}
+\newcommand{\Vch}{\ensuremath{V_{\mathrm{ch}}}}
+\newcommand{\Ach}{\ensuremath{A_{\mathrm{ch}}}}
+\newcommand{\Deq}{\ensuremath{D_{\mathrm{eq}}}}
+\newcommand{\Ap}{\ensuremath{A_{p}}}
+\newcommand{\Ab}{\ensuremath{A_{b}}}
+\newcommand{\dmax}{\ensuremath{d_{\max}}}
+\newcommand{\dV}{\ensuremath{\%\Delta V}}
+\newcommand{\dPsi}{\ensuremath{\%\Delta\Psi}}
+\newcommand{\dC}{\ensuremath{\%\Delta C}}
+\newcommand{\DegC}{\ensuremath{^{\circ}\mathrm{C}}}
+
+% -----------------------------------------------------------------------------
+\title{Assessment of Railroad Ballast Degradation under Modified Drop-Weight
+       Impact Loading Conditions and Image-Based Morphological Analysis}
+\author{Durgesh Kumar Legha \and Sandeep Patel}
+\date{April 2026}
+
+% =============================================================================
 \begin{document}
 
-\maketitle
+% ------------------------ FRONT MATTER ---------------------------------------
+\pagenumbering{roman}
 
-\section{Introduction}
+\include{chapters/00_titlepage}
+\include{chapters/01_declarations}
+\include{chapters/02_acknowledgements}
+\include{chapters/03_abstract}
+\include{chapters/04_outcomes}
 
-Hello, this is my first LaTeX document.
+% Table of contents, list of figures/tables, abbreviations & symbols
+\cleardoublepage\pdfbookmark[0]{Table of Contents}{toc}
+\tableofcontents
+\cleardoublepage\listoffigures
+\cleardoublepage\listoftables
+\include{chapters/05_abbreviations}
+\include{chapters/06_symbols}
+
+% ------------------------ MAIN MATTER ----------------------------------------
+\cleardoublepage\pagenumbering{arabic}\setcounter{page}{1}
+
+\include{chapters/07_chapter1_introduction}
+\include{chapters/08_chapter2_literature}
+\include{chapters/09_chapter3_methodology}
+\include{chapters/10_chapter4_impact_results}
+\include{chapters/11_chapter5_morphology}
+\include{chapters/12_chapter6_conclusions}
+
+% ------------------------ BACK MATTER ----------------------------------------
+\include{chapters/13_references}
+\appendix
+\include{chapters/14_appendix_a}
+\include{chapters/15_appendix_b}
 
 \end{document}
