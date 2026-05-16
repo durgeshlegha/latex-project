@@ -23,10 +23,61 @@ three-dimensional morphological-analysis pipeline
 (Section~\ref{sec:meth-morphology}).
 
 \begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.92\textwidth]{image9.png}
-    \caption{Experimental methodology flowchart (10-stage programme).}
-    \label{fig:meth-flowchart}
+\centering
+\begin{tikzpicture}[node distance=0.5cm and 0.6cm,>=Stealth]
+    % -------- Bulk stream (left column) --------
+    \node[flowstart]                                            (start)    {Source basalt ballast (RDSO gradation)};
+    \node[flowstep, below=of start]                             (sieve-in) {Dry-sieve analysis\\(pre-test PSD)};
+    \node[flowstep, below=of sieve-in]                          (prep)     {Specimen assembly\\(mould + base + pad + 20\,kg fill)};
+    \node[flowstep, below=of prep]                              (impact)   {Drop-weight impact test\\(20 blows; 300 or 450\,mm drop)};
+    \node[flowstep, below=of impact]                            (sett)     {Settlement \& peak force\\(every 5 blows)};
+    \node[flowstep, below=of sett]                              (sieve-out){Post-test sieve analysis\\(RDSO series)};
+    \node[flowstep, below=of sieve-out]                         (fiin)     {Compute $\FIIN = \PoneM + \PtwoM$};
+
+    % -------- Per-particle stream (right column) --------
+    \node[flowstep, right=2.6cm of prep]                        (select)   {Select 5 tracer particles\\per configuration ($n=45$)};
+    \node[flowstep, below=of select]                            (scanbef)  {Pre-test 3D scan\\(EinScan SL, $\sim$0.1\,mm)};
+    \node[flowstep, below=of scanbef]                           (qcbef)    {QC: watertight,\\single body, vol.\ in band};
+    \node[flowstep, below=of qcbef]                             (extract)  {Recover tracers post-test,\\re-scan, QC};
+    \node[flowstep, below=of extract]                           (desc)     {Compute 22 descriptors\\and paired $\Delta X$, $\%\Delta X$};
+
+    % Synthesis box
+    \node[flowend, below=2.2cm of $(fiin)!0.5!(desc)$]          (synth)    {Synthesis (\FIIN{} + paired morphology)};
+
+    % -------- Arrows --------
+    \draw[flowarrow] (start)    -- (sieve-in);
+    \draw[flowarrow] (sieve-in) -- (prep);
+    \draw[flowarrow] (prep)     -- (impact);
+    \draw[flowarrow] (impact)   -- (sett);
+    \draw[flowarrow] (sett)     -- (sieve-out);
+    \draw[flowarrow] (sieve-out)-- (fiin);
+    \draw[flowarrow] (fiin)     |- (synth);
+
+    \draw[flowarrow] (select)   -- (scanbef);
+    \draw[flowarrow] (scanbef)  -- (qcbef);
+    \draw[flowarrow, dashed]    (qcbef.south)
+        .. controls +(0,-0.4) and +(2.5,0) ..
+        (prep.east) node[midway,above,font=\scriptsize\itshape] {tracers go in};
+    \draw[flowarrow, dashed]    (impact.east)
+        .. controls +(2.5,0) and +(0,0.4) ..
+        (extract.north) node[midway,below,font=\scriptsize\itshape] {tracers come out};
+    \draw[flowarrow] (extract)  -- (desc);
+    \draw[flowarrow] (desc)     |- (synth);
+
+    % Stream labels
+    \node[font=\small\bfseries\color{gsvblue}, above=0.2cm of start]
+        {Bulk stream};
+    \node[font=\small\bfseries\color{gsvblue}, above=0.2cm of select]
+        {Per-particle stream};
+\end{tikzpicture}
+\caption{Experimental methodology: a two-stream pipeline. The bulk stream
+         (left) follows the specimen through assembly, impact testing,
+         and post-test sieve analysis, ending in the Indian Railway
+         Fouling Index \FIIN. The per-particle stream (right) follows 45
+         individually-tracked tracer particles through 3D scanning,
+         quality control, impact loading, re-scan, and 22-descriptor
+         comparison. The two streams converge in the synthesis stage.}
+\label{fig:meth-flowchart}
 \end{figure}
 
 \section{Basalt ballast}

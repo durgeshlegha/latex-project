@@ -173,6 +173,12 @@
    \fontsize{42}{42}\selectfont\thechapter}
   {6pt}
   {\Huge\bfseries\color{gsvblue}}
+% Starred (unnumbered) chapter form: keep the blue colour but no "CHAPTER N" label
+\titleformat{name=\chapter,numberless}[display]
+  {\normalfont\sffamily\filright}
+  {}
+  {0pt}
+  {\Huge\bfseries\color{gsvblue}}
 \titlespacing*{\chapter}{0pt}{-20pt}{18pt}
 
 \titleformat{\section}
@@ -356,5 +362,8 @@
 \appendix
 \include{chapters/14_appendix_a}
 \include{chapters/15_appendix_b}
+
+% About-the-authors page (back matter)
+\include{chapters/16_about_authors}
 
 \end{document}
