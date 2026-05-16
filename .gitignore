@@ -14,6 +14,15 @@
 *.snm
 *.vrb
 *.xdv
+# glossaries
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.acn
+*.acr
+*.alg
+*.ist
 
 # Keep the compiled PDF in the repo so reviewers can see the output
 # without rebuilding (delete this line if you prefer to ignore main.pdf)

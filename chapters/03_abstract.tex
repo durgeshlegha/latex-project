@@ -1,17 +1,23 @@
 % =============================================================================
-%  Abstract
+%  Abstract + Thesis Highlights (Executive Summary)
 % =============================================================================
 \chapter*{Abstract}
 \addcontentsline{toc}{chapter}{Abstract}
 \thispagestyle{plain}
+\markboth{Abstract}{}
+
+\begingroup
+\setlength{\parindent}{0pt}
 
 The thesis focuses on addressing the critical issue of railway ballast
 degradation, which significantly impacts the safety, stability, and
-operational efficiency of railway tracks. Tailored specifically to the
-unique conditions of Indian Railways, this research aims to develop a
-deeper understanding of ballast behaviour under impact loading and to
-predict the quantum of ballast degradation using 3D image processing as well
-as machine-learning models.
+operational efficiency of railway tracks. Tailored specifically to the unique
+conditions of Indian Railways, this research aims to develop a deeper
+understanding of ballast behaviour under impact loading and to predict the
+quantum of ballast degradation using 3D image processing as well as
+machine-learning models.
+
+\bigskip
 
 At the core of the study is the modification of the European-standard
 drop-weight impact test apparatus to better align with Indian railway
@@ -20,10 +26,12 @@ accurately replicates on-field stress conditions experienced by ballast in
 the Indian context, providing a more relevant and reliable framework for
 analysis. The modified apparatus serves as a critical tool for evaluating
 ballast degradation under controlled yet realistic conditions, delivering
-nominal contact stresses of \SI{275}{\kilo\pascal} (at a \SI{300}{\milli\metre}
-drop height) and \SI{523}{\kilo\pascal} (at a \SI{450}{\milli\metre} drop
-height) corresponding to the \num{22.5}-tonne axle load characteristic of
-Indian Railways.
+nominal contact stresses of \SI{275}{\kilo\pascal} (at a
+\SI{300}{\milli\metre} drop height) and \SI{523}{\kilo\pascal} (at a
+\SI{450}{\milli\metre} drop height)~--- corresponding to the
+\SI{22.5}{\tonne} axle load characteristic of Indian Railways.
+
+\bigskip
 
 A significant innovation in this study is the use of advanced 3D image
 processing techniques to evaluate morphological changes in ballast particles
@@ -32,16 +40,97 @@ analyse changes in particle shape, size, and texture, providing a detailed
 and quantitative understanding of ballast degradation. A paired-particle
 protocol applied to 45 marked tracer particles across nine experimental
 configurations enables precise measurement of deterioration, allowing
-identification of critical thresholds and damage modes (diffuse abrasion vs.\
-catastrophic fracture) that are not detectable through traditional sieve
-analysis.
+identification of critical thresholds and damage modes (\gls{ModeA} --- diffuse
+abrasion vs.\ \gls{ModeB} --- catastrophic fracture) that are not detectable
+through traditional sieve analysis.
+
+\bigskip
 
 The outcomes of this study contribute to railroad ballast degradation
 assessment using image-based morphology and machine learning, delivering a
 scalable and accurate alternative to conventional physical testing, with
 substantial implications for railway safety and maintenance planning.
 
-\vspace{0.4cm}
-\noindent\textbf{Keywords:} Railway ballast; drop-weight impact loading; RDSO
-gradation; Fouling Index; 3D structured-light scanning; particle morphology;
-under-ballast mats; ballast degradation.
+\bigskip
+
+\textbf{Keywords:} Railway ballast; drop-weight impact loading;
+\gls{RDSO} gradation; Fouling Index; 3D structured-light scanning; particle
+morphology; under-ballast mats; ballast degradation.
+
+\endgroup
+
+% =============================================================================
+\cleardoublepage
+\chapter*{Thesis Highlights}
+\addcontentsline{toc}{chapter}{Thesis Highlights}
+\thispagestyle{plain}
+\markboth{Thesis Highlights}{}
+
+\begingroup
+\setlength{\parindent}{0pt}
+
+The principal contributions of the thesis can be read in a single page.
+Each item is anchored to the chapter where it is developed in full.
+
+\bigskip
+
+\begin{finding}[title=Apparatus]
+A purpose-built large-scale drop-weight impact apparatus
+(\SI{300}{\milli\metre} mould, \SI{50}{\kilogram} hammer,
+\SIrange{200}{450}{\milli\metre} adjustable drop, in-line
+\SI{5}{\tonne} load cell) was designed, fabricated, and commissioned at
+Gati Shakti Vishwavidyalaya. The two drop heights bracket the Indian
+Railways field stress envelope at \SI{275}{\kilo\pascal} /
+\SI{147}{\joule} and \SI{523}{\kilo\pascal} / \SI{221}{\joule}.
+\hfill (Chapter~\ref{chap:methodology})
+\end{finding}
+
+\begin{finding}[title=Experimental campaign]
+A nine-configuration factorial test matrix crossing three pad conditions
+(\gls{UR} / \gls{RUBM} / \gls{PUBM}) with two base conditions
+(\gls{FB} / \gls{RB}) and two impact energies
+(\SI{300}{\milli\metre} / \SI{450}{\milli\metre} drop) was executed; the
+three \gls{FB}--\SI{450}{\milli\metre} cells were excluded by design.
+\hfill (Chapter~\ref{chap:methodology})
+\end{finding}
+
+\begin{finding}[title=Bulk fouling response]
+The Indian Railway Fouling Index \FIIN{} spans a 6.4-fold range across
+the nine configurations, from \SI{0.533}{\percent} at \testlabel{T1}
+(\gls{PUBM}--\gls{FB}--300) to \SI{3.386}{\percent} at \testlabel{T7}
+(\gls{UR}--\gls{RB}--450). \emph{Pad performance is energy- and
+base-dependent}: \gls{PUBM} dominates at both extremes, but \gls{RUBM}
+edges ahead on the rigid base at low energy.
+\hfill (Chapter~\ref{chap:impact-results})
+\end{finding}
+
+\begin{finding}[title=Two damage modes (Mode A / Mode B)]
+A paired per-particle 3D morphological protocol on 45 tracer particles
+revealed two distinct damage modes. \gls{ModeA} (diffuse corner
+abrasion) is universal: every particle exhibits a small but
+statistically significant sphericity rise
+($\Delta\Psi = +0.0041$, $p < 10^{-6}$). \gls{ModeB} (catastrophic
+fracture) is rare (6/45) and \emph{occurs only on rigid-base
+configurations}.
+\hfill (Chapter~\ref{chap:morph-results})
+\end{finding}
+
+\begin{finding}[title=Settlement vs.\ fouling are non-interchangeable]
+The test with the largest settlement (\testlabel{T5},
+\SI{48.6}{\milli\metre}) is not the test with the largest fouling
+(\testlabel{T7}). Settlement reflects rearrangement; fouling reflects
+breakage. Both metrics are required for a complete bulk-level
+characterisation.
+\hfill (Chapter~\ref{chap:impact-results})
+\end{finding}
+
+\begin{finding}[title=Output]
+A utility-patent draft (\cref{chap:appB}); two journal manuscripts
+under review; two accepted Springer conference papers; an open-source
+Python pipeline (\texttt{ballast\_analyzer.py}) that ingests paired
+pre/post \gls{STL} meshes and exports twenty-two morphological
+descriptors per particle.
+\hfill (Chapters~\ref{chap:conclusions} \& \ref{chap:appB})
+\end{finding}
+
+\endgroup

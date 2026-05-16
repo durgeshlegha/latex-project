@@ -6,24 +6,24 @@
 
 This thesis set out to address a combined apparatus-and-characterisation
 gap in the current assessment of railway ballast degradation under
-drop-weight impact loading, specifically in the context of the RDSO
+drop-weight impact loading, specifically in the context of the \gls{RDSO}
 \SIrange{20}{65}{\milli\metre} gradation envelope and the
 \SI{22.5}{\tonne} Indian Railways axle-load stress range. The programme
 comprised: the design, fabrication, and commissioning of a purpose-built
 large-scale drop-weight impact apparatus at Gati Shakti Vishwavidyalaya;
 the execution of a nine-configuration factorial test matrix crossing
-three pad conditions (UR / RUBM / PUBM) with two base conditions (FB /
-RB) and two impact energies (\SI{300}{\milli\metre} /
-\SI{450}{\milli\metre} drop); the characterisation of bulk degradation
-through the Indian Railway Fouling Index \FIIN{} on the post-test
-gradations; the paired three-dimensional morphological characterisation
-of 45 individually-tracked tracer particles through twenty-two
-descriptors before and after loading; and the statistical analysis of
-both characterisations individually and in synthesis. The present chapter
-states the principal conclusions of the programme, enumerates the
-specific novel contributions, identifies the limitations that bound the
-generalisability of the findings, and recommends concrete directions for
-follow-up research.
+three pad conditions (\gls{UR}~/~\gls{RUBM}~/~\gls{PUBM}) with two base
+conditions (\gls{FB}~/~\gls{RB}) and two impact energies
+(\SI{300}{\milli\metre}~/~\SI{450}{\milli\metre} drop); the
+characterisation of bulk degradation through the Indian Railway Fouling
+Index \FIIN{} on the post-test gradations; the paired three-dimensional
+morphological characterisation of 45 individually-tracked tracer particles
+through twenty-two descriptors before and after loading; and the
+statistical analysis of both characterisations individually and in
+synthesis. The present chapter states the principal conclusions of the
+programme, enumerates the specific novel contributions, identifies the
+limitations that bound the generalisability of the findings, and recommends
+concrete directions for follow-up research.
 
 \section{Conclusions}
 \label{sec:concl-main}
@@ -32,29 +32,55 @@ Six principal conclusions are drawn from the experimental programme and
 its analysis. They are stated here in the order in which they emerged
 during the research.
 
-\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=4pt]
-    \item A large-scale drop-weight setup was successfully developed at
-          GSV, delivering consistent and reproducible impact energies
-          representative of Indian Railways conditions.
-    \item Ballast shows rapid initial settlement that stabilises after
-          about \num{15} blows, confirming a 20-blow test as appropriate.
-          Higher energy and rigid bases cause greater settlement.
-    \item Fouling varies significantly with test conditions---highest
-          under rigid base, no pad, high energy; lowest with
-          polyurethane pad, flexible base, low energy.
-    \item Settlement and fouling measure different mechanisms
-          (rearrangement vs.\ breakage), so both are required for full
-          assessment.
-    \item \textbf{Abrasion (Mode~A)} --- all particles undergo gradual
-          corner abrasion, increasing sphericity and reducing size
-          across all configurations.
-          \textbf{Fracture (Mode~B)} --- severe particle breakage occurs
-          only under rigid-base conditions due to higher stress
-          reflection.
-    \item \FIIN{} captures bulk fouling effects, while particle
-          morphology reveals damage mechanisms---both are essential for
-          complete characterisation.
-\end{enumerate}
+\begin{finding}[title=Conclusion 1 -- Apparatus]
+A large-scale drop-weight setup was successfully developed at \gls{GSV},
+delivering consistent and reproducible impact energies (\SI{147}{\joule}
+and \SI{221}{\joule}, corresponding to nominal contact stresses of
+\SI{275}{\kilo\pascal} and \SI{523}{\kilo\pascal}) representative of
+Indian Railways conditions.
+\end{finding}
+
+\begin{finding}[title=Conclusion 2 -- Settlement]
+Ballast shows rapid initial settlement that stabilises after about 15
+blows, confirming a 20-blow test as appropriate. Higher energy and rigid
+bases cause greater settlement.
+\end{finding}
+
+\begin{finding}[title=Conclusion 3 -- Fouling]
+Fouling varies significantly with test conditions~--- highest under rigid
+base, no pad, high energy (\testlabel{T7}: \FIIN{} = \SI{3.386}{\percent});
+lowest with polyurethane pad, flexible base, low energy (\testlabel{T1}:
+\FIIN{} = \SI{0.533}{\percent}). A 6.4-fold span across the nine
+configurations establishes that pad, base, and energy variables each
+exert a material effect.
+\end{finding}
+
+\begin{finding}[title=Conclusion 4 -- Settlement vs.\ fouling]
+Settlement and fouling measure different mechanisms~--- rearrangement vs.\
+breakage~--- and are not interchangeable. \testlabel{T5} has the largest
+settlement (\SI{48.6}{\milli\metre}) but only intermediate fouling;
+\testlabel{T7} has the highest fouling but not the largest settlement.
+Both metrics are required for full bulk-level assessment.
+\end{finding}
+
+\begin{finding}[title=Conclusion 5 -- Two damage modes]
+\textbf{Mode~A (abrasion):} all 45 tracer particles undergo gradual
+corner abrasion, increasing sphericity ($\Delta\Psi = +0.0041$ for
+inliers, $p < 10^{-6}$) and reducing size across all
+configurations.\par
+\textbf{Mode~B (fracture):} catastrophic particle breakage occurs in
+6/45 tracer particles, and \emph{all six are drawn from rigid-base
+configurations}. The compliant sand base attenuates the impulsive force
+enough to keep every tracer in the abrasion-only regime.
+\end{finding}
+
+\begin{finding}[title=Conclusion 6 -- Complementary characterisation]
+\FIIN{} captures bulk fouling effects, while paired per-particle
+morphology reveals damage mechanisms. Both are essential for a complete
+characterisation: \FIIN{} alone cannot distinguish diffuse abrasion from
+catastrophic fracture, and the per-particle protocol alone cannot speak
+to assembly-level fines generation.
+\end{finding}
 
 \section{Novel contributions}
 \label{sec:concl-novel}
@@ -64,18 +90,17 @@ during the research.
 
 \begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=4pt]
     \item A modified drop-weight impact apparatus for Indian ballast. A
-          utility patent has been filed with the Indian Patent Office
-          (Appendix~\ref{chap:appB}).
+          utility patent has been filed with the \gls{IPO}
+          (\cref{chap:appB}).
     \item A standardised protocol calibrated to the Indian Railways
           stress window (\SIrange{275}{523}{\kilo\pascal}), recording
           per-blow peak force and five-milestone settlement---a full
           force-and-deformation history, versus the single post-test
-          fines percentage of conventional Aggregate Impact Value
-          testing.
-    \item A morphological-analysis method (Appendix~\ref{chap:appB})
-          that ingests paired pre/post STL meshes and exports various
-          parameters to a multi-sheet Excel workbook for direct
-          comparison.
+          fines percentage of conventional Aggregate Impact Value testing.
+    \item A morphological-analysis method (\cref{chap:appB}) that ingests
+          paired pre/post \gls{STL} meshes and exports twenty-two
+          descriptors per particle to a multi-sheet Excel workbook for
+          direct comparison.
 \end{enumerate}
 
 \subsection{Scientific findings}
@@ -83,68 +108,77 @@ during the research.
 
 \begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=4pt]
     \item Empirical demonstration that base condition (sand cushion vs.\
-          rigid concrete) governs the selection between Mode~A (diffuse
-          abrasion) and Mode~B (catastrophic fracture) under drop-weight
-          impact loading of ballast, using a paired per-particle 3D
-          morphological method.
+          rigid concrete) governs the selection between \gls{ModeA}
+          (diffuse abrasion) and \gls{ModeB} (catastrophic fracture)
+          under drop-weight impact loading of ballast, using a paired
+          per-particle 3D morphological method. All six observed
+          \gls{ModeB} events occurred on the rigid base.
     \item A heat-map of mean per-particle \%-change across fourteen
           descriptors for nine configurations: sign-uniformity in size
           and primary-shape descriptors, heterogeneity in shape-ratio
           descriptors, and sphericity and convexity as more robust
           diagnostics than angularity and roundness.
+    \item Empirical demonstration that pad performance is energy- and
+          base-dependent: PUBM dominates at the FB-300 and RB-450
+          corners; RUBM edges ahead on RB-300. A single optimal pad
+          cannot be specified independent of the substructure and
+          loading energy.
     \item The first published nine-configuration factorial dataset
-          pairing large-diameter drop-weight impact loading
-          (RDSO gradation, Indian Railways stress levels) with
-          per-particle 3D morphology---a reference for validating
-          discrete-element models and machine-learning degradation
-          predictors.
+          pairing large-diameter drop-weight impact loading (\gls{RDSO}
+          gradation, Indian Railways stress levels) with per-particle
+          3D morphology---a reference for validating discrete-element
+          models and machine-learning degradation predictors.
 \end{enumerate}
 
 \section{Limitations of the study}
 \label{sec:concl-limitations}
 
-Four limitations bound the generalisability of the conclusions and
-should be recorded in any reading of the findings.
+Four limitations bound the generalisability of the conclusions and should
+be recorded in any reading of the findings.
 
-\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=4pt]
-    \item \textbf{Sample size per configuration.} Five tracer particles
-          supports the pooled Mode~A significance test and Mode~B
-          detection, but not per-configuration ANOVA or tight Mode~B
-          probability estimates. Expanding to \numrange{10}{20} tracers
-          is the single most effective follow-up improvement.
-    \item \textbf{Single parent rock type.} Only basalt from one
-          Vadodara quarry was tested. Parent rock affects both
-          Mode~A abrasion rate and Mode~B fracture threshold, so
-          generalisation requires extension to another RDSO-approved
-          rock.
-    \item \textbf{Surface morphology only.} The EinScan structured-light
-          scanner cannot detect sub-surface micro-cracks, incipient
-          fracture planes, or mineralogical alteration. Mode~A
-          particles may carry latent damage that accelerates Mode~B
-          fracture; X-ray CT would be required to detect this.
-    \item \textbf{Laboratory scale.} The study is limited to a single
-          mould diameter and a single hammer mass. Field-scale
-          validation, including the effect of variable train speeds and
-          long-term cyclic loading, is outside the present scope.
-\end{enumerate}
+\begin{caveat}[title=Limitation 1 -- Sample size per configuration]
+Five tracer particles supports the pooled \gls{ModeA} significance test
+and \gls{ModeB} detection, but not per-configuration ANOVA or tight
+\gls{ModeB} probability estimates. Expanding to \numrange{10}{20}
+tracers is the single most effective follow-up improvement.
+\end{caveat}
+
+\begin{caveat}[title=Limitation 2 -- Single parent rock type]
+Only basalt from one Vadodara quarry was tested. Parent rock affects
+both \gls{ModeA} abrasion rate and \gls{ModeB} fracture threshold, so
+generalisation requires extension to another \gls{RDSO}-approved rock.
+\end{caveat}
+
+\begin{caveat}[title=Limitation 3 -- Surface morphology only]
+The EinScan structured-light scanner cannot detect sub-surface
+micro-cracks, incipient fracture planes, or mineralogical alteration.
+\gls{ModeA} particles may carry latent damage that accelerates
+\gls{ModeB} fracture; X-ray CT would be required to detect this.
+\end{caveat}
+
+\begin{caveat}[title=Limitation 4 -- Laboratory scale]
+The study is limited to a single mould diameter and a single hammer
+mass. Field-scale validation, including the effect of variable train
+speeds and long-term cyclic loading, is outside the present scope.
+\end{caveat}
 
 \section{Recommendations for future work}
 \label{sec:concl-future}
 
 Five concrete directions for follow-up research are identified, in rough
-order of increasing scope. Each would usefully build on the
-methodological platform established by the present thesis.
+order of increasing scope. Each would usefully build on the methodological
+platform established by the present thesis.
 
 \begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=4pt]
     \item \textbf{Expanded tracer-count study.} Repeat the present
           nine-configuration programme with \numrange{15}{20} tracer
           particles per configuration to support per-configuration
-          ANOVA and tighter estimates of Mode~B event probabilities.
+          ANOVA and tighter estimates of \gls{ModeB} event probabilities.
     \item \textbf{Multi-rock-type extension.} Extend the programme to
-          granite and quartzite ballast, using the same
-          nine-configuration matrix and the same per-particle morphology
-          pipeline, to map the parent-rock dependence of the
-          Mode~A / Mode~B crossover.
+          granite and quartzite ballast, using the same nine-configuration
+          matrix and the same per-particle morphology pipeline, to map
+          the parent-rock dependence of the \gls{ModeA}~/~\gls{ModeB}
+          crossover.
     \item \textbf{AI/ML-based prediction of degradation behaviour.} Use
           the per-particle paired morphological dataset to train
           supervised machine-learning models. A trained surrogate would
@@ -153,12 +187,12 @@ methodological platform established by the present thesis.
           analysis would identify which morphological descriptors most
           strongly govern degradation outcomes.
     \item \textbf{Cyclic-plus-impact combined loading.} Develop a
-          composite loading method that applies cyclic triaxial loading
+          composite loading method that applies cyclic-triaxial loading
           (mimicking ordinary traffic) interrupted periodically by
-          drop-weight impact events (mimicking transition-zone
-          hot-spots), and report the corresponding Mode~A / Mode~B
-          evolution. This is the closest laboratory analogue to real
-          service loading.
+          drop-weight impact events (mimicking transition-zone hot-spots),
+          and report the corresponding
+          \gls{ModeA}~/~\gls{ModeB} evolution. This is the closest
+          laboratory analogue to real service loading.
     \item \textbf{Field correlation.} Couple the laboratory degradation
           metrics with in-situ measurements at instrumented bridge
           approaches, rail joints, or transition zones on Indian

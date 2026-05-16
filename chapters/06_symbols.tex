@@ -9,11 +9,15 @@
 
 \begin{longtable}{@{}p{0.22\textwidth}p{0.72\textwidth}@{}}
     \toprule
-    \textbf{Symbol} & \textbf{Meaning (units)}\\
+    \rowcolor{tablehdr}
+    {\color{white}\textbf{Symbol}}
+    & {\color{white}\textbf{Meaning (units)}}\\
     \midrule
     \endfirsthead
     \toprule
-    \textbf{Symbol} & \textbf{Meaning (units)}\\
+    \rowcolor{tablehdr}
+    {\color{white}\textbf{Symbol}}
+    & {\color{white}\textbf{Meaning (units)}}\\
     \midrule
     \endhead
     \bottomrule
@@ -28,7 +32,8 @@
                     $=\left(6V/\pi\right)^{1/3}$ (\si{\milli\metre})\\
     $\dmax$       & Maximum particle size in a gradation (\si{\milli\metre})\\
     $E$           & Elongation $= I/L$ (dimensionless)\\
-    $F$           & Flatness $= S/I$ (dimensionless)\\
+    $F$           & Flatness $= S/I$ (dimensionless); peak hammer force
+                    (\si{\kilo\newton})\\
     $g$           & Gravitational acceleration,
                     \SI{9.81}{\metre\per\second\squared}\\
     $h$           & Drop height of hammer
@@ -45,15 +50,18 @@
     $p$           & Statistical $p$-value (dimensionless)\\
     $R$           & Roundness descriptor (dimensionless, scanner-specific)\\
     $S$           & Short bounding-box dimension (\si{\milli\metre})\\
+    $T$           & Surface-texture index $= A/\Ach$ (dimensionless)\\
     $t$           & Student's $t$-statistic (dimensionless)\\
     $V$           & Volume of a particle (\si{\milli\metre\cubed})\\
     $\Vch$        & Convex-hull volume (\si{\milli\metre\cubed})\\
     $\sigma$      & Nominal contact stress at specimen surface
                     (\si{\kilo\pascal})\\
-    $\Delta X$    & Change in descriptor $X = X_{\text{after}} -
-                    X_{\text{before}}$\\
-    $\%\Delta X$  & Percentage change in $X = \Delta X / X_{\text{before}}
-                    \times 100$\\
+    $\Delta X$    & Change in descriptor
+                    $X = X_{\text{after}} - X_{\text{before}}$\\
+    $\%\Delta X$  & Percentage change in
+                    $X = \Delta X / X_{\text{before}} \times 100$\\
     $\Psi$        & Sphericity
-                    $= \pi^{1/3}\,(6V)^{2/3}/A$ (Wadell, 1932)\\
+                    $= \pi^{1/3}\,(6V)^{2/3}/A$
+                    \citep{Wadell1932}\\
+    $\kappa_{s}$  & Sphericity ratio $= \Deq/L$ (dimensionless)\\
 \end{longtable}

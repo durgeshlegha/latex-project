@@ -18,11 +18,9 @@ preparation (Section~\ref{sec:meth-scanning}), the modified drop-weight
 impact apparatus (Section~\ref{sec:meth-apparatus}), stress-and-energy
 calibration to Indian Railways field loading
 (Section~\ref{sec:meth-calibration}), the blow-by-blow test protocol and
-bulk-index computation (Section~\ref{sec:meth-protocol}), the image-based
+bulk-index computation (Section~\ref{sec:meth-protocol}), and the image-based
 three-dimensional morphological-analysis pipeline
-(Section~\ref{sec:meth-morphology}), and the statistical framework that
-supports the analysis of Chapters~\ref{chap:impact-results}
-and~\ref{chap:morph-results}.
+(Section~\ref{sec:meth-morphology}).
 
 \begin{figure}[ht]
     \centering
@@ -38,18 +36,18 @@ and~\ref{chap:morph-results}.
 \label{sec:meth-source}
 
 All ballast used in the experimental programme was sourced from a single
-quarry supplying RDSO-specification railway ballast in the Vadodara region
-of Gujarat, India. A single source was used to eliminate parent-rock
+quarry supplying \gls{RDSO}-specification railway ballast in the Vadodara
+region of Gujarat, India. A single source was used to eliminate parent-rock
 variability as a confounding factor between tests: any cross-test difference
 in degradation can then be attributed to the reinforcement configuration
 rather than to unrecorded mineralogical variation. The parent rock is
 basalt---a fine-grained, dense, aphanitic igneous rock with a dry particle
 density \SI{2.76}{\gram\per\centi\metre\cubed} and low water absorption
-(\(<\SI{1}{\percent}\)). These figures are consistent with the RDSO
-specification (RDSO, 2023) requirement of not less than
+(\(<\SI{1}{\percent}\)). These figures are consistent with the \gls{RDSO}
+specification \citep{RDSO2023} requirement of not less than
 \SI{2.60}{\gram\per\centi\metre\cubed} dry density and with the parent-rock
 properties reported for comparable basalt in the impact literature
-(Koohmishi \& Palassi, 2020; Zhang et~al., 2023).
+\citep{Koohmishi2020, Zhang2023}.
 
 Approximately \SI{25000}{\kilogram} of ballast was procured for the
 programme---much more than required for the nine main tests (approximately
@@ -66,24 +64,24 @@ The as-supplied ballast was characterised by dry-sieve analysis using the
 following sieve series: 63, 50, 40, 31.5, 25, 20, 16, 12.5, 10, 4.75, 2.36,
 0.6, 0.15 and \SI{0.075}{\milli\metre}. Sieving was performed on sample
 masses of approximately \SI{10}{\kilogram} in accordance with the spirit of
-the RDSO procedure (RDSO, 2023). The resulting gradation, plotted in
-Figure~\ref{fig:meth-psd} against the RDSO upper and lower envelope curves,
-shows that the ballast conforms to the specification with a small reserve
-against both limits---the target gradation sits close to the mid-band of the
-envelope throughout the \SIrange{20}{63}{\milli\metre} range. The percentage
-retained on the \SI{65}{\milli\metre} sieve was below the \SI{5}{\percent}
-maximum permitted by the specification; the percentage passing the
-\SI{20}{\milli\metre} sieve was below \SI{2}{\percent}, well within the
-\SI{2}{\percent} maximum fines limit. The gradation is therefore centred
-within the acceptable window and is representative of production-quality
-RDSO ballast.
+the \gls{RDSO} procedure \citep{RDSO2023}. The resulting gradation, plotted
+in \cref{fig:meth-psd} against the \gls{RDSO} upper and lower envelope
+curves, shows that the ballast conforms to the specification with a small
+reserve against both limits---the target gradation sits close to the mid-band
+of the envelope throughout the \SIrange{20}{63}{\milli\metre} range. The
+percentage retained on the \SI{65}{\milli\metre} sieve was below the
+\SI{5}{\percent} maximum permitted by the specification; the percentage
+passing the \SI{20}{\milli\metre} sieve was below \SI{2}{\percent}, well
+within the \SI{2}{\percent} maximum fines limit. The gradation is therefore
+centred within the acceptable window and is representative of
+production-quality \gls{RDSO} ballast.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.85\textwidth]{image10.png}
     \caption{Pre-test particle size distribution of the basalt ballast used
              in the experimental programme, plotted against the upper and
-             lower envelope curves of the RDSO specification.}
+             lower envelope curves of the \acrshort{RDSO} specification.}
     \label{fig:meth-psd}
 \end{figure}
 
@@ -91,34 +89,38 @@ RDSO ballast.
 \label{sec:meth-properties}
 
 The ballast was characterised for the physical and mechanical properties
-required by the RDSO specification. The measurements are summarised in
-Table~\ref{tab:meth-ballast-properties}. All values fall within the RDSO
-acceptance thresholds; the Aggregate Impact Value measured on the
-artificially crushed \SIrange{10}{12.5}{\milli\metre} sub-sample is
-reported here for completeness but is precisely the index whose limitations
-are set out in Chapters~\ref{chap:introduction} and~\ref{chap:literature}.
-The remainder of the programme accordingly reports the bulk fouling index
-\FIIN{} on the full-size specimen.
+required by the \gls{RDSO} specification. The measurements are summarised in
+\cref{tab:meth-ballast-properties}. All values fall within the \gls{RDSO}
+acceptance thresholds; the \gls{AIV} measured on the artificially crushed
+\SIrange{10}{12.5}{\milli\metre} sub-sample is reported here for
+completeness but is precisely the index whose limitations are set out in
+Chapters~\ref{chap:introduction} and~\ref{chap:literature}. The remainder of
+the programme accordingly reports the bulk fouling index \FIIN{} on the
+full-size specimen.
 
 \begin{table}[ht]
 \centering
 \caption{Physical and mechanical properties of the basalt ballast used in
          the experimental programme.}
 \label{tab:meth-ballast-properties}
-\begin{tabular}{@{}lccc@{}}
+\rowcolors{2}{rowbg}{white}
+\begin{tabular}{@{}lccl@{}}
     \toprule
-    \textbf{Property} & \textbf{Measured} & \textbf{RDSO limit}
-        & \textbf{Method}\\
+    \rowcolor{tablehdr}
+    {\color{white}\textbf{Property}}
+    & {\color{white}\textbf{Measured}}
+    & {\color{white}\textbf{\acrshort{RDSO} limit}}
+    & {\color{white}\textbf{Method}}\\
     \midrule
     Dry particle density (\si{\gram\per\centi\metre\cubed})
         & 2.78 & \(\ge 2.60\) & Gas pycnometer $+$ weighing\\
     Bulk (loose) density (\si{\kilogram\per\metre\cubed})
         & 1460 & Not specified & Bulk volume in mould\\
     Water absorption (\si{\percent})
-        & 0.72 & \(\le 1.0\) & ASTM C127 equivalent\\
-    Aggregate Abrasion Value (LAA) (\si{\percent})
+        & 0.72 & \(\le 1.0\) & ASTM~C127 equivalent\\
+    \acrshort{AAV} (\acrshort{LAA}) (\si{\percent})
         & 15.4 & \(\le 30\) & IS:2386 Pt~IV\\
-    Aggregate Impact Value (\si{\percent})
+    \acrshort{AIV} (\si{\percent})
         & 12.1 & \(\le 20\) & IS:2386 Pt~IV (conventional)\\
     \bottomrule
 \end{tabular}
@@ -127,8 +129,8 @@ The remainder of the programme accordingly reports the bulk fouling index
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.70\textwidth]{image11.jpeg}
-    \caption{Pile of the RDSO-gradation basalt ballast used in the
-             experimental programme (Civil Lab, GSV).}
+    \caption{Pile of the \acrshort{RDSO}-gradation basalt ballast used in
+             the experimental programme (Civil Lab, \acrshort{GSV}).}
     \label{fig:meth-ballast-pile}
 \end{figure}
 
@@ -136,75 +138,76 @@ The remainder of the programme accordingly reports the bulk fouling index
 \label{sec:meth-reinforcement}
 
 Three pad conditions and two base conditions are crossed in the factorial
-test matrix. The three pad conditions are an Unreinforced (UR) control, a
-Rubber Under-Ballast Mat (RUBM), and a Polyurethane Under-Ballast Mat
-(PUBM). The two base conditions are a Flexible Base (FB) of compacted sand
-and a Rigid Base (RB) of the concrete mould floor. The systematic
-three-letter abbreviations are introduced formally in this thesis as a
-replacement for the ad-hoc numbered test labels used in earlier laboratory
-work.
+test matrix. The three pad conditions are an Unreinforced (\gls{UR})
+control, a Rubber Under-Ballast Mat (\gls{RUBM}), and a Polyurethane
+Under-Ballast Mat (\gls{PUBM}). The two base conditions are a Flexible Base
+(\gls{FB}) of compacted sand and a Rigid Base (\gls{RB}) of the concrete
+mould floor. The systematic three-letter abbreviations are introduced
+formally in this thesis as a replacement for the ad-hoc numbered test
+labels used in earlier laboratory work.
 
 \subsection{Unreinforced (UR) control}
 \label{sec:meth-UR}
 
-The UR configuration places no pad between the ballast fill and the base
-element of the mould. The UR condition serves three analytical purposes
-simultaneously: it is the mechanical control against which the two pad
-conditions are compared; it represents the in-service condition of legacy
-ballasted track with no substructure reinforcement; and it isolates the
-effect of the base condition (flexible sand versus rigid concrete) from the
-effect of any compliant pad placed above it. The UR condition is present in
-three of the nine test configurations, providing the baseline against which
-the pad-protected configurations are measured.
+The \gls{UR} configuration places no pad between the ballast fill and the
+base element of the mould. The \gls{UR} condition serves three analytical
+purposes simultaneously: it is the mechanical control against which the two
+pad conditions are compared; it represents the in-service condition of
+legacy ballasted track with no substructure reinforcement; and it isolates
+the effect of the base condition (flexible sand versus rigid concrete) from
+the effect of any compliant pad placed above it. The \gls{UR} condition is
+present in three of the nine test configurations, providing the baseline
+against which the pad-protected configurations are measured.
 
 \subsection{Rubber Under-Ballast Mat (RUBM)}
 \label{sec:meth-RUBM}
 
-The RUBM material is a commercially manufactured \SI{12}{\milli\metre}
+The \gls{RUBM} material is a commercially manufactured \SI{12}{\milli\metre}
 thick sheet of vulcanised natural rubber with a Shore~A hardness of
 approximately~65 and a nominal bulk density of
 \SI{1.35}{\gram\per\centi\metre\cubed}. The sheet was cut to a circular disc
 matching the \SI{300}{\milli\metre} internal diameter of the test mould and
 placed flat on the base element before the ballast fill. The compliance of
-the RUBM falls in the middle of the range reported in the literature for
-natural-rubber under-ballast mats (Navaratnarajah \& Indraratna, 2017; Ngo
-et~al., 2019)---sufficient to dissipate a meaningful fraction of the
-hammer impulse energy while stiff enough to recover elastically between
-blows without progressive plastic deformation of the pad itself. No RUBM
-specimen was reused between tests; a fresh \SI{12}{\milli\metre} disc was
-cut for every test to eliminate any carry-over effect of cumulative pad
-damage.
+the \gls{RUBM} falls in the middle of the range reported in the literature
+for natural-rubber under-ballast mats
+\citep{Navaratnarajah2017, Ngo2019}---sufficient to dissipate a meaningful
+fraction of the hammer impulse energy while stiff enough to recover
+elastically between blows without progressive plastic deformation of the pad
+itself. No \gls{RUBM} specimen was reused between tests; a fresh
+\SI{12}{\milli\metre} disc was cut for every test to eliminate any
+carry-over effect of cumulative pad damage.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.55\textwidth]{image12.jpeg}
-    \caption{Rubber Under-Ballast Mat (RUBM) disc, \SI{12}{\milli\metre}
-             thick natural rubber, cut to \SI{300}{\milli\metre} diameter.}
+    \caption{Rubber Under-Ballast Mat (\acrshort{RUBM}) disc,
+             \SI{12}{\milli\metre} thick natural rubber, cut to
+             \SI{300}{\milli\metre} diameter.}
     \label{fig:meth-RUBM}
 \end{figure}
 
 \subsection{Polyurethane Under-Ballast Mat (PUBM)}
 \label{sec:meth-PUBM}
 
-The PUBM material is a commercial Getzner polyurethane under-ballast mat
-product. Getzner is a widely adopted supplier of polyurethane
+The \gls{PUBM} material is a commercial Getzner polyurethane under-ballast
+mat product. Getzner is a widely adopted supplier of polyurethane
 track-resilient elements on European, Australian, and Indian mainline and
 urban rail networks, and the specific variant used in this study is
 representative of the stiffness range in which Getzner UBM products are
 typically deployed beneath ballast in transition zones and impact-prone
-locations. The PUBM disc was cut to \SI{300}{\milli\metre} diameter matching
-the mould internal diameter, like the RUBM. Gundavaram and Hussaini (2023)
+locations. The \gls{PUBM} disc was cut to \SI{300}{\milli\metre} diameter
+matching the mould internal diameter, like the \gls{RUBM}. \citet{Gundavaram2023}
 have previously demonstrated, in cyclic-triaxial tests on Indian ballast,
 that an elastomeric polyurethane inclusion materially reduces both
 cumulative plastic deformation and the rate of fines generation, and the
-use of PUBM in the present programme extends that line of evidence from
-cyclic to impact loading.
+use of \gls{PUBM} in the present programme extends that line of evidence
+from cyclic to impact loading.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.55\textwidth]{image13.jpeg}
-    \caption{Polyurethane Under-Ballast Mat (PUBM, commercial Getzner
-             product), cut to \SI{300}{\milli\metre} diameter.}
+    \caption{Polyurethane Under-Ballast Mat (\acrshort{PUBM}, commercial
+             Getzner product), cut to \SI{300}{\milli\metre} diameter.}
     \label{fig:meth-PUBM}
 \end{figure}
 
@@ -213,35 +216,34 @@ cyclic to impact loading.
 
 The base condition---the element directly beneath the pad, or beneath the
 ballast if no pad is used---is the second factorial variable in the
-experimental design. The FB condition comprises a \SI{100}{\milli\metre}
-deep cushion of clean, medium-grained quartz sand placed at the base of the
-test mould before the pad and ballast fill. The sand was oven-dried to
-constant mass and compacted in the mould by a standardised vibratory
-compaction protocol to a bulk density of approximately
-\SI{1.60}{\gram\per\centi\metre\cubed}. The RB condition places the ballast
-fill (with or without the interposed pad) directly on the concrete floor of
-the test mould. The concrete floor is several orders of magnitude stiffer
-than either the pad or the sand base and is effectively unyielding at the
-stress levels delivered by the hammer.
+experimental design. The \gls{FB} condition comprises a
+\SI{100}{\milli\metre} deep cushion of clean, medium-grained quartz sand
+placed at the base of the test mould before the pad and ballast fill. The
+sand was oven-dried to constant mass and compacted in the mould by a
+standardised vibratory compaction protocol to a bulk density of
+approximately \SI{1.60}{\gram\per\centi\metre\cubed}. The \gls{RB}
+condition places the ballast fill (with or without the interposed pad)
+directly on the concrete floor of the test mould. The concrete floor is
+several orders of magnitude stiffer than either the pad or the sand base
+and is effectively unyielding at the stress levels delivered by the hammer.
 
 The two base conditions are chosen to bracket the stiffness range that a
-ballast layer might encounter in service: the FB approximates a
-well-compacted granular sub-ballast, while the RB approximates an
+ballast layer might encounter in service: the \gls{FB} approximates a
+well-compacted granular sub-ballast, while the \gls{RB} approximates an
 unyielding structural element such as a bridge deck, a concrete track-slab
 foundation, or a poorly-maintained subgrade that has densified below its
 own elastic limit. The factorial crossing of pad and base conditions allows
 the pad-effect contribution and the base-effect contribution to be
-separated cleanly, which is the analytical design that Nimbalkar,
-Indraratna, Dash, and Christie (2012) identified as essential for
-distinguishing pad performance from sub-grade compliance in laboratory
-shock-mat work.
+separated cleanly, which is the analytical design that \citet{Nimbalkar2012}
+identified as essential for distinguishing pad performance from sub-grade
+compliance in laboratory shock-mat work.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.55\textwidth]{image14.jpeg}
     \caption{Test mould prepared with the \SI{100}{\milli\metre} flexible
-             base sand cushion (FB condition), photographed immediately
-             before placement of the pad and the ballast fill.}
+             base sand cushion (\acrshort{FB} condition), photographed
+             immediately before placement of the pad and the ballast fill.}
     \label{fig:meth-FB}
 \end{figure}
 
@@ -251,19 +253,21 @@ shock-mat work.
 \subsection{Rationale for the paired-particle design}
 \label{sec:meth-paired-rationale}
 
-The thesis rests on a paired-particle experimental design: the same
-physical grains are scanned before and after the impact-loading event, and
-the grain-scale damage is tracked within each particle rather than averaged
-across the population. The paired design is the methodological centre of
-gravity of the study, and its value is two-fold. First, it eliminates the
-particle-to-particle variability in initial shape---which in any typical
-ballast assembly is considerable, with volumes ranging over almost an order
-of magnitude across the \SIrange{20}{65}{\milli\metre} gradation---as a
-source of scatter in the damage signal. Second, it enables the direct
-attribution of each observed change in shape descriptors to the loading
-event, because any change recorded in the after-scan that is not also
-present in the before-scan of the same particle must have arisen from the
-hammer blows.
+The thesis rests on a paired-particle experimental design: the same physical
+grains are scanned before and after the impact-loading event, and the
+grain-scale damage is tracked within each particle rather than averaged
+across the population.
+
+\begin{mechanism}[title=Why pair before and after?]
+Pairing eliminates the particle-to-particle variability in initial shape
+---which in any typical ballast assembly is considerable, with volumes
+ranging over almost an order of magnitude across the
+\SIrange{20}{65}{\milli\metre} gradation---as a source of scatter in the
+damage signal. It also enables the direct attribution of each observed
+change in shape descriptors to the loading event, because any change
+recorded in the after-scan that is not also present in the before-scan of
+the same particle must have arisen from the hammer blows.
+\end{mechanism}
 
 \subsection{Selection criteria}
 \label{sec:meth-selection}
@@ -280,7 +284,7 @@ candidate particle had to satisfy all four to be accepted as a tracer.
     \item \textbf{Shape:} particles with extreme flatness or elongation
           (aspect ratio $L/S>3$ by initial calliper reading) were rejected
           because such shapes produce preferentially high breakage under
-          impact loading and would distort the Mode~A / Mode~B
+          impact loading and would distort the \gls{ModeA} / \gls{ModeB}
           distribution.
     \item \textbf{Parent freshness:} candidates showing any visible
           weathering rind, iron-oxide staining, or surface cementation were
@@ -308,22 +312,22 @@ volume or the surface area computed from the scans.
 \label{sec:meth-prescan}
 
 Each tracer particle was scanned on an EinScan (Shining 3D Technology
-Co.\ Ltd., Hangzhou, China) desktop structured-light scanner. The EinScan~SE
-was used across the programme, providing comparable geometric accuracy of
-approximately \SI{0.1}{\milli\metre} and scan resolution of approximately
-\SI{0.15}{\milli\metre} in the automatic turntable mode used here. The
-detailed scan-protocol and mesh quality-control procedures are set out in
-Section~\ref{sec:meth-morphology} below, in the context of the
+Co.\ Ltd., Hangzhou, China) desktop structured-light scanner. The
+EinScan~SE was used across the programme, providing comparable geometric
+accuracy of approximately \SI{0.1}{\milli\metre} and scan resolution of
+approximately \SI{0.15}{\milli\metre} in the automatic turntable mode used
+here. The detailed scan-protocol and mesh quality-control procedures are
+set out in \cref{sec:meth-morphology} below, in the context of the
 morphological-analysis pipeline. In the present sub-section pre-test
 scanning is described as part of specimen preparation: every tracer
 particle carried a complete, validated, watertight triangular surface mesh
-in STL format into the impact test, and the pre-test mesh serves as the
-reference state against which the post-test mesh is paired.
+in \gls{STL} format into the impact test, and the pre-test mesh serves as
+the reference state against which the post-test mesh is paired.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.65\textwidth]{image16.jpeg}
-    \caption{EinScan structured-light scanner (Shining 3D) in operation with
+    \caption{EinScan structured-light scanner (Shining~3D) in operation with
              a marked tracer particle mounted on the automatic turntable.}
     \label{fig:meth-einscan}
 \end{figure}
@@ -333,22 +337,22 @@ reference state against which the post-test mesh is paired.
 
 The apparatus comprises five principal components: a cylindrical cast-iron
 test mould of \SI{300}{\milli\metre} internal diameter and
-\SI{350}{\milli\metre} internal depth, seated on a rigid reaction base-plate;
-a vertical guide frame of four mild-steel columns connected by an upper
-crosshead; a cylindrical cast-iron hammer of \SI{50}{\kilogram} mass,
-sliding on the guide columns in free fall; a continuously adjustable hammer
-release-and-locking mechanism graduated over the
+\SI{350}{\milli\metre} internal depth, seated on a rigid reaction
+base-plate; a vertical guide frame of four mild-steel columns connected by
+an upper crosshead; a cylindrical cast-iron hammer of \SI{50}{\kilogram}
+mass, sliding on the guide columns in free fall; a continuously adjustable
+hammer release-and-locking mechanism graduated over the
 \SIrange{200}{450}{\milli\metre} range of drop height; and a load-transfer
 assembly consisting of a \SI{300}{\milli\metre} bearing plate, a
 compression-type \SI{5}{\tonne} strain-gauge load cell, and a hardened-steel
 striker plate. A mechanical blow counter and two manual operating handles
-complete the assembly. The mould diameter of \SI{300}{\milli\metre}
-delivers a $D/\dmax$ ratio of approximately 6 against the RDSO
+complete the assembly. The mould diameter of \SI{300}{\milli\metre} delivers
+a $D/\dmax$ ratio of approximately~6 against the \gls{RDSO}
 \SI{50}{\milli\metre} mean particle size, eliminating the boundary-dominance
-of the conventional IS:2386 Part~IV apparatus (BIS, 1963) and bringing the
-present rig into the design envelope established by Nimbalkar, Indraratna,
-Dash, and Christie (2012) and the subsequent impact literature surveyed in
-Section~\ref{sec:lit-lab}.
+of the conventional IS:2386 Part~IV apparatus \citep{BIS1963} and bringing
+the present rig into the design envelope established by
+\citet{Nimbalkar2012} and the subsequent impact literature surveyed in
+\cref{sec:lit-lab}.
 
 The adjustable release mechanism permits the hammer to be locked at any
 drop height between \SI{200}{\milli\metre} and \SI{450}{\milli\metre}
@@ -377,56 +381,65 @@ the utility patent application filed for this apparatus.
         \caption{Load-transfer assembly.}
     \end{subfigure}
     \caption{Modified drop-weight impact apparatus designed and commissioned
-             at GSV. (a) Overall view of the apparatus and its frame.
-             (b) Close-up of the load-transfer assembly (bearing plate,
-             \SI{5}{\tonne} load cell, striker plate) and the digital
+             at \acrshort{GSV}. (a) Overall view of the apparatus and its
+             frame. (b) Close-up of the load-transfer assembly (bearing
+             plate, \SI{5}{\tonne} load cell, striker plate) and the digital
              peak-force display.}
     \label{fig:meth-apparatus}
 \end{figure}
 
-\subsection{Comparison with the conventional Aggregate Impact Value
-            apparatus}
+\subsection{Comparison with the conventional AIV apparatus}
 \label{sec:meth-AIV-comparison}
 
 The salient design differences between the conventional IS:2386 Part~IV
-Aggregate Impact Value apparatus and the modified large-scale apparatus
-commissioned at GSV are tabulated in Table~\ref{tab:meth-AIV-comparison}.
+\gls{AIV} apparatus and the modified large-scale apparatus commissioned at
+\gls{GSV} are tabulated in \cref{tab:meth-AIV-comparison}.
 
 \begin{table}[ht]
 \centering
 \caption{Principal specification of the modified apparatus in comparison to
          the conventional IS:2386 Part~IV Aggregate Impact Value apparatus.
          Only the headline parameters are listed; the full specification is
-         in the patent documentation (Appendix~\ref{chap:appB}).}
+         in the patent documentation (\cref{chap:appB}).}
 \label{tab:meth-AIV-comparison}
 \small
+\rowcolors{2}{rowbg}{white}
 \begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{@{}p{4.4cm}p{4.8cm}p{5.6cm}@{}}
     \toprule
-    \textbf{Parameter} &
-    \textbf{Conventional AIV (IS:2386 Pt~IV)} &
-    \textbf{Modified apparatus (present)}\\
+    \rowcolor{tablehdr}
+    {\color{white}\textbf{Parameter}}
+    & {\color{white}\textbf{Conventional \acrshort{AIV} (IS:2386 Pt~IV)}}
+    & {\color{white}\textbf{Modified apparatus (present)}}\\
     \midrule
-    Mould internal diameter & \SI{102}{\milli\metre}
-        & \SI{300}{\milli\metre}\\
-    Mould effective depth & \(\sim\!\SI{50}{\milli\metre}\)
-        & \SI{350}{\milli\metre}\\
-    Hammer mass & \SI{13.5}{\kilogram} & \SI{50}{\kilogram}\\
-    Drop height & \SI{380}{\milli\metre} (fixed)
+    Mould internal diameter
+        & \SI{102}{\milli\metre} & \SI{300}{\milli\metre}\\
+    Mould effective depth
+        & \(\sim\!\SI{50}{\milli\metre}\) & \SI{350}{\milli\metre}\\
+    Hammer mass
+        & \SI{13.5}{\kilogram} & \SI{50}{\kilogram}\\
+    Drop height
+        & \SI{380}{\milli\metre} (fixed)
         & \SIrange{200}{450}{\milli\metre} (adjustable)\\
     Particle size tested
         & \SIrange{10}{12.5}{\milli\metre} (crushed sub-sample)
-        & \SIrange{20}{63}{\milli\metre} (full RDSO gradation)\\
-    Approx.\ particles per test & \numrange{2}{4} & \numrange{40}{80}\\
-    $D/\dmax$ ratio & \(\approx 1.6\) (boundary-dominated) & \(\approx 6\)\\
-    Stress simulation & Fixed / none
+        & \SIrange{20}{63}{\milli\metre} (full \acrshort{RDSO} gradation)\\
+    Approx.\ particles per test
+        & \numrange{2}{4} & \numrange{40}{80}\\
+    $D/\dmax$ ratio
+        & \(\approx 1.6\) (boundary-dominated)
+        & \(\approx 6\) (boundary-free)\\
+    Stress simulation
+        & Fixed / none
         & \SIrange{275}{523}{\kilo\pascal} (adjustable, maps to
         \SI{22.5}{\tonne} axle)\\
-    Real-time force measurement & None
+    Real-time force measurement
+        & None
         & \SI{5}{\tonne} load cell $+$ digital peak-force indicator\\
-    Blow counting & Manual & Integrated mechanical counter\\
+    Blow counting
+        & Manual & Integrated mechanical counter\\
     Post-test degradation metric
-        & AIV (\(\%\) fines through \SI{2.36}{\milli\metre})
+        & \acrshort{AIV} (\(\%\) fines through \SI{2.36}{\milli\metre})
         & \FIIN{} $+$ paired per-particle morphology\\
     \bottomrule
 \end{tabular}
@@ -453,7 +466,7 @@ effective bearing area is approximately
 regions each carry roughly half the axle load on each rail. Taking $\Ab
 \approx \SI{1100}{\centi\metre\squared}$ as the effective bearing area
 below a single rail seat, the static contact stress at the top of the
-ballast under a \SI{22.5}{\tonne} axle is:
+ballast under a \SI{22.5}{\tonne} axle is
 \begin{equation}
     \sigma_{\text{static}} = \frac{W}{\Ab}
     \approx \frac{\SI{110.25}{\kilo\newton}}{\SI{0.11}{\metre\squared}}
@@ -461,13 +474,12 @@ ballast under a \SI{22.5}{\tonne} axle is:
     \approx \SI{250}{\kilo\pascal}.
     \label{eq:meth-sigma-static}
 \end{equation}
-
-Applying a conservative dynamic amplification of 1.5 under ordinary
+Applying a conservative dynamic amplification of~1.5 under ordinary
 mainline traffic yields $\sigma \approx \SI{375}{\kilo\pascal}$; at
 impact-prone locations where the amplification can reach $2\times$ or
 higher, the contact stress rises into the
-\SIrange{500}{600}{\kilo\pascal} range. The in-service stress window at
-the top of the ballast layer under Indian Railways traffic is therefore
+\SIrange{500}{600}{\kilo\pascal} range. The in-service stress window at the
+top of the ballast layer under Indian Railways traffic is therefore
 conservatively taken as approximately \SIrange{250}{550}{\kilo\pascal},
 with the upper end reflecting heavy-haul and transition-zone conditions.
 
@@ -478,7 +490,7 @@ For the modified apparatus the nominal contact stress $\sigma$ is the peak
 hammer force $F$ divided by the bearing-plate area $\Ap$. The hammer
 kinetic energy at impact is
 \begin{equation}
-    \Ke = mgh,
+    \Ke = m\,g\,h,
     \label{eq:meth-ke}
 \end{equation}
 where $m$ is the hammer mass (\SI{50}{\kilogram}), $g$ is the gravitational
@@ -486,31 +498,82 @@ acceleration (\SI{9.81}{\metre\per\second\squared}), and $h$ is the drop
 height. Using the measured peak forces reported at commissioning---$F
 \approx \SI{19.4}{\kilo\newton}$ at $h = \SI{300}{\milli\metre}$ and $F
 \approx \SI{37.0}{\kilo\newton}$ at $h = \SI{450}{\milli\metre}$---and the
-bearing-plate area $\Ap = \pi \times (\SI{0.150}{\metre})^{2} =
-\SI{0.0707}{\metre\squared}$, the two apparatus operating points
-correspond to:
+bearing-plate area $\Ap = \pi\,(\SI{0.150}{\metre})^{2} =
+\SI{0.0707}{\metre\squared}$, the two apparatus operating points correspond
+to
 \begin{align}
-    h &= \SI{300}{\milli\metre}: \quad
-        \Ke = 50 \times 9.81 \times 0.300 = \SI{147}{\joule}; \quad
-        \sigma = \frac{\SI{19.4}{\kilo\newton}}{\SI{0.0707}{\metre\squared}}
-            \approx \SI{275}{\kilo\pascal}.
+    h &= \SI{300}{\milli\metre}: &
+    \Ke &= 50 \times 9.81 \times 0.300 = \SI{147}{\joule}, &
+    \sigma &= \frac{\SI{19.4}{\kilo\newton}}{\SI{0.0707}{\metre\squared}}
+        \approx \SI{275}{\kilo\pascal};
         \label{eq:meth-h300}\\
-    h &= \SI{450}{\milli\metre}: \quad
-        \Ke = 50 \times 9.81 \times 0.450 = \SI{221}{\joule}; \quad
-        \sigma = \frac{\SI{37.0}{\kilo\newton}}{\SI{0.0707}{\metre\squared}}
-            \approx \SI{523}{\kilo\pascal}.
+    h &= \SI{450}{\milli\metre}: &
+    \Ke &= 50 \times 9.81 \times 0.450 = \SI{221}{\joule}, &
+    \sigma &= \frac{\SI{37.0}{\kilo\newton}}{\SI{0.0707}{\metre\squared}}
+        \approx \SI{523}{\kilo\pascal}.
         \label{eq:meth-h450}
 \end{align}
 
-These two operating points---\SI{275}{\kilo\pascal} at \SI{147}{\joule} and
+\begin{finding}[title=Calibration outcome]
+The two operating points---\SI{275}{\kilo\pascal} at \SI{147}{\joule} and
 \SI{523}{\kilo\pascal} at \SI{221}{\joule}---correspond respectively to the
 lower end (ordinary mainline traffic) and the upper end (heavy-haul and
 transition-zone conditions) of the in-service stress window. The two drop
 heights selected for the test programme therefore bracket the Indian
-Railways field-loading envelope cleanly. The adjustability of the
-drop-height mechanism over the full \SIrange{200}{450}{\milli\metre} range
-leaves open the possibility of finer calibration to specific axle-load
-classes in future work.
+Railways field-loading envelope cleanly.
+\end{finding}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[>=Stealth,every node/.style={font=\footnotesize}]
+    % Vertical stress axis
+    \draw[thick,->] (0,0) -- (0,7.2) node[above]
+        {\scriptsize $\sigma$ (\si{\kilo\pascal})};
+    \foreach \y/\v in {0.5/250,1.5/300,2.5/350,3.5/400,4.5/450,5.5/500,6.5/550}
+        \draw (-0.1,\y) -- (0.1,\y) node[left,xshift=-0.15cm] {\v};
+
+    % Field stress band
+    \fill[gsvblue!15] (0.7, 0.5) rectangle (4.5, 6.5);
+    \node[gsvblue,align=center] at (2.6, 3.5)
+        {In-service stress\\window\\\textbf{250--550 \si{\kilo\pascal}}};
+    \node[gsvblue,anchor=west,font=\scriptsize\itshape] at (0.7, 0.3)
+        {static \SI{250}{\kilo\pascal}};
+    \node[gsvblue,anchor=west,font=\scriptsize\itshape] at (0.7, 6.7)
+        {impact-zone \SI{550}{\kilo\pascal}};
+
+    % Apparatus operating points
+    \draw[->,thick,boxmech!80] (5.6, 0.75) -- (4.5, 0.75);
+    \node[fill=boxmech,text=white,rounded corners=2pt,
+          font=\small\bfseries] at (6.2, 0.75)
+        {\SI{300}{\milli\metre} drop};
+    \node[anchor=west,font=\footnotesize] at (7.2, 0.75)
+        {$\sigma\approx\SI{275}{\kilo\pascal}$,\ $\Ke=\SI{147}{\joule}$};
+
+    \draw[->,thick,boxmech!80] (5.6, 5.7) -- (4.5, 5.7);
+    \node[fill=boxmech,text=white,rounded corners=2pt,
+          font=\small\bfseries] at (6.2, 5.7)
+        {\SI{450}{\milli\metre} drop};
+    \node[anchor=west,font=\footnotesize] at (7.2, 5.7)
+        {$\sigma\approx\SI{523}{\kilo\pascal}$,\ $\Ke=\SI{221}{\joule}$};
+
+    % Brace showing apparatus range
+    \draw[decorate,decoration={brace,amplitude=6pt},gsvaccent,thick]
+        (5.0,0.75) -- (5.0,5.7)
+        node[midway,xshift=-0.4cm,rotate=90,font=\footnotesize\bfseries,
+             text=gsvaccent] {Apparatus};
+\end{tikzpicture}
+\caption{Apparatus calibration to the Indian Railways field-loading
+         envelope. The two drop heights span the in-service stress
+         window from ordinary mainline traffic
+         (\(\sim\!\SI{275}{\kilo\pascal}\), \SI{147}{\joule}) to
+         heavy-haul / transition-zone conditions
+         (\(\sim\!\SI{523}{\kilo\pascal}\), \SI{221}{\joule}).}
+\label{fig:meth-calibration-ladder}
+\end{figure}
+
+The adjustability of the drop-height mechanism over the full
+\SIrange{200}{450}{\milli\metre} range leaves open the possibility of finer
+calibration to specific axle-load classes in future work.
 
 \section{Sample preparation and test protocol}
 \label{sec:meth-protocol}
@@ -558,12 +621,12 @@ protocol. Twenty (20) free-fall blows were delivered per test from the
 nominated drop height (either \SI{300}{\milli\metre} or
 \SI{450}{\milli\metre}). The choice of 20 blows is guided by two
 considerations. First, it is consistent with the number of blows used in
-comparable published drop-weight studies on ballast (Nimbalkar et~al.,
-2012; Koohmishi \& Palassi, 2020; Zhang et~al., 2023). Second, preliminary
-trials showed that the settlement--blow curve flattens substantially
-between blow 15 and blow 20 and enters a near-stable zone beyond blow 15;
-twenty blows therefore captures both the transient settlement regime and
-the early approach to the steady state.
+comparable published drop-weight studies on ballast
+\citep{Nimbalkar2012, Koohmishi2020, Zhang2023}. Second, preliminary trials
+showed that the settlement--blow curve flattens substantially between
+blow~15 and blow~20 and enters a near-stable zone beyond blow~15; twenty
+blows therefore captures both the transient settlement regime and the
+early approach to the steady state.
 
 The twenty blows were delivered in rapid succession, with an interval of
 \SIrange{5}{8}{\second} between consecutive blows---long enough for the
@@ -580,38 +643,85 @@ indicator was observed and recorded for each test.
 \label{sec:meth-matrix}
 
 The nine test configurations are defined by the factorial crossing of the
-three pad conditions (UR / RUBM / PUBM), the two base conditions (FB / RB),
-and the two impact energies (\SI{300}{\milli\metre} and
-\SI{450}{\milli\metre} drop heights of the \SI{50}{\kilogram} hammer,
-corresponding to nominal contact stresses of \SI{275}{\kilo\pascal} and
-\SI{523}{\kilo\pascal} as derived in Section~\ref{sec:meth-calibration}).
-The nine cells listed in Table~\ref{tab:meth-matrix} cover the factorial
-with three cells (FB--450 combinations) omitted because the apparatus
+three pad conditions (\gls{UR} / \gls{RUBM} / \gls{PUBM}), the two base
+conditions (\gls{FB} / \gls{RB}), and the two impact energies
+(\SI{300}{\milli\metre} and \SI{450}{\milli\metre} drop heights of the
+\SI{50}{\kilogram} hammer, corresponding to nominal contact stresses of
+\SI{275}{\kilo\pascal} and \SI{523}{\kilo\pascal} as derived in
+\cref{sec:meth-calibration}). The nine cells listed in
+\cref{tab:meth-matrix} cover the factorial with the three
+\gls{FB}--\SI{450}{\milli\metre} combinations omitted because the apparatus
 commissioning revealed that at the \SI{450}{\milli\metre} drop height the
-sand cushion under the FB condition would progressively lose bearing
+sand cushion under the \gls{FB} condition would progressively lose bearing
 capacity through cumulative compaction over twenty blows and would thereby
 confound the pad-effect signal with a base-consolidation signal.
 
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[node distance=0.15cm,>=Stealth]
+    % Column header row
+    \node[labelrow] (hdr-fb300) at (0, 2.4)
+        {FB -- \SI{300}{\milli\metre}\\\footnotesize\SI{275}{\kilo\pascal}, \SI{147}{\joule}};
+    \node[labelrow] (hdr-rb300) at (3.4, 2.4)
+        {RB -- \SI{300}{\milli\metre}\\\footnotesize\SI{275}{\kilo\pascal}, \SI{147}{\joule}};
+    \node[labelrow] (hdr-rb450) at (6.8, 2.4)
+        {RB -- \SI{450}{\milli\metre}\\\footnotesize\SI{523}{\kilo\pascal}, \SI{221}{\joule}};
+
+    % Row labels
+    \node[labelrow,anchor=east] (lbl-pubm) at (-1.7, 1.2) {PUBM};
+    \node[labelrow,anchor=east] (lbl-rubm) at (-1.7, 0.0) {RUBM};
+    \node[labelrow,anchor=east] (lbl-ur)   at (-1.7,-1.2) {UR};
+
+    % Row 1: PUBM (green)
+    \node[cellpubm] at (0, 1.2)   {\testlabel{T1}\\PUBM--FB--300};
+    \node[cellpubm] at (3.4, 1.2) {\testlabel{T9}\\PUBM--RB--300};
+    \node[cellpubm] at (6.8, 1.2) {\testlabel{T6}\\PUBM--RB--450};
+    % Row 2: RUBM (orange)
+    \node[cellrubm] at (0, 0.0)   {\testlabel{T2}\\RUBM--FB--300};
+    \node[cellrubm] at (3.4, 0.0) {\testlabel{T8}\\RUBM--RB--300};
+    \node[cellrubm] at (6.8, 0.0) {\testlabel{T5}\\RUBM--RB--450};
+    % Row 3: UR (red)
+    \node[cellur] at (0,  -1.2) {\testlabel{T3}\\UR--FB--300};
+    \node[cellur] at (3.4,-1.2) {\testlabel{T4}\\UR--RB--300};
+    \node[cellur] at (6.8,-1.2) {\testlabel{T7}\\UR--RB--450};
+\end{tikzpicture}
+\caption{The nine-cell factorial test matrix. Rows are pad conditions
+         (\gls{PUBM} / \gls{RUBM} / \gls{UR}); columns are
+         base--energy combinations. The three
+         \gls{FB}--\SI{450}{\milli\metre} cells are excluded by design
+         because the sand cushion would progressively lose bearing
+         capacity at the higher drop energy (see text).}
+\label{fig:meth-matrix}
+\end{figure}
+
 \begin{table}[ht]
 \centering
-\caption{The nine test configurations of the experimental programme.}
+\caption{The nine test configurations of the experimental programme.
+         Systematic labels are \texttt{PAD--BASE--DROP}; the legacy
+         laboratory labels (\acrshort{LH}, \acrshort{HH}) are listed for
+         cross-reference with the raw laboratory records.}
 \label{tab:meth-matrix}
-\begin{tabular}{@{}cccccccc@{}}
+\rowcolors{2}{rowbg}{white}
+\begin{tabular}{@{}cclcccc@{}}
     \toprule
-    \textbf{Test No.} & \textbf{Systematic label}
-    & \textbf{Pad} & \textbf{Base}
-    & $h$ (\si{\milli\metre}) & $\sigma$ (\si{\kilo\pascal})
-    & $\Ke$ (\si{\joule})\\
+    \rowcolor{tablehdr}
+    {\color{white}\textbf{Test}}
+    & {\color{white}\textbf{Systematic label}}
+    & {\color{white}\textbf{Legacy label}}
+    & {\color{white}$\boldsymbol{h}$~(\si{\milli\metre})}
+    & {\color{white}$\boldsymbol{\sigma}$~(\si{\kilo\pascal})}
+    & {\color{white}$\boldsymbol{\Ke}$~(\si{\joule})}
+    & {\color{white}\textbf{Peak~$F$~(\si{\kilo\newton})}}\\
     \midrule
-    T1 & UR-FB-300   & UR   & FB & 300 & 275 & 147\\
-    T2 & RUBM-FB-300 & RUBM & FB & 300 & 275 & 147\\
-    T3 & PUBM-FB-300 & PUBM & FB & 300 & 275 & 147\\
-    T4 & UR-RB-450   & UR   & RB & 450 & 523 & 221\\
-    T5 & RUBM-RB-450 & RUBM & RB & 450 & 523 & 221\\
-    T6 & PUBM-RB-450 & PUBM & RB & 450 & 523 & 221\\
-    T7 & UR-RB-300   & UR   & RB & 300 & 275 & 147\\
-    T8 & RUBM-RB-300 & RUBM & RB & 300 & 275 & 147\\
-    T9 & PUBM-RB-300 & PUBM & RB & 300 & 275 & 147\\
+    \testlabel{T1} & PUBM--FB--300 & PUBM-FB-LH & 300 & 275 & 147 & 19.4\\
+    \testlabel{T2} & RUBM--FB--300 & RUBM-FB-LH & 300 & 275 & 147 & 19.4\\
+    \testlabel{T3} & UR--FB--300   & UR-FB-LH   & 300 & 275 & 147 & 19.4\\
+    \testlabel{T4} & UR--RB--300   & UR-RB-LH   & 300 & 275 & 147 & 19.4\\
+    \testlabel{T5} & RUBM--RB--450 & RUBM-RB-HH & 450 & 523 & 221 & 37.0\\
+    \testlabel{T6} & PUBM--RB--450 & PUBM-RB-HH & 450 & 523 & 221 & 37.0\\
+    \testlabel{T7} & UR--RB--450   & UR-RB-HH   & 450 & 523 & 221 & 37.0\\
+    \testlabel{T8} & RUBM--RB--300 & RUBM-RB-LH & 300 & 275 & 147 & 19.4\\
+    \testlabel{T9} & PUBM--RB--300 & PUBM-RB-LH & 300 & 275 & 147 & 19.4\\
     \bottomrule
 \end{tabular}
 \end{table}
@@ -639,16 +749,15 @@ A single fouling-based degradation index is computed on the post-test
 gradation---the Indian Railway Fouling Index \FIIN.
 
 \paragraph{Indian Railway Fouling Index.}
-Following the adaptation by Anbazhagan, Lijun, Bharatha, and Pratibha
-(2012) of Selig and Waters (1994):
+Following the adaptation by \citet{Anbazhagan2012} of \citet{Selig1994}:
 \begin{equation}
-    \FIIN = \PoneM + \PtwoM,
+    \FIIN \;=\; \PoneM \;+\; \PtwoM,
     \label{eq:meth-FIIN}
 \end{equation}
 where \PoneM{} and \PtwoM{} are the weight percent passing the
 \SI{0.075}{\milli\metre} and \SI{20}{\milli\metre} sieves respectively. The
 first term captures fines; the second the total fraction lost from the
-acceptable RDSO ballast gradation.
+acceptable \gls{RDSO} ballast gradation.
 
 \section{Image-based three-dimensional morphological analysis}
 \label{sec:meth-morphology}
@@ -669,7 +778,7 @@ programme---both pre-test and post-test---comprises:
     \item Four-check quality-control gate (watertightness, single body,
           mesh volume within the
           \SIrange{10000}{250000}{\milli\metre\cubed} range).
-    \item Export of the validated mesh as a binary STL file.
+    \item Export of the validated mesh as a binary \gls{STL} file.
 \end{enumerate}
 
 \begin{figure}[ht]
@@ -707,22 +816,22 @@ descriptors (flatness $F=S/I$, elongation $E=I/L$, aspect ratio $L/S$,
 flatness index $\mathit{FI}=(L+I)/(2S)$, and Zingg-triangle position); and
 eight roundness and texture descriptors (sphericity $\Psi$, convexity
 $C=V/\Vch$, scanner-roundness $R$, angularity $\mathrm{Ang}$,
-surface-texture index $T=A/\Ach$, sphericity ratio
-$\kappa_{s}=\Deq/L$, and the cross-check pair $\nu_{\mathrm{ch}}$ and
-$A_{\text{ratio}}$). The classical Wadell sphericity (Wadell, 1932) and
-the Krumbein roundness concept (Krumbein, 1941) remain the two principal
-reporting axes for grain-scale degradation.
+surface-texture index $T=A/\Ach$, sphericity ratio $\kappa_{s}=\Deq/L$, and
+the cross-check pair $\nu_{\mathrm{ch}}$ and $A_{\text{ratio}}$). The
+classical Wadell sphericity \citep{Wadell1932} and the Krumbein roundness
+concept \citep{Krumbein1941} remain the two principal reporting axes for
+grain-scale degradation.
 
 \subsection{Python script}
 \label{sec:meth-python}
 
 The descriptors are computed by a purpose-built Python~3 pipeline based on
-the \texttt{trimesh} (Dawson-Haggerty, 2019), \texttt{NumPy} (Harris
-et~al., 2020), and \texttt{SciPy} (Virtanen et~al., 2020) libraries. The
+the \texttt{trimesh} \citep{DawsonHaggerty2019}, \texttt{NumPy}
+\citep{Harris2020}, and \texttt{SciPy} \citep{Virtanen2020} libraries. The
 pipeline executes seven sequential stages on each particle's
 before-and-after mesh pair:
 \begin{enumerate}[label=(\roman*),leftmargin=*]
-    \item Load STL.
+    \item Load \gls{STL}.
     \item Run the four-check QC gate.
     \item Compute size descriptors.
     \item Compute form descriptors.
@@ -732,7 +841,7 @@ before-and-after mesh pair:
           After, Changes (After~$-$~Before), and Percent Changes.
 \end{enumerate}
 
-The complete script is reproduced in Appendix~\ref{chap:appB} and has been
+The complete script is reproduced in \cref{chap:appB} and has been
 unit-tested against synthetic reference meshes (sphere, ellipsoid, cube).
 
 \begin{figure}[ht]

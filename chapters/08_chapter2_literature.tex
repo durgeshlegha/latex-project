@@ -5,35 +5,35 @@
 \label{chap:literature}
 
 The literature on ballast degradation is both deep and unusually fragmented.
-It is deep because serious laboratory work on granular skeletons under cyclic
-and impact loading has been continuous since the 1960s, and it has been
-reinforced in the last two decades by discrete-element modelling, by field
-monitoring of mainline track, and---most recently---by three-dimensional
-imaging of individual grains. It is fragmented because these different
-strands have grown largely independently of one another: the cyclic-triaxial
-community and the impact community have different journals and different
-index vocabularies; the image-analysis community has only recently made
-sustained contact with the degradation-mechanics community; and the
-practitioners who set national ballast specifications have, in turn, moved at
-their own pace. This review is organised thematically rather than
-paper-by-paper in order to make sense of these strands together.
+It is deep because serious laboratory work on granular skeletons under
+cyclic and impact loading has been continuous since the 1960s, and it has
+been reinforced in the last two decades by discrete-element modelling, by
+field monitoring of mainline track, and---most recently---by
+three-dimensional imaging of individual grains. It is fragmented because
+these different strands have grown largely independently of one another:
+the cyclic-triaxial community and the impact community have different
+journals and different index vocabularies; the image-analysis community has
+only recently made sustained contact with the degradation-mechanics
+community; and the practitioners who set national ballast specifications
+have, in turn, moved at their own pace. This review is organised
+thematically rather than paper-by-paper in order to make sense of these
+strands together.
 
-Six themes are traced in turn. Section~\ref{sec:lit-layer} places the ballast
+Six themes are traced in turn. \cref{sec:lit-layer} places the ballast
 layer in the track system and reviews its functional requirements.
-Section~\ref{sec:lit-degradation} discusses the mechanisms of ballast
-degradation that the thesis is ultimately concerned with.
-Section~\ref{sec:lit-lab} examines the laboratory characterisation of
-degradation under cyclic and impact loading, with particular attention to the
-apparatus and the size-effect problem that motivates Chapter~3.
-Section~\ref{sec:lit-reinforcement} reviews the use of resilient substructure
-inclusions---pads, mats, and compliant bases---to intercept and dissipate the
-impulsive energy that drives grain-scale damage.
-Section~\ref{sec:lit-morphology} surveys the emergence of three-dimensional
-morphological characterisation, which supplies the measurement framework
-used in Chapter~3 and applied in Chapter~5.
-Section~\ref{sec:lit-synthesis} draws the preceding five sections together
-and identifies the two gaps---the apparatus gap and the characterisation
-gap---that this thesis addresses.
+\cref{sec:lit-degradation} discusses the mechanisms of ballast degradation
+that the thesis is ultimately concerned with. \cref{sec:lit-lab} examines
+the laboratory characterisation of degradation under cyclic and impact
+loading, with particular attention to the apparatus and the size-effect
+problem that motivates \cref{chap:methodology}. \cref{sec:lit-reinforcement}
+reviews the use of resilient substructure inclusions---pads, mats, and
+compliant bases---to intercept and dissipate the impulsive energy that
+drives grain-scale damage. \cref{sec:lit-morphology} surveys the emergence
+of three-dimensional morphological characterisation, which supplies the
+measurement framework used in \cref{chap:methodology} and applied in
+\cref{chap:morph-results}. \cref{sec:lit-synthesis} draws the preceding
+five sections together and identifies the two gaps---the apparatus gap
+and the characterisation gap---that this thesis addresses.
 
 \section{The ballast layer in the railway track system}
 \label{sec:lit-layer}
@@ -42,44 +42,52 @@ gap---that this thesis addresses.
 \label{sec:lit-functional}
 
 The conventional ballasted track is a layered granular--structural system
-whose task is to convert the concentrated contact forces at the wheel--rail
-interface into diffuse, tolerable stresses at the subgrade surface. The
-ballast layer---a \SIrange{250}{350}{\milli\metre} deep mat of crushed,
-angular stone placed beneath and around the sleepers---is the principal
-load-distributing element of this system. Selig and Waters (1994) enumerated
-its six primary functions: (i) distribution of vertical wheel loads from the
-sleepers to the subgrade over an area substantially larger than the sleeper
-footprint; (ii) restraint against lateral and longitudinal sleeper movement
-through inter-particle friction and interlock; (iii) absorption of some
-fraction of the dynamic energy imparted by passing trains; (iv) provision of
-rapid drainage of water away from the track formation; (v) accommodation of
-tamping and lining operations without structural damage; and (vi)
-maintenance of a resilient bearing surface that allows the rail to deflect
-elastically under load without plastic accumulation at the sleeper--ballast
-contact.
+whose task is to convert the concentrated contact forces at the
+wheel--rail interface into diffuse, tolerable stresses at the subgrade
+surface. The ballast layer---a \SIrange{250}{350}{\milli\metre} deep mat
+of crushed, angular stone placed beneath and around the sleepers---is the
+principal load-distributing element of this system. \citet{Selig1994}
+enumerated its six primary functions:
+\begin{enumerate}[label=(\roman*),leftmargin=*,itemsep=2pt]
+    \item distribution of vertical wheel loads from the sleepers to the
+          subgrade over an area substantially larger than the sleeper
+          footprint;
+    \item restraint against lateral and longitudinal sleeper movement
+          through inter-particle friction and interlock;
+    \item absorption of some fraction of the dynamic energy imparted by
+          passing trains;
+    \item provision of rapid drainage of water away from the track
+          formation;
+    \item accommodation of tamping and lining operations without
+          structural damage;
+    \item maintenance of a resilient bearing surface that allows the rail
+          to deflect elastically under load without plastic accumulation
+          at the sleeper--ballast contact.
+\end{enumerate}
 
 These six functions impose mutually constraining requirements on the
 material. High lateral restraint demands angular, machine-crushed grains
 with strong inter-particle interlock; high drainage demands a uniformly
-graded, coarse assembly with open voids; load distribution demands adequate
-depth and density; and long service life demands particles hard enough to
-resist both impact-driven fracture and cumulative abrasion. These
-requirements are reflected in national ballast specifications with
-remarkable consistency: AREMA (2020) in the United States, UIC~719R in
-continental Europe, and the RDSO specification (RDSO, 2023) in India all
-prescribe crushed, angular stone of comparable hardness and in a comparable
-\SIrange{20}{65}{\milli\metre} size band, albeit with local variations in
-the permissible fines fraction and in the tolerated parent-rock types.
+graded, coarse assembly with open voids; load distribution demands
+adequate depth and density; and long service life demands particles hard
+enough to resist both impact-driven fracture and cumulative abrasion.
+These requirements are reflected in national ballast specifications with
+remarkable consistency: \citet{AREMA2020} in the United States, UIC~719R
+in continental Europe, and the RDSO specification \citep{RDSO2023} in
+India all prescribe crushed, angular stone of comparable hardness and in
+a comparable \SIrange{20}{65}{\milli\metre} size band, albeit with local
+variations in the permissible fines fraction and in the tolerated
+parent-rock types.
 
-A small but growing body of Indian-context research has begun to address the
-specific behaviour of RDSO-gradation ballast. Gundavaram and Hussaini (2023)
---- the present supervisor --- demonstrated in cyclic triaxial tests on
-elastomeric-polyurethane-reinforced ballast that the inclusion of a
-polymeric element between the ballast and the subgrade substantially reduces
-cumulative plastic deformation and attenuates the growth of the fines
-fraction. That result, on cyclic loading, motivates in part the use of the
-polyurethane under-ballast mat (PUBM) condition in the present impact-loading
-study.
+A small but growing body of Indian-context research has begun to address
+the specific behaviour of \gls{RDSO}-gradation ballast.
+\citet{Gundavaram2023}---the present supervisor---demonstrated in
+cyclic-triaxial tests on elastomeric-polyurethane-reinforced ballast that
+the inclusion of a polymeric element between the ballast and the
+subgrade substantially reduces cumulative plastic deformation and
+attenuates the growth of the fines fraction. That result, on cyclic
+loading, motivates in part the use of the polyurethane under-ballast mat
+(\gls{PUBM}) condition in the present impact-loading study.
 
 \section{Ballast Degradation}
 \label{sec:lit-degradation}
@@ -89,60 +97,60 @@ study.
 
 The engineering consequence of the three grain-scale mechanisms is the
 progressive generation of fines---particles finer than
-\SI{0.075}{\milli\metre} in the Selig and Waters (1994) usage, or finer than
-the RDSO \SI{0.075}{\milli\metre} sieve in the Indian adaptation. These
-fines infill the voids of the ballast skeleton and give rise to the condition
-known as \textit{fouling}. A fouled ballast has reduced drainage capacity,
-reduced shear strength, a softer and more plastic response to cyclic load,
-and a higher rate of settlement under repeated traffic (Huang et~al., 2009;
-Tutumluer, 2013). The practical maintenance responses---ballast cleaning,
-partial renewal, and in extreme cases full deep-screening---are costly and
-disruptive, and the engineering motivation for slowing the rate of fines
-generation is direct and economic.
+\SI{0.075}{\milli\metre} in the \citet{Selig1994} usage, or finer than the
+\gls{RDSO} \SI{0.075}{\milli\metre} sieve in the Indian adaptation. These
+fines infill the voids of the ballast skeleton and give rise to the
+condition known as \textit{fouling}. A fouled ballast has reduced drainage
+capacity, reduced shear strength, a softer and more plastic response to
+cyclic load, and a higher rate of settlement under repeated traffic
+\citep{Huang2009, Tutumluer2013}. The practical maintenance
+responses---ballast cleaning, partial renewal, and in extreme cases full
+deep-screening---are costly and disruptive, and the engineering motivation
+for slowing the rate of fines generation is direct and economic.
 
-Field fouling has an exogenous contribution---coal and mineral-ore spillage
-from freight wagons, wind-blown dust, and subgrade pumping---that is not
-reproducible in a sealed laboratory mould. The laboratory characterisation
-of degradation therefore measures the endogenous contribution only. Within
-the laboratory, the self-generated fouling contribution is quantified by a
-family of bulk indices whose development and limitations are reviewed next.
+Field fouling has an exogenous contribution---coal and mineral-ore
+spillage from freight wagons, wind-blown dust, and subgrade pumping---that
+is not reproducible in a sealed laboratory mould. The laboratory
+characterisation of degradation therefore measures the endogenous
+contribution only. Within the laboratory, the self-generated fouling
+contribution is quantified by a family of bulk indices whose development
+and limitations are reviewed next.
 
 \subsection{Fouling Index}
 \label{sec:lit-fouling-index}
 
-The Fouling Index $\mathit{FI}=P_{4}+P_{20}$, introduced by Selig and Waters
-(1994), and its metric counterpart $\FIIN=\PoneM+\PtwoM$ adapted for Indian
-conditions by Anbazhagan, Lijun, Bharatha, and Pratibha (2012), are weighted
-sums of the percentages finer than key sieves and are intended to capture
-the fines-generation aspect of degradation specifically rather than the
-total PSD shift. The fouling index is dimensionless, is reported in weight
-percent, and is the bulk metric most directly tied to the engineering
-consequences that motivate ballast replacement in the field---loss of
-drainage, loss of shear strength, and the progressive infilling of voids
-that drives settlement-bowl formation at impact-prone locations. Because it
-isolates the fines fraction and the sub-acceptable fraction, \FIIN{} is also
-the most widely reported degradation metric in the Indian-ballast literature
+The Fouling Index $\gls{FI}=P_{4}+P_{20}$, introduced by \citet{Selig1994},
+and its metric counterpart $\FIIN=\PoneM+\PtwoM$ adapted for Indian
+conditions by \citet{Anbazhagan2012}, are weighted sums of the percentages
+finer than key sieves and are intended to capture the fines-generation
+aspect of degradation specifically rather than the total \gls{PSD} shift.
+The fouling index is dimensionless, is reported in weight percent, and is
+the bulk metric most directly tied to the engineering consequences that
+motivate ballast replacement in the field---loss of drainage, loss of
+shear strength, and the progressive infilling of voids that drives
+settlement-bowl formation at impact-prone locations. Because it isolates
+the fines fraction and the sub-acceptable fraction, \FIIN{} is also the
+most widely reported degradation metric in the Indian-ballast literature
 and is referenced (in its imperial form) in international ballast-fouling
 specifications.
 
 \begin{equation}
-    \FIIN = \PoneM + \PtwoM
+    \FIIN \;=\; \PoneM \;+\; \PtwoM.
     \label{eq:FIIN-def}
 \end{equation}
 
-\FIIN{} is a scalar summary of the post-test particle-size distribution and
-therefore carries a structural blind spot common to any sieve-derived index.
-Two test specimens can produce identical \FIIN{} values while differing in
-the grain-scale distribution of damage: one specimen may have experienced a
-small amount of abrasion distributed across all its grains, another may
-have experienced catastrophic fracture of a few geometrically weak grains
-with the remainder largely untouched. If the two damage patterns happen to
-push comparable fractions across the \SI{0.075}{\milli\metre} and
-\SI{20}{\milli\metre} sieves, the index reports the same value. The two
-specimens have the same post-test PSD in those two bands, the same \FIIN{},
-and completely different underlying physical states. The engineering
-implications---for settlement, for the spatial distribution of fines, for
-void fabric, for drainage---are not the same.
+\begin{caveat}[title=The structural blind spot of $\FIIN$]
+\FIIN{} is a scalar summary of the post-test particle-size distribution.
+Two test specimens can produce identical \FIIN{} values while differing
+in the grain-scale distribution of damage: one specimen may have
+experienced a small amount of abrasion distributed across all its
+grains, another may have experienced catastrophic fracture of a few
+geometrically weak grains with the remainder largely untouched. If the
+two damage patterns happen to push comparable fractions across the
+\SI{0.075}{\milli\metre} and \SI{20}{\milli\metre} sieves, the index
+reports the same value~--- but the two specimens have completely
+different underlying physical states and engineering implications.
+\end{caveat}
 
 \subsection{Factors affecting ballast breakage and its propagation}
 \label{sec:lit-breakage}
@@ -150,47 +158,47 @@ void fabric, for drainage---are not the same.
 The rate and mode of ballast breakage are not properties of the rock alone
 but emerge from the interaction of intrinsic material variables with
 extrinsic loading and boundary variables. The intrinsic variables include
-the parent-rock mineralogy and grain texture, the unconfined compressive and
-tensile strengths, the density of pre-existing micro-cracks, and---at the
-assembly scale---the particle size distribution and the particle shape
+the parent-rock mineralogy and grain texture, the unconfined compressive
+and tensile strengths, the density of pre-existing micro-cracks, and---at
+the assembly scale---the particle size distribution and the particle shape
 (angularity, sphericity and flatness/elongation). The extrinsic variables
 include the magnitude and frequency of the applied load, the stress path
 (monotonic versus cyclic, confined triaxial versus impact), the moisture
 state, the degree of confinement provided by adjacent layers, and the
-stiffness of the substructure on which the ballast rests. Indraratna et~al.\
-(2011) and Sun, Indraratna, and Nimbalkar (2014) summarise these dependencies
+stiffness of the substructure on which the ballast rests.
+\citet{Indraratna2011} and \citet{Sun2014} summarise these dependencies
 and show that, holding intrinsic properties constant, the breakage index
 rises sharply with peak stress and with the number of load cycles, but is
 moderated by confining pressure (which suppresses tensile failure at point
-contacts) and by the introduction of a resilient layer beneath the ballast
-(which lengthens the contact pulse and lowers its peak).
+contacts) and by the introduction of a resilient layer beneath the
+ballast (which lengthens the contact pulse and lowers its peak).
 
-At the grain scale the propagation of breakage is controlled by the geometry
-of the contact and the distribution of pre-existing micro-flaws within the
-parent rock. Hertzian contact theory predicts a tensile-stress lobe just
-below a point or near-point contact whose magnitude scales with the contact
-force to the one-third power; once this tensile stress exceeds the local
-tensile strength, a crack initiates and propagates along the path of least
-resistance through the grain (Lim \& McDowell, 2005). Angular grains contact
-each other over small areas and therefore generate higher contact stresses
-for a given force, which is why fresher, more angular ballast fractures
-preferentially in the early loading history before transitioning to an
-abrasion-dominated regime. Conversely, more rounded grains distribute the
-same contact force over a larger area, reduce the peak tensile stress, and
-shift the dominant degradation mode toward asperity wear. The stiffness of
-the substructure beneath the ballast plays an analogous role at the layer
-scale: a stiffer base concentrates contact forces at fewer particle--particle
-and particle--base contacts, while a resilient inclusion (rubber pad,
-under-sleeper pad, or under-ballast mat) lengthens the contact-force pulse
-and reduces its peak, biasing the degradation toward abrasion and away from
-fracture (Sol-S\'anchez, Moreno-Navarro, \& Rubio-G\'amez, 2015;
-Navaratnarajah \& Indraratna, 2017).
+At the grain scale the propagation of breakage is controlled by the
+geometry of the contact and the distribution of pre-existing micro-flaws
+within the parent rock. Hertzian contact theory predicts a tensile-stress
+lobe just below a point or near-point contact whose magnitude scales with
+the contact force to the one-third power; once this tensile stress
+exceeds the local tensile strength, a crack initiates and propagates
+along the path of least resistance through the grain \citep{Lim2005}.
+Angular grains contact each other over small areas and therefore generate
+higher contact stresses for a given force, which is why fresher, more
+angular ballast fractures preferentially in the early loading history
+before transitioning to an abrasion-dominated regime. Conversely, more
+rounded grains distribute the same contact force over a larger area,
+reduce the peak tensile stress, and shift the dominant degradation mode
+toward asperity wear. The stiffness of the substructure beneath the
+ballast plays an analogous role at the layer scale: a stiffer base
+concentrates contact forces at fewer particle--particle and particle--base
+contacts, while a resilient inclusion (rubber pad, under-sleeper pad, or
+under-ballast mat) lengthens the contact-force pulse and reduces its
+peak, biasing the degradation toward abrasion and away from fracture
+\citep{SolSanchez2015, Navaratnarajah2017}.
 
-Propagation through the assembly is governed by force-chain mechanics rather
-than by the average stress. Discrete-element simulations and photoelastic
-studies of granular media (Cundall \& Strack, 1979; Tordesillas, 2007) show
-that load is transmitted through a sparse network of strong contacts that
-carry well above the mean stress, while the remaining particles bear
+Propagation through the assembly is governed by force-chain mechanics
+rather than by the average stress. Discrete-element simulations and
+photoelastic studies of granular media \citep{Cundall1979, Tordesillas2007}
+show that load is transmitted through a sparse network of strong contacts
+that carry well above the mean stress, while the remaining particles bear
 comparatively little load. Particles that lie on a strong force chain
 experience contact stresses that can exceed the bulk-applied stress by an
 order of magnitude and are therefore the first to fracture. When such a
@@ -199,23 +207,23 @@ particles, which may themselves fracture in the next loading cycle,
 producing a cascade until a stable contact network re-forms. This
 force-chain rearrangement is the mechanism by which breakage is spatially
 clustered rather than uniformly distributed, and it explains the field
-observation that fines are often concentrated in localised pockets within an
-otherwise comparatively intact ballast layer.
+observation that fines are often concentrated in localised pockets within
+an otherwise comparatively intact ballast layer.
 
 A second statistical layer concerns the variability of breakage outcomes
 between nominally identical particles. Single-particle crushing tests on
-ballast and rockfill consistently report a wide scatter in the failure load
-even within a narrow size band, and the distribution is well described by
-Weibull statistics with a modulus typically in the range \numrange{3}{6} for
-basaltic and granitic ballast (McDowell, 2002; Lim, McDowell, \& Collop,
-2004). The Weibull modulus encodes the heterogeneity of internal flaws:
-lower moduli indicate that a small population of weak particles will
-fracture early in the loading history, while the bulk of the assembly
-continues to degrade by abrasion. This is consistent with the bimodal damage
-pattern observed in laboratory specimens, where a few catastrophically split
-particles coexist with a majority showing only corner rounding, and it sets
-a lower bound on how representative any single test outcome can be of the
-assembly response.
+ballast and rockfill consistently report a wide scatter in the failure
+load even within a narrow size band, and the distribution is well
+described by Weibull statistics with a modulus typically in the range
+\numrange{3}{6} for basaltic and granitic ballast
+\citep{McDowell2002, Lim2004}. The Weibull modulus encodes the
+heterogeneity of internal flaws: lower moduli indicate that a small
+population of weak particles will fracture early in the loading history,
+while the bulk of the assembly continues to degrade by abrasion. This is
+consistent with the bimodal damage pattern observed in laboratory
+specimens, where a few catastrophically split particles coexist with a
+majority showing only corner rounding, and it sets a lower bound on how
+representative any single test outcome can be of the assembly response.
 
 \section{Laboratory characterisation of ballast under impact loading}
 \label{sec:lit-lab}
@@ -224,61 +232,62 @@ assembly response.
 \label{sec:lit-impact-mould}
 
 Impact loading---as distinct from cyclic-triaxial loading---has received
-less sustained attention, despite being the loading mode that dominates at
-impact-prone locations in service. The seminal study of Nimbalkar,
-Indraratna, Dash, and Christie (2012) used a \SI{300}{\milli\metre} diameter
-drop-weight rig with a \SI{50}{\kilogram} falling hammer and a
-\SI{500}{\milli\metre} drop height to establish that shock mats placed
-beneath the ballast reduce post-test bulk degradation substantially, and
-that the benefit of the shock mat is greatest when the underlying support is
-rigid. The same authors subsequently demonstrated that recycled rubber mats
-achieve comparable performance at much lower cost. This line of
+less sustained attention, despite being the loading mode that dominates
+at impact-prone locations in service. The seminal study of
+\citet{Nimbalkar2012} used a \SI{300}{\milli\metre} diameter drop-weight
+rig with a \SI{50}{\kilogram} falling hammer and a \SI{500}{\milli\metre}
+drop height to establish that shock mats placed beneath the ballast
+reduce post-test bulk degradation substantially, and that the benefit of
+the shock mat is greatest when the underlying support is rigid. The same
+authors subsequently demonstrated that recycled rubber mats achieve
+comparable performance at much lower cost. This line of
 inquiry---large-diameter mould, drop-weight hammer, ballast-scale
 particles---is the line that the present apparatus continues.
 
-A series of papers by Koohmishi and co-workers has extended the drop-weight
-methodology in several directions. Koohmishi and Palassi (2020) investigated
-the morphological response of basalt, granite, limestone and a
-mixed-lithology ballast under drop-weight impact and showed that the parent
-rock type governs the partition of damage between abrasion and splitting.
-Koohmishi and Azarhoosh (2021, 2022) studied the effect of crumb-rubber
-incorporation on both fresh and recycled ballast, finding that
-\SIrange{5}{10}{\percent} rubber by volume reduces post-test bulk breakage
-measurably but that the benefit saturates---and eventually reverses---beyond
-about \SI{15}{\percent}. Koohmishi and Guo (2023) combined drop-weight
-impact data with random-forest and support-vector-regression models and
-demonstrated that parent rock type and nominal impact stress together
-explain the majority of variance in post-test bulk degradation, with rubber
-content contributing an additional smaller effect. Zhang, Chang, and Feng
-(2023) and the very recent Chen, Zhang, Yang, and Wu (2026) have continued
-this line on ballast--rubber mixtures, with the 2026 study being the first
-to explicitly couple impact-loading breakage to the gradation-evolution
-trajectory during a multi-blow test rather than only at the endpoint.
+A series of papers by Koohmishi and co-workers has extended the
+drop-weight methodology in several directions. \citet{Koohmishi2020}
+investigated the morphological response of basalt, granite, limestone and
+a mixed-lithology ballast under drop-weight impact and showed that the
+parent rock type governs the partition of damage between abrasion and
+splitting. \citet{Koohmishi2021} and \citet{Koohmishi2022} studied the
+effect of crumb-rubber incorporation on both fresh and recycled ballast,
+finding that \SIrange{5}{10}{\percent} rubber by volume reduces post-test
+bulk breakage measurably but that the benefit saturates---and eventually
+reverses---beyond about \SI{15}{\percent}. \citet{Koohmishi2023} combined
+drop-weight impact data with random-forest and support-vector-regression
+models and demonstrated that parent rock type and nominal impact stress
+together explain the majority of variance in post-test bulk degradation,
+with rubber content contributing an additional smaller effect.
+\citet{Zhang2023} and the very recent \citet{Chen2026} have continued
+this line on ballast--rubber mixtures, with the 2026 study being the
+first to explicitly couple impact-loading breakage to the
+gradation-evolution trajectory during a multi-blow test rather than only
+at the endpoint.
 
-Across all of these studies the same apparatus-related problem appears: the
-conventional IS/BS aggregate impact value test (BIS, 1963; BSI, 2010) has a
-\SI{102}{\milli\metre} diameter mould that is far too small for
-RDSO-gradation ballast. Marsal (1967) established that the boundary
-conditions of a granular test dominate the measured response until the
-container diameter is at least six times the maximum particle size, and
-Bishop (1969) independently reached a similar conclusion from work on
-rock-skeleton saturation response. In a \SI{102}{\milli\metre} mould with
-\SIrange{40}{65}{\milli\metre} particles the ratio is
+Across all of these studies the same apparatus-related problem appears:
+the conventional IS/BS aggregate impact value test \citep{BIS1963, BSI2010}
+has a \SI{102}{\milli\metre} diameter mould that is far too small for
+\gls{RDSO}-gradation ballast. \citet{Marsal1967} established that the
+boundary conditions of a granular test dominate the measured response
+until the container diameter is at least six times the maximum particle
+size, and \citet{Bishop1969} independently reached a similar conclusion
+from work on rock-skeleton saturation response. In a \SI{102}{\milli\metre}
+mould with \SIrange{40}{65}{\milli\metre} particles the ratio is
 \numrange{1.6}{2.5}---one is no longer testing the ballast, one is testing
 the mould wall. The universal response in the published impact literature
 has been to develop purpose-built large-diameter rigs of
-\SIrange{250}{500}{\milli\metre} diameter (e.g.\ Nimbalkar et~al., 2012;
-Koohmishi \& Palassi, 2020; Ferreira \& Indraratna, 2023)---but none of
-these has been designed or calibrated specifically for the RDSO gradation
-and the Indian stress range, and none is standardised for Indian Railways
+\SIrange{250}{500}{\milli\metre} diameter
+\citep{Nimbalkar2012, Koohmishi2020, Ferreira2023}---but none of these has
+been designed or calibrated specifically for the \gls{RDSO} gradation and
+the Indian stress range, and none is standardised for Indian Railways
 quality assurance. The present thesis fills that specific apparatus gap.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.80\textwidth]{image6.png}
     \caption{Established falling height through the impact loading test for
-             implementing the characterised stress levels on ballast
-             (Koohmishi \& Guo, 2023).}
+             implementing the characterised stress levels on ballast.
+             Source: \citet{Koohmishi2023}.}
     \label{fig:koohmishi-falling-height}
 \end{figure}
 
@@ -288,80 +297,89 @@ quality assurance. The present thesis fills that specific apparatus gap.
          apparatus and method comparison.}
 \label{tab:lit-impact-studies}
 \small
+\rowcolors{2}{rowbg}{white}
 \begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{@{}lcccp{3.0cm}p{2.6cm}p{2.4cm}@{}}
     \toprule
-    \textbf{Study} & \textbf{Mould $D$} & \textbf{Hammer} & \textbf{Drop $h$}
-    & \textbf{Variables} & \textbf{Metrics} & \textbf{Ballast}\\
+    \rowcolor{tablehdr}
+    {\color{white}\textbf{Study}}
+    & {\color{white}\textbf{Mould $D$}}
+    & {\color{white}\textbf{Hammer}}
+    & {\color{white}\textbf{Drop $h$}}
+    & {\color{white}\textbf{Variables}}
+    & {\color{white}\textbf{Metrics}}
+    & {\color{white}\textbf{Ballast}}\\
     \midrule
-    Nimbalkar et~al.\ (2012)  & \SI{300}{\mm} & \SI{50}{\kg}
+    \citet{Nimbalkar2012}      & \SI{300}{\mm} & \SI{50}{\kg}
         & \SI{500}{\mm} & Shock mats, various
         & \FIIN & AU freight ballast\\
-    Koohmishi \& Palassi (2020) & \SI{250}{\mm} & \SI{40}{\kg}
+    \citet{Koohmishi2020}      & \SI{250}{\mm} & \SI{40}{\kg}
         & Variable & Crumb rubber, rock types
         & \FIIN & Mixed (basalt, granite, limestone)\\
-    Koohmishi \& Azarhoosh (2021) & \SI{250}{\mm} & \SI{40}{\kg}
-        & Variable & Crumb rubber + gradation
+    \citet{Koohmishi2021}      & \SI{250}{\mm} & \SI{40}{\kg}
+        & Variable & Crumb rubber $+$ gradation
         & \FIIN & Recycled ballast\\
-    Koohmishi \& Azarhoosh (2022) & \SI{250}{\mm} & \SI{40}{\kg}
-        & Variable & Crumb rubber + recycling
+    \citet{Koohmishi2022}      & \SI{250}{\mm} & \SI{40}{\kg}
+        & Variable & Crumb rubber $+$ recycling
         & \FIIN & Recycled ballast\\
-    Zhang et~al.\ (2023) & \(\sim\!\SI{300}{\mm}\) & \SI{45}{\kg}
+    \citet{Zhang2023}          & \(\sim\!\SI{300}{\mm}\) & \SI{45}{\kg}
         & \SI{450}{\mm} & Crumb rubber, energy
         & \FIIN, image analysis & Basalt\\
-    Ferreira \& Indraratna (2023) & \SI{300}{\mm} & \SI{50}{\kg}
+    \citet{Ferreira2023}       & \SI{300}{\mm} & \SI{50}{\kg}
         & \SI{450}{\mm} & Image-based morphology
         & 2D morphology, FI & Australian ballast\\
     \textbf{Present study} & \SI{300}{\mm} & \SI{50}{\kg}
-        & Variable & UR / RUBM / PUBM $\times$ FB / RB
-        & \FIIN{} + 3D morphology (paired) & Indian Ballast\\
+        & Variable & UR/RUBM/PUBM $\times$ FB/RB
+        & \FIIN{} $+$ 3D morphology (paired) & Indian ballast\\
     \bottomrule
 \end{tabular}
 \end{adjustbox}
 \end{table}
 
-Table~\ref{tab:lit-impact-studies} makes two observations explicit. First,
-the dominant apparatus tradition has converged on a
+\cref{tab:lit-impact-studies} makes two observations explicit. First, the
+dominant apparatus tradition has converged on a
 \SIrange{250}{300}{\milli\metre} mould, a \SIrange{40}{50}{\kilogram}
 hammer, and drop heights in the \SIrange{300}{500}{\milli\metre} range---all
 broadly consistent with the present apparatus described in
-Chapter~\ref{chap:methodology}. Second, the metrics reported are
-overwhelmingly sieve-based bulk metrics, with image-based morphology
-appearing only in the two most recent studies and in neither case as a
-paired before--after protocol on individually marked tracer particles. The
-present thesis is, to the authors' knowledge, the first to combine a
-large-diameter drop-weight apparatus calibrated for RDSO gradation with a
-fully paired per-particle three-dimensional morphological characterisation
-across a factorial grid of pad type, base condition and impact energy.
+\cref{chap:methodology}. Second, the metrics reported are overwhelmingly
+sieve-based bulk metrics, with image-based morphology appearing only in the
+two most recent studies and in neither case as a paired before--after
+protocol on individually marked tracer particles. The present thesis is, to
+the authors' knowledge, the first to combine a large-diameter drop-weight
+apparatus calibrated for \gls{RDSO} gradation with a fully paired
+per-particle three-dimensional morphological characterisation across a
+factorial grid of pad type, base condition and impact energy.
 
 \section{Ballast Reinforcement Methods}
 \label{sec:lit-reinforcement}
 
-Three categories of inclusion are commonly used to reinforce or protect the
-ballast layer: under-sleeper pads (USPs), which sit between the sleeper and
-the ballast; under-ballast mats (UBMs), which sit beneath the ballast and
-above the sub-ballast or subgrade; and geogrids, planar polymeric grids
-embedded within or beneath the ballast that confine particles through
-aperture interlock. The first two add compliance at a stiffness-mismatched
-interface to attenuate impact energy, whereas geogrids reinforce the ballast
-layer mechanically by restraining lateral spread of the granular skeleton.
+Three categories of inclusion are commonly used to reinforce or protect
+the ballast layer: under-sleeper pads (\glspl{USP}), which sit between the
+sleeper and the ballast; under-ballast mats (\glspl{UBM}), which sit
+beneath the ballast and above the sub-ballast or subgrade; and geogrids,
+planar polymeric grids embedded within or beneath the ballast that
+confine particles through aperture interlock. The first two add
+compliance at a stiffness-mismatched interface to attenuate impact
+energy, whereas geogrids reinforce the ballast layer mechanically by
+restraining lateral spread of the granular skeleton.
 
-Their mechanical regimes differ in kind. USPs are stiff elastomeric layers
-bonded to the underside of the sleeper that reduce sleeper--ballast contact
-stress, with static stiffness typically in the
-\SIrange{0.10}{0.30}{\newton\per\milli\metre\cubed} band (Jayasuriya et~al.,
-2019). UBMs are placed beneath the ballast to attenuate impact energy
-transmitted to the subgrade; rubber variants cover roughly
-\SIrange{0.02}{0.10}{\newton\per\milli\metre\cubed} (Navaratnarajah \&
-Indraratna, 2017; Ngo et~al., 2019), and the polyurethane UBM (PUBM) used in
-the present study spans a wider product range. Geogrids, by contrast, are
-planar polymeric grids embedded within or beneath the ballast that confine
-particles through aperture interlock; they slow lateral spread of the
-granular skeleton and the rate of fines generation under repeated loading.
-Choosing among these three is therefore a question of matching mechanism to
-the dominant local issue---stress reduction at the sleeper interface, energy
-attenuation above the subgrade, or particle confinement within the ballast
-itself---rather than of selecting the most compliant element available.
+Their mechanical regimes differ in kind. \glspl{USP} are stiff elastomeric
+layers bonded to the underside of the sleeper that reduce sleeper--ballast
+contact stress, with static stiffness typically in the
+\SIrange{0.10}{0.30}{\newton\per\milli\metre\cubed} band
+\citep{Jayasuriya2019}. \glspl{UBM} are placed beneath the ballast to
+attenuate impact energy transmitted to the subgrade; rubber variants cover
+roughly \SIrange{0.02}{0.10}{\newton\per\milli\metre\cubed}
+\citep{Navaratnarajah2017, Ngo2019}, and the polyurethane \gls{UBM}
+(\gls{PUBM}) used in the present study spans a wider product range.
+Geogrids, by contrast, are planar polymeric grids embedded within or
+beneath the ballast that confine particles through aperture interlock;
+they slow lateral spread of the granular skeleton and the rate of fines
+generation under repeated loading. Choosing among these three is therefore
+a question of matching mechanism to the dominant local issue---stress
+reduction at the sleeper interface, energy attenuation above the
+subgrade, or particle confinement within the ballast itself---rather than
+of selecting the most compliant element available.
 
 \section{Three-dimensional morphological characterisation of ballast}
 \label{sec:lit-morphology}
@@ -369,20 +387,21 @@ itself---rather than of selecting the most compliant element available.
 \subsection{From sieve-based to shape-based descriptors}
 \label{sec:lit-sieve-to-shape}
 
-The classical sieve-based characterisation of a ballast sample---its PSD and
-any index derived from it---does not resolve particle shape. Two assemblies
-with identical PSDs can differ substantially in the angularity, elongation,
-and surface texture of their grains, and the difference in shape is known to
-affect both initial strength and degradation kinetics. The classical
-shape-analysis literature begins with Wadell (1932), who introduced the
-concept of sphericity $\Psi$ as the ratio of the surface area of a
-volume-equivalent sphere to the actual surface area of the particle:
+The classical sieve-based characterisation of a ballast sample---its
+\gls{PSD} and any index derived from it---does not resolve particle shape.
+Two assemblies with identical \glspl{PSD} can differ substantially in the
+angularity, elongation, and surface texture of their grains, and the
+difference in shape is known to affect both initial strength and
+degradation kinetics. The classical shape-analysis literature begins with
+\citet{Wadell1932}, who introduced the concept of sphericity $\Psi$ as the
+ratio of the surface area of a volume-equivalent sphere to the actual
+surface area of the particle:
 \begin{equation}
     \Psi = \frac{\pi^{1/3}\,(6V)^{2/3}}{A},
     \label{eq:sphericity}
 \end{equation}
-and with Krumbein (1941), who extended the framework to sedimentary particle
-populations.
+and with \citet{Krumbein1941}, who extended the framework to sedimentary
+particle populations.
 
 \begin{figure}[ht]
     \centering
@@ -405,55 +424,55 @@ populations.
 \label{sec:lit-sl-scanning}
 
 The second-generation shape-characterisation moved from manual calliper
-measurement to digital imaging. Sun, Indraratna, and Nimbalkar (2014a)
-applied three-dimensional laser scanning to the size and shape of
-as-supplied quarry ballast and produced one of the first systematic datasets
-of paired particle volumes and surface areas. Qian, Boler, Moaveni,
-Tutumluer, Hashash, and Ghaboussi (2014) coupled image analysis to Los
-Angeles abrasion testing and showed that abrasion in the LAA mill follows a
+measurement to digital imaging. \citet{Sun2014} applied three-dimensional
+laser scanning to the size and shape of as-supplied quarry ballast and
+produced one of the first systematic datasets of paired particle volumes
+and surface areas. \citet{Qian2014} coupled image analysis to Los~Angeles
+abrasion testing and showed that abrasion in the \gls{LAA} mill follows a
 characteristic angularity-decay trajectory that can be tracked
-particle-by-particle. Guo, Markine, Song, and Jing (2018) refined the
-angularity-index concept and, with the same LAA methodology, demonstrated
-that the size- and shape-dependence of degradation can be quantified at the
-single-particle level.
+particle-by-particle. \citet{Guo2018} refined the angularity-index concept
+and, with the same \gls{LAA} methodology, demonstrated that the size- and
+shape-dependence of degradation can be quantified at the single-particle
+level.
 
 The tool-chain that supports this line of work has matured rapidly.
-Angelidakis, Nadimi, and Utili (2021) released an open-source shape-analysis
-code (SHAPE) that computes a standardised set of form and roundness
-descriptors from triangulated surface meshes. The open-source Python
-mesh-processing library \texttt{trimesh} (Dawson-Haggerty, 2019) has become
-the de-facto workhorse for reading and interrogating STL files, and the
-scientific-computing stack NumPy and SciPy (Harris et~al., 2020; Virtanen
-et~al., 2020) supports the downstream statistical analysis. Kwunjai, Somsri,
-Jitsangiam, Binaree, Qian, and Jing (2023) combined a structured-light
-scanning workflow with supervised machine learning to classify deteriorated
-ballast and demonstrated that grain-scale shape descriptors carry the
-information required to distinguish fresh from service-aged ballast.
-Kwunjai, Jitsangiam, and Somsri (2024) simplified the analysis pipeline
-while retaining the essential descriptor set.
+\citet{Angelidakis2021} released an open-source shape-analysis code
+(SHAPE) that computes a standardised set of form and roundness descriptors
+from triangulated surface meshes. The open-source Python mesh-processing
+library \texttt{trimesh} \citep{DawsonHaggerty2019} has become the
+de-facto workhorse for reading and interrogating \gls{STL} files, and the
+scientific-computing stack NumPy \citep{Harris2020} and SciPy
+\citep{Virtanen2020} supports the downstream statistical analysis.
+\citet{Kwunjai2023} combined a structured-light scanning workflow with
+supervised machine learning to classify deteriorated ballast and
+demonstrated that grain-scale shape descriptors carry the information
+required to distinguish fresh from service-aged ballast.
+\citet{Kwunjai2024} simplified the analysis pipeline while retaining the
+essential descriptor set.
 
 \subsection{Paired before--after protocols}
 \label{sec:lit-paired}
 
 The crucial methodological step---and the one that the present thesis is
-built on---is the paired before--after protocol. If the same physical grains
-are characterised before and after a loading event, then each grain serves
-as its own pre-test control and the particle-to-particle variability that is
-the dominant source of scatter in unpaired datasets is eliminated. The
-paired protocol has been used occasionally in the literature, most notably
-by Ferreira and Indraratna (2023) for two-dimensional image analysis of
-ballast under impact loading and by Bian, Cai, Luo, Zhao, and Chen (2023)
-for in-situ image-aided analysis of ballast particle movement along a
-high-speed railway. It has not, however, been applied in combination with a
-large-diameter drop-weight apparatus across a factorial grid of pad type,
-base condition, and impact energy, which is the methodological novelty of
-the present study.
+built on---is the paired before--after protocol. If the same physical
+grains are characterised before and after a loading event, then each
+grain serves as its own pre-test control and the particle-to-particle
+variability that is the dominant source of scatter in unpaired datasets is
+eliminated. The paired protocol has been used occasionally in the
+literature, most notably by \citet{Ferreira2023} for two-dimensional image
+analysis of ballast under impact loading and by \citet{Bian2023} for
+in-situ image-aided analysis of ballast particle movement along a
+high-speed railway. It has not, however, been applied in combination with
+a large-diameter drop-weight apparatus across a factorial grid of pad
+type, base condition, and impact energy, which is the methodological
+novelty of the present study.
 
 \section{Synthesis and identification of gaps}
 \label{sec:lit-synthesis}
 
-Three synthesising observations emerge from the preceding five sections, and
-together they identify the two gaps that this thesis is designed to fill.
+Three synthesising observations emerge from the preceding five sections,
+and together they identify the two gaps that this thesis is designed to
+fill.
 
 \subsection{Synthesising observations}
 \label{sec:lit-synth-obs}
@@ -464,24 +483,37 @@ together they identify the two gaps that this thesis is designed to fill.
           \SIrange{40}{50}{\kilogram} hammer, \SIrange{300}{500}{\milli\metre}
           drop-height rigs that satisfy the $D/\dmax \ge 6$ boundary
           criterion. However, no apparatus in the public record has been
-          designed or calibrated specifically for the RDSO
+          designed or calibrated specifically for the \gls{RDSO}
           \SIrange{20}{65}{\milli\metre} gradation and the
           \SIrange{275}{525}{\kilo\pascal} stress range representative of
           Indian Railways---the very specification and stress band that
           governs acceptance of ballast for the Indian network.
     \item The dominant characterisation tradition---the Fouling Index, in
-          its imperial and metric forms---is bulk in character and cannot,
-          by construction, distinguish diffuse abrasion from catastrophic
-          single-particle fracture. Two specimens with identical \FIIN{}
-          values can have very different grain-scale damage patterns, with
-          different implications for settlement-bowl formation and
-          maintenance scheduling.
+          its imperial and metric forms---is bulk in character and
+          cannot, by construction, distinguish diffuse abrasion from
+          catastrophic single-particle fracture. Two specimens with
+          identical \FIIN{} values can have very different grain-scale
+          damage patterns, with different implications for
+          settlement-bowl formation and maintenance scheduling.
     \item The emerging three-dimensional morphological tradition has
-          demonstrated that per-particle before--after characterisation is
-          technically feasible and methodologically sound, but has not yet
-          been combined with a large-diameter drop-weight apparatus across a
-          factorial grid of pad type, base condition, and impact energy---the
-          very grid that is most relevant to the practical design of
-          resilient inclusions at impact-prone locations on a national rail
-          network.
+          demonstrated that per-particle before--after characterisation
+          is technically feasible and methodologically sound, but has not
+          yet been combined with a large-diameter drop-weight apparatus
+          across a factorial grid of pad type, base condition, and impact
+          energy---the very grid that is most relevant to the practical
+          design of resilient inclusions at impact-prone locations on a
+          national rail network.
 \end{enumerate}
+
+\begin{finding}[title=The two gaps closed by this thesis]
+\textbf{Apparatus gap.} No published drop-weight rig has been
+calibrated specifically for \gls{RDSO} ballast and the Indian
+\SIrange{275}{525}{\kilo\pascal} stress band. \cref{chap:methodology}
+addresses this by designing, fabricating, and commissioning such an
+apparatus at \gls{GSV}.\par\smallskip
+\textbf{Characterisation gap.} No published study has paired the
+large-diameter drop-weight apparatus with a per-particle 3D
+morphological protocol across a factorial pad--base--energy grid.
+\cref{chap:morph-results} closes this gap with 45 tracer particles
+across nine configurations.
+\end{finding}

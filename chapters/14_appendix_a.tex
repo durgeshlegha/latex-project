@@ -8,38 +8,45 @@ This appendix reproduces tabulated excerpts from the principal laboratory
 data files referenced throughout the thesis. The full raw
 data---including all 45 paired before--after scans and 22 descriptors per
 mesh---is archived in the two Excel workbooks referenced in
-Appendix~\ref{chap:appB} and is available from the authors on reasonable
-request.
+\cref{chap:appB} and is available from the authors on reasonable request.
 
 \section{Test matrix --- full specification}
 \label{sec:appA-matrix}
 
 \begin{table}[H]
 \centering
-\caption{Complete nine-configuration test matrix with measured peak
-         force, kinetic energy, specimen mass, ballast-column height at
-         \SI{1200}{\kilogram\per\metre\cubed} reference density, and the
-         legacy~$\to$~systematic test-number mapping.}
+\caption{Complete nine-configuration test matrix with measured peak force,
+         kinetic energy, and the legacy~$\to$~systematic test-number
+         mapping. Specimen mass is approximately \SI{20}{\kilogram} per
+         test; ballast-column height is approximately
+         \SI{280}{\milli\metre} at the
+         \SI{1200}{\kilogram\per\metre\cubed} reference density.}
 \label{tab:appA-matrix-full}
 \small
+\rowcolors{2}{rowbg}{white}
 \begin{adjustbox}{max width=\textwidth}
-\begin{tabular}{@{}cccccccc@{}}
+\begin{tabular}{@{}clccccccc@{}}
     \toprule
-    \textbf{Test} & \textbf{Systematic label}
-    & \textbf{Pad} & \textbf{Base}
-    & $h$ (\si{\milli\metre}) & $\Ke$ (\si{\joule})
-    & \textbf{Peak Force} (\si{\kilo\newton})
-    & $\sigma$ (\si{\kilo\pascal})\\
+    \rowcolor{tablehdr}
+    {\color{white}\textbf{Test}}
+    & {\color{white}\textbf{Systematic label}}
+    & {\color{white}\textbf{Legacy label}}
+    & {\color{white}\textbf{Pad}}
+    & {\color{white}\textbf{Base}}
+    & {\color{white}$\boldsymbol{h}$~(\si{\milli\metre})}
+    & {\color{white}$\boldsymbol{\Ke}$~(\si{\joule})}
+    & {\color{white}\textbf{Peak~$F$~(\si{\kilo\newton})}}
+    & {\color{white}$\boldsymbol{\sigma}$~(\si{\kilo\pascal})}\\
     \midrule
-    T1 & PUBM-FB-LH & PUBM & FB & 300 & 147 & 19.4 & 275\\
-    T2 & RUBM-FB-LH & RUBM & FB & 300 & 147 & 19.4 & 275\\
-    T3 & UR-FB-LH   & UR   & FB & 300 & 147 & 19.4 & 275\\
-    T4 & UR-RB-LH   & UR   & RB & 300 & 147 & 19.4 & 275\\
-    T5 & RUBM-RB-HH & RUBM & RB & 450 & 221 & 37.0 & 523\\
-    T6 & PUBM-RB-HH & PUBM & RB & 450 & 221 & 37.0 & 523\\
-    T7 & UR-RB-HH   & UR   & RB & 450 & 221 & 37.0 & 523\\
-    T8 & RUBM-RB-LH & RUBM & RB & 300 & 147 & 19.4 & 275\\
-    T9 & PUBM-RB-LH & PUBM & RB & 300 & 147 & 19.4 & 275\\
+    \testlabel{T1} & PUBM--FB--300 & PUBM-FB-LH & PUBM & FB & 300 & 147 & 19.4 & 275\\
+    \testlabel{T2} & RUBM--FB--300 & RUBM-FB-LH & RUBM & FB & 300 & 147 & 19.4 & 275\\
+    \testlabel{T3} & UR--FB--300   & UR-FB-LH   & UR   & FB & 300 & 147 & 19.4 & 275\\
+    \testlabel{T4} & UR--RB--300   & UR-RB-LH   & UR   & RB & 300 & 147 & 19.4 & 275\\
+    \testlabel{T5} & RUBM--RB--450 & RUBM-RB-HH & RUBM & RB & 450 & 221 & 37.0 & 523\\
+    \testlabel{T6} & PUBM--RB--450 & PUBM-RB-HH & PUBM & RB & 450 & 221 & 37.0 & 523\\
+    \testlabel{T7} & UR--RB--450   & UR-RB-HH   & UR   & RB & 450 & 221 & 37.0 & 523\\
+    \testlabel{T8} & RUBM--RB--300 & RUBM-RB-LH & RUBM & RB & 300 & 147 & 19.4 & 275\\
+    \testlabel{T9} & PUBM--RB--300 & PUBM-RB-LH & PUBM & RB & 300 & 147 & 19.4 & 275\\
     \bottomrule
 \end{tabular}
 \end{adjustbox}
@@ -50,29 +57,35 @@ request.
 
 \begin{table}[H]
 \centering
-\caption{Per-configuration Mode~A summary of the principal morphological
-         change descriptors. Mode~B outliers excluded. $\Delta V$,
-         $\Delta\Psi$, $\Delta C$ in \%-relative change. $n$ = Mode~A
-         sample size in each configuration.}
+\caption{Per-configuration \gls{ModeA} summary of the principal
+         morphological-change descriptors. \gls{ModeB} outliers excluded.
+         $\Delta V$, $\Delta\Psi$, $\Delta C$ in \%-relative change.
+         $n$ = \gls{ModeA} sample size in each configuration.}
 \label{tab:appA-morph-summary}
 \small
-\begin{tabular}{@{}cccccccc@{}}
+\rowcolors{2}{rowbg}{white}
+\begin{tabular}{@{}clcccccc@{}}
     \toprule
-    \textbf{Test} & \textbf{Label}
-    & $n$ (Mode~A) & \textbf{Mode~B Events}
-    & \textbf{Mean \dV{}} & \textbf{Mean \dPsi{}}
-    & \textbf{Mean \dC{}}\\
+    \rowcolor{tablehdr}
+    {\color{white}\textbf{Test}}
+    & {\color{white}\textbf{Label}}
+    & {\color{white}$\boldsymbol{n}$ (Mode~A)}
+    & {\color{white}\textbf{Mode~B events}}
+    & {\color{white}\textbf{Mean \dV{}}}
+    & {\color{white}\textbf{Mean \dPsi{}}}
+    & {\color{white}\textbf{Mean \dC{}}}\\
     \midrule
-    T1 & PUBM-FB-LH    & 5  & 0 & $-0.18$ & $+0.56$ & $+0.50$\\
-    T2 & RUBM-FB-LH    & 5  & 0 & $-0.10$ & $+0.25$ & $+0.29$\\
-    T3 & UR-FB-LH      & 5  & 0 & $-0.44$ & $+0.65$ & $+0.24$\\
-    T4 & UR-RB-LH      & 3  & 2 & $-0.87$ & $+1.43$ & $+1.31$\\
-    T5 & RUBM-RB-HH    & 4  & 1 & $-0.84$ & $+0.31$ & $+0.27$\\
-    T6 & PUBM-RB-HH    & 4  & 1 & $-0.30$ & $+0.50$ & $+0.75$\\
-    T7 & UR-RB-HH      & 4  & 1 & $-0.72$ & $+0.55$ & $+0.18$\\
-    T8 & RUBM-RB-LH    & 4  & 1 & $-0.58$ & $+0.68$ & $-0.01$\\
-    T9 & PUBM-RB-LH    & 5  & 0 & $-0.18$ & $+0.48$ & $+0.26$\\
+    \testlabel{T1} & PUBM--FB--300 & 5  & 0 & $-0.18$ & $+0.56$ & $+0.50$\\
+    \testlabel{T2} & RUBM--FB--300 & 5  & 0 & $-0.10$ & $+0.25$ & $+0.29$\\
+    \testlabel{T3} & UR--FB--300   & 5  & 0 & $-0.44$ & $+0.65$ & $+0.24$\\
+    \testlabel{T4} & UR--RB--300   & 3  & 2 & $-0.87$ & $+1.43$ & $+1.31$\\
+    \testlabel{T5} & RUBM--RB--450 & 4  & 1 & $-0.84$ & $+0.31$ & $+0.27$\\
+    \testlabel{T6} & PUBM--RB--450 & 4  & 1 & $-0.30$ & $+0.50$ & $+0.75$\\
+    \testlabel{T7} & UR--RB--450   & 4  & 1 & $-0.72$ & $+0.55$ & $+0.18$\\
+    \testlabel{T8} & RUBM--RB--300 & 4  & 1 & $-0.58$ & $+0.68$ & $-0.01$\\
+    \testlabel{T9} & PUBM--RB--300 & 5  & 0 & $-0.18$ & $+0.48$ & $+0.26$\\
     \midrule
+    \rowcolor{gsvlight}
     \multicolumn{2}{l}{\textbf{All (pooled)}}
     & \textbf{39} & \textbf{6}
     & $\boldsymbol{-0.47}$ & $\boldsymbol{+0.56}$
@@ -87,21 +100,28 @@ request.
 \begin{table}[H]
 \centering
 \caption{Percentage retained on each sieve, post-test, for the nine
-         configurations. Rows are sieve sizes; columns are tests.
-         Values in weight percent of the post-test specimen mass.}
+         configurations. Rows are sieve sizes; columns are tests. Values
+         in weight percent of the post-test specimen mass.}
 \label{tab:appA-sieve}
 \scriptsize
 \setlength{\tabcolsep}{4pt}
+\rowcolors{3}{rowbg}{white}
 \begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{@{}lccccccccc@{}}
     \toprule
-    \textbf{Sieve (mm)}
-    & \textbf{T1}        & \textbf{T2}        & \textbf{T3}
-    & \textbf{T4}        & \textbf{T5}        & \textbf{T6}
-    & \textbf{T7}        & \textbf{T8}        & \textbf{T9}\\
-    & PUBM-FB-LH & RUBM-FB-LH & UR-FB-LH
-    & UR-RB-LH   & RUBM-RB-HH & PUBM-RB-HH
-    & UR-RB-HH   & RUBM-RB-LH & PUBM-RB-LH\\
+    \rowcolor{tablehdr}
+    {\color{white}\textbf{Sieve (mm)}}
+    & {\color{white}\textbf{T1}} & {\color{white}\textbf{T2}}
+    & {\color{white}\textbf{T3}} & {\color{white}\textbf{T4}}
+    & {\color{white}\textbf{T5}} & {\color{white}\textbf{T6}}
+    & {\color{white}\textbf{T7}} & {\color{white}\textbf{T8}}
+    & {\color{white}\textbf{T9}}\\
+    \rowcolor{tablehdr!80}
+    & {\color{white}\scriptsize PUBM-FB-300} & {\color{white}\scriptsize RUBM-FB-300}
+    & {\color{white}\scriptsize UR-FB-300}   & {\color{white}\scriptsize UR-RB-300}
+    & {\color{white}\scriptsize RUBM-RB-450} & {\color{white}\scriptsize PUBM-RB-450}
+    & {\color{white}\scriptsize UR-RB-450}   & {\color{white}\scriptsize RUBM-RB-300}
+    & {\color{white}\scriptsize PUBM-RB-300}\\
     \midrule
     63    & 7.18  & 8.34  & 8.44  & 12.11 & 8.01  & 6.45  & 8.35  & 11.00 & 8.63\\
     40    & 9.15  & 8.09  & 6.44  & 12.25 & 12.15 & 10.85 & 9.62  & 13.02 & 9.26\\
@@ -117,12 +137,16 @@ request.
     0.075 & 0.022 & 0.013 & 0.022 & 0.035 & 0.050 & 0.011 & 0.083 & 0.040 & 0.024\\
     Pan   & 0.005 & 0.004 & 0.005 & 0.013 & 0.011 & 0.004 & 0.024 & 0.010 & 0.004\\
     \midrule
+    \rowcolor{gsvlight}
     Specimen Total (\si{\gram})
           & 18.76 & 19.73 & 17.78 & 28.01 & 22.27 & 23.43 & 20.26 & 27.89 & 20.91\\
+    \rowcolor{gsvlight}
     $\PoneM$ (\si{\percent})
           & 0.12  & 0.07  & 0.12  & 0.12  & 0.22  & 0.05  & 0.41  & 0.14  & 0.11\\
+    \rowcolor{gsvlight}
     $\PtwoM$ (\si{\percent})
           & 0.50  & 1.09  & 0.95  & 1.16  & 1.01  & 0.26  & 2.28  & 0.62  & 0.77\\
+    \rowcolor{gsvlight}
     $\FIIN$ (\si{\percent})
           & 0.62  & 1.16  & 1.07  & 1.28  & 1.23  & 0.31  & 2.69  & 0.76  & 0.88\\
     \bottomrule

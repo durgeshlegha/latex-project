@@ -6,27 +6,34 @@
 %  Authors: Durgesh Kumar Legha (2270007) & Sandeep Patel (2280043)
 %  Supervisor: Dr. Dinesh Gundavaram
 %
-%  Compilation: pdflatex -> bibtex (optional) -> pdflatex -> pdflatex
+%  Compilation: pdflatex -> bibtex main -> pdflatex -> pdflatex
+%               (or: latexmk -pdf main.tex)
 % =============================================================================
 \documentclass[12pt,a4paper,oneside]{report}
 
 % -----------------------------------------------------------------------------
-%  Page geometry & basic typography
+%  Page geometry, encoding, typography
 % -----------------------------------------------------------------------------
-\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=3.2cm,right=2.5cm,headheight=15pt]{geometry}
+\usepackage[a4paper,top=2.5cm,bottom=2.6cm,left=3.2cm,right=2.6cm,
+            headheight=26pt,headsep=12pt,footskip=18pt]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \usepackage{textcomp}
-\usepackage{microtype}
+\usepackage[protrusion=true,expansion=true,final]{microtype}
 \usepackage{setspace}
 \onehalfspacing
 
+% Better orphan / widow control
+\widowpenalty=10000
+\clubpenalty=10000
+\brokenpenalty=10000
+\raggedbottom
+
 % -----------------------------------------------------------------------------
-%  Maths, science, units
+%  Mathematics, science, units
 % -----------------------------------------------------------------------------
-\usepackage{amsmath,amssymb,amsfonts}
-\usepackage{mathtools}
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
 \usepackage{siunitx}
 \sisetup{
     detect-all,
@@ -36,6 +43,12 @@
     range-units=single
 }
 \DeclareSIUnit\tonne{t}
+\DeclareSIUnit\blow{blow}
+
+% Equation numbering by chapter (1.1, 3.1, etc.)
+\numberwithin{equation}{chapter}
+\numberwithin{figure}{chapter}
+\numberwithin{table}{chapter}
 
 % -----------------------------------------------------------------------------
 %  Tables, figures, captions
@@ -47,51 +60,88 @@
 \usepackage{array}
 \usepackage{tabularx}
 \usepackage{longtable}
-\usepackage{multirow}
-\usepackage{multicol}
+\usepackage{multirow,multicol}
 \usepackage{rotating}
 \usepackage{adjustbox}
 \usepackage{makecell}
-\renewcommand{\arraystretch}{1.15}
+\usepackage[table]{xcolor}
+\renewcommand{\arraystretch}{1.18}
 
-\usepackage[font=small,labelfont=bf,format=plain,justification=centering,
-            labelsep=period]{caption}
-\usepackage{subcaption}
-
-% -----------------------------------------------------------------------------
-%  Cross-references, hyperlinks, bibliography
-% -----------------------------------------------------------------------------
-\usepackage[hidelinks,bookmarksopen,bookmarksopenlevel=1]{hyperref}
-\hypersetup{
-    colorlinks=false,
-    pdftitle={Assessment of Railroad Ballast Degradation under Modified
-              Drop-Weight Impact Loading Conditions and Image-Based
-              Morphological Analysis},
-    pdfauthor={Durgesh Kumar Legha and Sandeep Patel},
-    pdfsubject={B.Tech. Thesis, Gati Shakti Vishwavidyalaya},
-    pdfkeywords={ballast, drop-weight impact, 3D morphology, RDSO,
-                 Indian Railways, fouling index}
-}
-\usepackage[noabbrev,capitalise]{cleveref}
-
-% -----------------------------------------------------------------------------
-%  Lists, headers, code, miscellaneous
-% -----------------------------------------------------------------------------
-\usepackage{enumitem}
-\setlist{itemsep=2pt,topsep=4pt}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\renewcommand{\headrulewidth}{0.4pt}
-\fancyhead[L]{\nouppercase{\leftmark}}
-\fancyhead[R]{\thepage}
-\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}}
-
-\usepackage{xcolor}
+% Colour palette (institutional blue + accents)
+\definecolor{gsvblue}{HTML}{1F3A93}
+\definecolor{gsvlight}{HTML}{D6E4F2}
+\definecolor{gsvaccent}{HTML}{B8860B}
 \definecolor{codebg}{HTML}{F7F7F7}
 \definecolor{codekw}{HTML}{0033B3}
 \definecolor{codestr}{HTML}{067D17}
 \definecolor{codecom}{HTML}{8C8C8C}
+\definecolor{tablehdr}{HTML}{1F3A93}
+\definecolor{rowbg}{HTML}{F2F5FA}
+\definecolor{boxfind}{HTML}{1F3A93}
+\definecolor{boxmech}{HTML}{2E7D32}
+\definecolor{boxnote}{HTML}{6A1B9A}
+\definecolor{boxcaveat}{HTML}{B71C1C}
+
+% Zebra-stripe-style table command
+\newcommand{\rowbg}{\rowcolors{2}{rowbg}{white}}
+\newcommand{\headrow}{\rowcolor{tablehdr!90}\color{white}}
+
+\usepackage[font=small,labelfont={bf,color=gsvblue},
+            format=plain,justification=justified,
+            singlelinecheck=false,labelsep=period]{caption}
+\usepackage{subcaption}
+
+% -----------------------------------------------------------------------------
+%  Hyperlinks, references, bibliography, glossary
+% -----------------------------------------------------------------------------
+\usepackage[colorlinks=true,
+            linkcolor=gsvblue,
+            citecolor=gsvblue,
+            urlcolor=gsvaccent,
+            bookmarksopen,
+            bookmarksopenlevel=1,
+            pdfencoding=auto,
+            psdextra]{hyperref}
+\hypersetup{
+    pdftitle={Assessment of Railroad Ballast Degradation under Modified
+              Drop-Weight Impact Loading Conditions and Image-Based
+              Morphological Analysis},
+    pdfauthor={Durgesh Kumar Legha and Sandeep Patel},
+    pdfsubject={B.Tech. Thesis, Gati Shakti Vishwavidyalaya, April 2026},
+    pdfkeywords={ballast; drop-weight impact; 3D morphology; RDSO;
+                 Indian Railways; fouling index; under-ballast mat;
+                 paired-particle; structured-light scanning}
+}
+\usepackage[noabbrev,capitalise,nameinlink]{cleveref}
+\crefname{lstlisting}{Listing}{Listings}
+\Crefname{lstlisting}{Listing}{Listings}
+
+% Natbib-style author-year citations
+\usepackage[round,authoryear,sort&compress]{natbib}
+\bibliographystyle{plainnat}
+\setcitestyle{aysep={,},yysep={;},notesep={, }}
+\renewcommand{\bibsection}{}% suppress automatic chapter heading from natbib
+
+% Glossaries / acronyms
+\usepackage[acronym,nonumberlist,nopostdot,toc=false]{glossaries}
+\renewcommand*{\acronymname}{List of Abbreviations}
+\makeglossaries
+
+% -----------------------------------------------------------------------------
+%  Lists, headers, code, fancy environments
+% -----------------------------------------------------------------------------
+\usepackage{enumitem}
+\setlist{itemsep=2pt,topsep=4pt,parsep=0pt}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{gsvblue}\leaders\hrule height \headrulewidth\hfill}}
+\fancyhead[L]{\color{gsvblue}\nouppercase{\small\leftmark}}
+\fancyhead[R]{\color{gsvblue}\small\thepage}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\color{gsvblue}\small\thepage}%
+    \renewcommand{\headrulewidth}{0pt}}
 
 \usepackage{listings}
 \lstdefinestyle{pythonstyle}{
@@ -105,6 +155,7 @@
     numberstyle=\tiny\color{gray},
     numbersep=8pt,
     frame=single,
+    rulecolor=\color{gsvblue!40},
     framesep=4pt,
     breaklines=true,
     breakatwhitespace=true,
@@ -114,14 +165,122 @@
 }
 \lstset{style=pythonstyle}
 
+% Decorative chapter headings
 \usepackage{titlesec}
 \titleformat{\chapter}[display]
-    {\normalfont\Huge\bfseries}
-    {\chaptertitlename\ \thechapter}{18pt}{\Huge}
-\titlespacing*{\chapter}{0pt}{-30pt}{20pt}
+  {\normalfont\sffamily\filright}
+  {\color{gsvblue!70}\Large\bfseries\MakeUppercase{\chaptertitlename}\
+   \fontsize{42}{42}\selectfont\thechapter}
+  {6pt}
+  {\Huge\bfseries\color{gsvblue}}
+\titlespacing*{\chapter}{0pt}{-20pt}{18pt}
+
+\titleformat{\section}
+    {\normalfont\Large\bfseries\color{gsvblue}}
+    {\thesection}{0.6em}{}
+\titleformat{\subsection}
+    {\normalfont\large\bfseries\color{gsvblue!90}}
+    {\thesubsection}{0.6em}{}
+\titleformat{\subsubsection}
+    {\normalfont\normalsize\bfseries\color{gsvblue!80}}
+    {\thesubsubsection}{0.5em}{}
 
 % -----------------------------------------------------------------------------
-%  Convenience macros
+%  Coloured "callout" boxes for findings, mechanisms, caveats, notes
+% -----------------------------------------------------------------------------
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{breakable,skins}
+
+\newtcolorbox{finding}[1][]{
+    enhanced,breakable,
+    colback=gsvlight,colframe=boxfind,
+    coltitle=white,colbacktitle=boxfind,
+    fonttitle=\bfseries\sffamily,
+    title=Key finding,
+    boxrule=0.6pt,arc=2mm,
+    left=8pt,right=8pt,top=4pt,bottom=4pt,
+    before skip=8pt,after skip=8pt,
+    #1
+}
+\newtcolorbox{mechanism}[1][]{
+    enhanced,breakable,
+    colback=boxmech!8,colframe=boxmech,
+    coltitle=white,colbacktitle=boxmech,
+    fonttitle=\bfseries\sffamily,
+    title=Mechanism,
+    boxrule=0.6pt,arc=2mm,
+    left=8pt,right=8pt,top=4pt,bottom=4pt,
+    before skip=8pt,after skip=8pt,
+    #1
+}
+\newtcolorbox{caveat}[1][]{
+    enhanced,breakable,
+    colback=boxcaveat!7,colframe=boxcaveat,
+    coltitle=white,colbacktitle=boxcaveat,
+    fonttitle=\bfseries\sffamily,
+    title=Caveat,
+    boxrule=0.6pt,arc=2mm,
+    left=8pt,right=8pt,top=4pt,bottom=4pt,
+    before skip=8pt,after skip=8pt,
+    #1
+}
+\newtcolorbox{thesisnote}[1][]{
+    enhanced,breakable,
+    colback=boxnote!7,colframe=boxnote,
+    coltitle=white,colbacktitle=boxnote,
+    fonttitle=\bfseries\sffamily,
+    title=Note,
+    boxrule=0.6pt,arc=2mm,
+    left=8pt,right=8pt,top=4pt,bottom=4pt,
+    before skip=8pt,after skip=8pt,
+    #1
+}
+
+% -----------------------------------------------------------------------------
+%  TikZ for the methodology flowchart
+% -----------------------------------------------------------------------------
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric,arrows.meta,positioning,fit,backgrounds,
+                calc,decorations.pathreplacing,patterns,shadows.blur}
+
+% Common TikZ styles used in the methodology and test-matrix diagrams
+\tikzset{
+    % Generic boxes
+    flowstart/.style={
+        rectangle, rounded corners=4pt, minimum width=3.8cm, minimum height=0.85cm,
+        text centered, draw=gsvblue, fill=gsvblue, text=white, font=\small\bfseries,
+        drop shadow={opacity=0.2,shadow xshift=2pt,shadow yshift=-2pt}
+    },
+    flowstep/.style={
+        rectangle, rounded corners=3pt, minimum width=3.8cm, minimum height=0.85cm,
+        text centered, draw=gsvblue!70, fill=gsvlight, font=\footnotesize,
+        text=black, align=center
+    },
+    flowdecision/.style={
+        diamond, aspect=2, minimum width=3.5cm, minimum height=0.7cm,
+        text centered, draw=gsvaccent!80, fill=gsvaccent!15, font=\footnotesize,
+        align=center
+    },
+    flowend/.style={
+        rectangle, rounded corners=4pt, minimum width=3.8cm, minimum height=0.85cm,
+        text centered, draw=boxmech, fill=boxmech, text=white, font=\small\bfseries,
+        drop shadow={opacity=0.2,shadow xshift=2pt,shadow yshift=-2pt}
+    },
+    flowarrow/.style={-Stealth, thick, gsvblue!70, line width=0.8pt},
+    % Test-matrix cells
+    cell/.style={
+        rectangle, minimum width=2.9cm, minimum height=1.0cm,
+        draw=gsvblue!50, font=\footnotesize, align=center, rounded corners=2pt
+    },
+    cellur/.style={cell,fill=red!8,draw=red!50},
+    cellrubm/.style={cell,fill=orange!10,draw=orange!60},
+    cellpubm/.style={cell,fill=green!10,draw=green!60},
+    cellempty/.style={cell,fill=gray!10,draw=gray!40,text=gray!60},
+    labelrow/.style={font=\small\bfseries\color{gsvblue},align=center},
+}
+
+% -----------------------------------------------------------------------------
+%  Semantic macros for symbols used throughout the thesis
 % -----------------------------------------------------------------------------
 \newcommand{\FIIN}{\ensuremath{\mathit{FI}_{\mathrm{IN}}}}
 \newcommand{\PoneM}{\ensuremath{P_{0.075}}}
@@ -137,6 +296,14 @@
 \newcommand{\dPsi}{\ensuremath{\%\Delta\Psi}}
 \newcommand{\dC}{\ensuremath{\%\Delta C}}
 \newcommand{\DegC}{\ensuremath{^{\circ}\mathrm{C}}}
+
+% Test-label macros (canonical 9-test matrix)
+\newcommand{\testlabel}[1]{\textsf{\small #1}}
+
+% -----------------------------------------------------------------------------
+%  Glossary entries (acronyms)
+% -----------------------------------------------------------------------------
+\input{chapters/glossary.tex}
 
 % -----------------------------------------------------------------------------
 \title{Assessment of Railroad Ballast Degradation under Modified Drop-Weight
@@ -156,11 +323,13 @@
 \include{chapters/03_abstract}
 \include{chapters/04_outcomes}
 
-% Table of contents, list of figures/tables, abbreviations & symbols
+% Table of contents, list of figures/tables
 \cleardoublepage\pdfbookmark[0]{Table of Contents}{toc}
 \tableofcontents
 \cleardoublepage\listoffigures
 \cleardoublepage\listoftables
+
+% Abbreviations & symbols
 \include{chapters/05_abbreviations}
 \include{chapters/06_symbols}
 
@@ -175,7 +344,15 @@
 \include{chapters/12_chapter6_conclusions}
 
 % ------------------------ BACK MATTER ----------------------------------------
-\include{chapters/13_references}
+% Bibliography
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{References}
+\chapter*{References}
+\markboth{References}{}
+\bibliography{references}
+
+% Appendices
 \appendix
 \include{chapters/14_appendix_a}
 \include{chapters/15_appendix_b}

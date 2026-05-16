@@ -4,40 +4,43 @@
 \chapter{Python Morphological Analysis Script}
 \label{chap:appB}
 
-This appendix records the Python morphological-analysis script. The
-script reads STL meshes from a pre-test folder and a post-test folder,
-performs the four-check mesh quality-control gate, computes the
-twenty-two morphological descriptors, pairs the pre-test and post-test
-meshes by filename, computes the per-particle changes, and exports the
-complete dataset to a multi-sheet Excel workbook.
+This appendix records the Python morphological-analysis script. The script
+reads STL meshes from a pre-test folder and a post-test folder, performs
+the four-check mesh quality-control gate, computes the twenty-two
+morphological descriptors, pairs the pre-test and post-test meshes by
+filename, computes the per-particle changes, and exports the complete
+dataset to a multi-sheet Excel workbook.
 
 \section{Software environment}
 \label{sec:appB-env}
 
-\begin{itemize}[leftmargin=*]
+\begin{itemize}[leftmargin=*,itemsep=2pt]
     \item Python~\num{3.10} or later (tested on 3.12).
-    \item \texttt{trimesh}~$\ge$\num{4.0} --- STL input, mesh integrity
-          checks, convex hull.
-    \item \texttt{numpy}~$\ge$\num{1.24} --- numerical operations on
-          descriptor arrays.
-    \item \texttt{pandas}~$\ge$\num{2.0} --- DataFrame handling for the
+    \item \texttt{trimesh}~$\ge$~\num{4.0} --- \gls{STL} input, mesh integrity
+          checks, convex hull \citep{DawsonHaggerty2019}.
+    \item \texttt{numpy}~$\ge$~\num{1.24} --- numerical operations on
+          descriptor arrays \citep{Harris2020}.
+    \item \texttt{pandas}~$\ge$~\num{2.0} --- DataFrame handling for the
           paired dataset.
     \item \texttt{openpyxl} --- Excel workbook output.
-    \item \texttt{scipy} --- linear algebra and statistics.
+    \item \texttt{scipy} --- linear algebra and statistics
+          \citep{Virtanen2020}.
     \item \texttt{numpy-stl} --- legacy STL-format compatibility layer.
 \end{itemize}
 
 Installation is via the pip toolchain:
-\begin{verbatim}
+\begin{lstlisting}[language=bash]
 pip install trimesh numpy pandas openpyxl scipy numpy-stl
-\end{verbatim}
+\end{lstlisting}
 
 \section{Pipeline script --- \texttt{ballast\_analyzer.py}}
 \label{sec:appB-script}
 
-The complete pipeline script is archived as \texttt{ballast\_analyzer.py}.
-The script is approximately \num{450} lines of commented Python. The
-core descriptor-extraction loop is reproduced below in abridged form.
+The complete pipeline script is archived as \texttt{ballast\_analyzer.py}
+(approximately \num{450} lines of commented Python). The core
+descriptor-extraction loop is reproduced in
+\cref{lst:ballast-analyzer}; the full source is available from the
+authors.
 
 \begin{lstlisting}[caption={Core extraction logic of
 \texttt{ballast\_analyzer.py}.},label={lst:ballast-analyzer}]
@@ -109,5 +112,7 @@ def run(before_dir, after_dir, out_xlsx):
 
 \vfill
 \begin{center}
-\emph{--- End of thesis ---}
+\rule{0.5\textwidth}{0.4pt}\\[6pt]
+\textit{\large --- End of thesis ---}\\[6pt]
+\rule{0.5\textwidth}{0.4pt}
 \end{center}
