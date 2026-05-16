@@ -91,6 +91,72 @@ to climb past the single-particle fracture threshold in a non-negligible
 fraction of tracer particles.
 \end{thesisnote}
 
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[>=Stealth,every node/.style={font=\footnotesize}]
+    % --- Mode A: Abrasion (left) ---
+    \begin{scope}[shift={(0,0)}]
+        \node[font=\bfseries\color{gsvblue}] at (0, 3.7) {Mode A: Diffuse abrasion};
+        % Before particle (angular, with sharp corners)
+        \fill[gray!70] (-1.5, 2.0) -- (-0.9, 2.6) -- (-0.3, 2.5) --
+                      (0.0, 2.0) -- (-0.3, 1.4) -- (-1.0, 1.3) --
+                      (-1.4, 1.6) -- cycle;
+        \node[font=\scriptsize] at (-0.75, 0.95) {Before};
+        % Arrow
+        \draw[->,thick,boxmech!70] (0.4, 2.0) -- (1.0, 2.0);
+        % After particle (smoother, more rounded)
+        \fill[gray!70] (1.35,2.0) -- (1.75,2.45) -- (2.25,2.3) --
+                      (2.45,1.95) -- (2.20,1.55) -- (1.80,1.45) --
+                      (1.40,1.65) -- cycle;
+        \node[font=\scriptsize] at (1.85, 0.95) {After (rounder)};
+        % Annotations below
+        \node[font=\scriptsize,align=center,text width=4.5cm] at (0.6, 0.2)
+            {Sphericity rises\\($\Delta\Psi=+0.004$, $p<10^{-6}$)\\
+             Volume drops slightly};
+    \end{scope}
+
+    % Vertical separator
+    \draw[gray!40, dashed, thick] (3.3, 3.9) -- (3.3, -0.3);
+
+    % --- Mode B: Fracture (right) ---
+    \begin{scope}[shift={(6.6,0)}]
+        \node[font=\bfseries\color{boxcaveat}] at (0, 3.7) {Mode B: Catastrophic fracture};
+        % Before particle (same as Mode A)
+        \fill[gray!70] (-1.5, 2.0) -- (-0.9, 2.6) -- (-0.3, 2.5) --
+                      (0.0, 2.0) -- (-0.3, 1.4) -- (-1.0, 1.3) --
+                      (-1.4, 1.6) -- cycle;
+        \node[font=\scriptsize] at (-0.75, 0.95) {Before};
+        % Arrow
+        \draw[->,thick,boxcaveat] (0.4, 2.0) -- (1.0, 2.0)
+            node[midway,above=2pt,font=\tiny,boxcaveat] {SNAP!};
+        % After: split into two pieces
+        \fill[gray!70] (1.35,2.0) -- (1.55,2.55) -- (1.85,2.4) -- cycle;
+        \fill[gray!70] (1.9,2.05) -- (2.4,2.45) -- (2.45,1.7) --
+                      (2.05,1.55) -- cycle;
+        \fill[gray!70] (1.4,1.5) -- (1.6,1.7) -- (1.8,1.45) -- cycle;
+        \node[font=\scriptsize] at (1.85, 0.95) {After (fragmented)};
+        % Annotations below
+        \node[font=\scriptsize,align=center,text width=4.5cm] at (0.6, 0.2)
+            {Large \%$\Delta V$ drop\\(below Tukey fence)\\
+             6 of 45 particles \emph{(rigid base only)}};
+    \end{scope}
+
+    % Bottom labels
+    \draw[gsvblue!60, very thick, ->] (-1.5, -1.0) -- (8.5, -1.0)
+        node[right,font=\small\bfseries\color{gsvblue}] {Increasing peak contact stress};
+    \node[font=\scriptsize,gsvblue] at (0.5, -1.4) {Flexible-base regime};
+    \node[font=\scriptsize,gsvblue] at (6.6, -1.4) {Rigid-base regime};
+\end{tikzpicture}
+\caption{Conceptual contrast between the two damage modes identified in
+         this thesis. \gls{ModeA} (diffuse abrasion) operates in every
+         configuration and is associated with a small but statistically
+         significant rise in sphericity. \gls{ModeB} (catastrophic
+         single-particle fracture) was observed only in rigid-base
+         configurations and produces large negative volume changes that
+         fall below the Tukey $1.5\times$\gls{IQR} fence.}
+\label{fig:morph-modes}
+\end{figure}
+
 \section{Shape evolution: sphericity, convexity, angularity and roundness}
 \label{sec:morph-shape}
 

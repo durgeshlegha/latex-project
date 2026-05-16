@@ -82,6 +82,75 @@ is uncertain.
     \label{fig:ballasted-track}
 \end{figure}
 
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[>=Stealth,every node/.style={font=\footnotesize}]
+    % --- Track structure ---
+    % Wheel (circle)
+    \draw[thick,fill=gray!40] (0,4.6) circle (0.4);
+    \node at (0, 4.6) {\scriptsize $W$};
+    \draw[->,very thick,red!80] (0,4.0) -- (0,3.55)
+        node[right=2pt,red!80,font=\scriptsize] {wheel load};
+
+    % Rail (small rectangle)
+    \draw[thick,fill=gray!60] (-0.8,3.2) rectangle (0.8,3.5);
+    \node at (-1.5,3.35) {Rail};
+
+    % Sleeper (long rectangle)
+    \draw[thick,fill=brown!30] (-3.0,2.7) rectangle (3.0,3.15);
+    \node at (-3.8,2.92) {Sleeper};
+
+    % Ballast layer (trapezoidal-ish)
+    \draw[thick,fill=gsvaccent!20] (-3.5,1.6) -- (3.5,1.6) --
+                                   (4.0,2.7) -- (-4.0,2.7) -- cycle;
+    \node at (-4.8, 2.15) {Ballast};
+    % Ballast particles (decorative)
+    \foreach \x in {-3,-2.2,-1.5,-0.7,0,0.7,1.5,2.2,3}
+        \draw[fill=gray!60] (\x, 2.1) circle (0.18);
+    \foreach \x/\y in {-2.6/1.85,-1.8/1.85,-1/1.85,-0.3/1.85,
+                       0.4/1.85,1.1/1.85,1.9/1.85,2.6/1.85}
+        \draw[fill=gray!50] (\x, \y) circle (0.16);
+
+    % Sub-ballast (lighter)
+    \draw[thick,fill=brown!15] (-4.0,1.0) -- (4.0,1.0) --
+                               (4.2,1.6) -- (-4.2,1.6) -- cycle;
+    \node at (-4.9, 1.3) {Sub-ballast};
+
+    % Subgrade (largest)
+    \draw[thick,fill=brown!10] (-4.5,0.0) -- (4.5,0.0) --
+                               (4.2,1.0) -- (-4.2,1.0) -- cycle;
+    \node at (-5.0, 0.5) {Subgrade};
+
+    % --- Stress trumpet (right side) ---
+    \draw[->, very thick, gsvblue]
+        (3.6, 3.5) -- (3.6, 1.2) node[right, font=\scriptsize, gsvblue] {depth};
+    \draw[gsvblue, very thick] (4.5, 3.3) -- (4.5, 3.0);
+    \draw[gsvblue, thick]      (4.3, 2.6) -- (4.7, 2.6);
+    \draw[gsvblue]             (4.0, 1.8) -- (5.0, 1.8);
+    \draw[gsvblue,thin]        (3.8, 1.0) -- (5.2, 1.0);
+    \node[gsvblue,font=\scriptsize\bfseries,anchor=west] at (5.0, 3.15)
+        {$\sim$\,500\,kPa};
+    \node[gsvblue,font=\scriptsize\bfseries,anchor=west] at (5.0, 2.6)
+        {$\sim$\,300\,kPa};
+    \node[gsvblue,font=\scriptsize\bfseries,anchor=west] at (5.0, 1.8)
+        {$\sim$\,150\,kPa};
+    \node[gsvblue,font=\scriptsize\bfseries,anchor=west] at (5.0, 1.0)
+        {$\sim$\,80\,kPa};
+
+    % Title
+    \node[font=\small\bfseries\color{gsvblue}] at (0, 5.4)
+        {Wheel load $\to$ rail $\to$ sleeper $\to$ ballast $\to$ subgrade};
+\end{tikzpicture}
+\caption{Conceptual diagram of the load-transfer mechanism in
+         conventional ballasted track. The vertical wheel load is
+         distributed laterally with depth, attenuating from
+         $\sim$\,500\,kPa at the top of the ballast to $\sim$\,80\,kPa
+         at the subgrade. Ballast degradation under repeated impact
+         loading concentrates in the upper $\sim$\,150\,mm of the
+         ballast layer where the contact stress is highest.}
+\label{fig:load-transfer}
+\end{figure}
+
 \section{Problem Statement}
 \label{sec:intro-problem}
 
