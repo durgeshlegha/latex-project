@@ -1,20 +1,174 @@
 % =============================================================================
-%  Title page (single-page, compact)
+%  Front cover  -- Frontispiece -- Title page -- Verso -- Dedication -- Epigraph
 % =============================================================================
+
+% -----------------------------------------------------------------------------
+%  Page i : Front cover  (designed as a book cover -- maximum impact)
+% -----------------------------------------------------------------------------
+\begin{titlepage}
+\thispagestyle{empty}
+\setlength{\parindent}{0pt}
+
+\begin{tikzpicture}[remember picture,overlay]
+    % Outer thick blue frame
+    \draw[line width=2.2pt,gsvblue]
+        ([xshift=1.4cm,yshift=-1.4cm]current page.north west) rectangle
+        ([xshift=-1.4cm,yshift= 1.4cm]current page.south east);
+    % Inner thin gold rule
+    \draw[line width=0.4pt,gsvaccent]
+        ([xshift=1.7cm,yshift=-1.7cm]current page.north west) rectangle
+        ([xshift=-1.7cm,yshift= 1.7cm]current page.south east);
+\end{tikzpicture}
+
+\centering
+\vspace*{1.4cm}
+
+% Institution band
+{\sffamily\small\color{gsvblue}\MakeUppercase{Gati Shakti Vishwavidyalaya
+\;\textbullet\; Vadodara}}\\[2pt]
+{\footnotesize\itshape\color{gsvblue!80}A Central University under the
+Ministry of Railways, Government of India}
+
+\vspace{0.55cm}
+{\color{gsvaccent}\rule{0.45\textwidth}{0.6pt}}
+
+\vspace{0.8cm}
+{\sffamily\footnotesize\color{gsvblue}\MakeUppercase{B.Tech.\ Thesis
+\;\textbullet\; Civil Engineering \;\textbullet\; Rail Engineering}}
+
+\vspace{1.0cm}
+
+% Main title -- maximum impact
+{\fontsize{20}{26}\selectfont\bfseries\color{gsvblue}%
+ASSESSMENT OF\\[3pt]
+RAILROAD BALLAST DEGRADATION\par}
+\vspace{8pt}
+{\fontsize{14}{20}\selectfont\itshape\color{gsvblue!85!black}%
+under modified drop-weight impact loading\\[2pt]
+and image-based morphological analysis\par}
+
+\vspace{0.9cm}
+{\color{gsvaccent}\rule{0.35\textwidth}{0.4pt}}
+\vspace{0.6cm}
+
+% Authorship block
+{\small\itshape\color{gsvblue}submitted by}\\[6pt]
+{\large\bfseries\color{gsvblue}\scshape Durgesh Kumar Legha}
+\quad\&\quad
+{\large\bfseries\color{gsvblue}\scshape Sandeep Patel}\\[4pt]
+{\footnotesize Roll Nos.\ 2270007 \;\textbullet\; 2280043}
+
+\vspace{0.5cm}
+{\small\itshape\color{gsvblue}under the supervision of}\\[4pt]
+{\bfseries Dr.\ Dinesh Gundavaram}\\[1pt]
+{\footnotesize\itshape Assistant Professor, School of Civil Engineering}
+
+\vfill
+
+\includegraphics[height=2.4cm]{image1.png}
+
+\vspace{0.3cm}
+{\bfseries\large\color{gsvblue} APRIL 2026}
+
+\vspace{0.4cm}
+{\footnotesize\itshape\color{gsvblue!80}Lalbaug, Vadodara 390004,
+Gujarat, India}
+
+\vspace{0.4cm}
+\end{titlepage}
+
+% -----------------------------------------------------------------------------
+%  Page ii : Frontispiece (TikZ artistic figure facing the title page)
+% -----------------------------------------------------------------------------
+\thispagestyle{empty}
+\null
+\vspace*{1.5cm}
+
+\begin{center}
+{\small\itshape\color{gsvblue}Frontispiece}\\[6pt]
+{\color{gsvaccent}\rule{0.25\textwidth}{0.4pt}}\\[1.6cm]
+
+\begin{tikzpicture}[>=Stealth,scale=0.95]
+    % --- Apparatus silhouette (left) ---
+    \begin{scope}[shift={(-3.4,0)}]
+        % Hammer
+        \fill[gsvblue!85] (-0.55,3.6) rectangle (0.55,4.5);
+        \draw[gsvblue,thick] (-0.55,3.6) rectangle (0.55,4.5);
+        \node[font=\tiny\color{white}\bfseries] at (0,4.05) {50\,kg};
+        \draw[->,thick,gsvaccent,line width=1.4pt] (0,3.5) -- (0,2.8);
+        % Guide column
+        \draw[gsvblue!60,line width=2.4pt] (0,4.6) -- (0,5.6);
+        % Specimen mould
+        \draw[gsvblue,thick,fill=gsvblue!12] (-0.95,1.0) rectangle (0.95,2.6);
+        % Ballast particles
+        \foreach \x/\y in {-0.6/1.3, -0.2/1.4, 0.3/1.3,
+                          -0.6/1.8, 0.0/1.9, 0.55/1.8,
+                          -0.4/2.2, 0.3/2.2, -0.2/2.5}
+            \fill[gray!60] (\x,\y) circle (0.16);
+        % Pad layer
+        \fill[orange!40] (-0.95,0.95) rectangle (0.95,1.05);
+        % Base layer
+        \fill[gsvblue] (-1.15,0.5) rectangle (1.15,0.95);
+        \node[font=\scriptsize\bfseries,gsvblue,below] at (0,0.4) {Apparatus};
+    \end{scope}
+
+    % --- Centre arrow ---
+    \draw[->,line width=2.2pt,gsvaccent] (-1.7,2.0) -- (1.7,2.0);
+    \node[font=\bfseries\small\color{gsvblue},above] at (0,2.1) {transforms};
+    \node[font=\itshape\scriptsize\color{gsvaccent},below=-1pt] at (0,1.95)
+        {bulk + paired-particle};
+
+    % --- Morphology (right) ---
+    \begin{scope}[shift={(3.2,0)}]
+        % Mesh icon
+        \draw[gsvblue,thick,fill=gsvblue!10]
+            (-0.7,1.4) -- (0.7,1.4) -- (1.05,2.0) -- (1.05,3.0) --
+            (0.7,3.6)  -- (-0.7,3.6) -- (-1.05,3.0) -- (-1.05,2.0) -- cycle;
+        \draw[gsvblue!70,thin] (-0.7,1.4) -- (-0.4,1.9) -- (0.4,1.9) -- (0.7,1.4);
+        \draw[gsvblue!70,thin] (-0.4,1.9) -- (-0.4,3.1) -- (0.4,3.1) -- (0.4,1.9);
+        \draw[gsvblue!70,thin] (-0.4,3.1) -- (-0.7,3.6);
+        \draw[gsvblue!70,thin] ( 0.4,3.1) -- ( 0.7,3.6);
+        % Descriptor labels radiating outward
+        \foreach \ang/\lab in {
+            -25/$V$, 25/$\Psi$, 70/$C$,
+            115/$A_p$, 160/$d_{\max}$,
+            205/$A_b$, 250/$\Delta\Psi$, 295/$\Delta V$}
+            \node[font=\scriptsize\color{gsvblue}] at
+                ($(0,2.5) + (\ang:1.85)$) {\lab};
+        \node[font=\scriptsize\bfseries,gsvblue,below] at (0,0.4) {Morphology};
+    \end{scope}
+\end{tikzpicture}
+
+\vspace{0.6cm}
+{\color{gsvaccent}\rule{0.25\textwidth}{0.4pt}}\\[10pt]
+\begin{minipage}{0.78\textwidth}
+\centering\itshape\small\color{gsvblue!85!black}
+The two-stream methodology of this thesis: large-scale impact loading
+on the left, paired pre-and-post 3D morphological analysis on the right.
+The two streams converge in the Indian Railway Fouling Index $\FIIN$
+and a 22-descriptor per-particle record.\par
+\end{minipage}
+\end{center}
+
+\vspace*{\fill}
+\cleardoublepage
+
+% -----------------------------------------------------------------------------
+%  Page iii : Title page (formal)
+% -----------------------------------------------------------------------------
 \begin{titlepage}
 \centering
 \thispagestyle{empty}
 \setlength{\parskip}{0pt}
 
-% Decorative top double rule
 {\color{gsvblue}\rule{\textwidth}{1pt}}\\[1pt]
 {\color{gsvblue}\rule{\textwidth}{0.3pt}}
 
-\vspace{0.25cm}
+\vspace{0.30cm}
 {\small\itshape\color{gsvblue}A B.Tech.\ Thesis in Civil Engineering
 \;|\; Specialisation: Rail Engineering}
 
-\vspace{0.45cm}
+\vspace{0.55cm}
 {\large\bfseries\color{gsvblue}%
 ASSESSMENT OF RAILROAD BALLAST DEGRADATION\\[2pt]
 UNDER MODIFIED DROP-WEIGHT IMPACT LOADING\\[2pt]
@@ -61,3 +215,117 @@ Government of India\par}
 {\color{gsvblue}\rule{\textwidth}{0.3pt}}\\[1pt]
 {\color{gsvblue}\rule{\textwidth}{1pt}}
 \end{titlepage}
+
+% -----------------------------------------------------------------------------
+%  Page iv : Verso  (copyright, citation, version)
+% -----------------------------------------------------------------------------
+\thispagestyle{empty}
+\setlength{\parindent}{0pt}
+\null\vspace*{1cm}
+
+\begin{center}
+\begin{minipage}{0.86\textwidth}
+
+\footnotesize\sffamily\setlength{\parskip}{8pt}
+
+\textbf{\color{gsvblue}Suggested citation}\\[1pt]
+{\normalfont
+Legha, D.~K., \& Patel, S. (2026). \emph{Assessment of Railroad Ballast
+Degradation under Modified Drop-Weight Impact Loading Conditions and
+Image-Based Morphological Analysis}. B.Tech.\ Thesis, Gati Shakti
+Vishwavidyalaya, Vadodara, India.}
+
+\textbf{\color{gsvblue}Copyright}\\[1pt]
+{\normalfont
+\textcopyright\ 2026 Durgesh Kumar Legha and Sandeep Patel.
+This work is the intellectual property of its authors and Gati Shakti
+Vishwavidyalaya. It may be reproduced for non-commercial academic
+purposes with full citation. Commercial reproduction, in whole or in
+part, requires the prior written permission of the authors and the
+university.}
+
+\textbf{\color{gsvblue}Patent notice}\\[1pt]
+{\normalfont
+The apparatus described in Chapter~3 is the subject of an Indian
+utility-patent application filed by Gundavaram, D.\ and Legha, D.\
+(\textit{Assessment of Railroad Ballast Degradation under Modified
+Drop-Weight Impact Loading Conditions}, 2026, draft prepared).}
+
+\textbf{\color{gsvblue}Document version}\\[1pt]
+{\normalfont
+Version 2.0, compiled \today\ with pdf\LaTeX, BibTeX, and the
+\texttt{natbib}, \texttt{glossaries}, \texttt{cleveref},
+\texttt{siunitx}, \texttt{tcolorbox}, and \texttt{TikZ} packages.}
+
+\textbf{\color{gsvblue}Open materials}\\[1pt]
+{\normalfont
+The morphological-analysis pipeline (\texttt{ballast\_analyzer.py}) is
+reproduced in Appendix~B. The raw paired \gls{STL} meshes and the
+laboratory spreadsheets are archived at Gati Shakti Vishwavidyalaya
+and are available from the authors on reasonable request for
+non-commercial research use.}
+
+\vspace{14pt}
+\centering\itshape\color{gsvblue!80}Typeset in Latin Modern on A4 paper.
+
+\end{minipage}
+\end{center}
+\vspace*{\fill}
+\cleardoublepage
+
+% -----------------------------------------------------------------------------
+%  Page v : Dedication
+% -----------------------------------------------------------------------------
+\thispagestyle{empty}
+\vspace*{6cm}
+\begin{center}
+{\Large\itshape\color{gsvblue} Dedicated to}\\[0.7cm]
+{\large our families,}\\[0.25cm]
+{\large our supervisor, and}\\[0.25cm]
+{\large the engineers and operators of Indian Railways,}\\[0.7cm]
+{\large whose patience and trust made this work possible.}\\[1.5cm]
+{\color{gsvaccent}\rule{0.18\textwidth}{0.4pt}}
+\end{center}
+\vspace*{\fill}
+\cleardoublepage
+
+% -----------------------------------------------------------------------------
+%  Page vi : Epigraph
+% -----------------------------------------------------------------------------
+\thispagestyle{empty}
+\null\vfill
+\begin{center}
+\begin{minipage}{0.74\textwidth}
+\itshape\large\color{gsvblue!90!black}
+``Track maintenance is not the cost of running a railway; it \emph{is}
+the railway. The ballast is where the train meets the earth, and where
+the earth answers back.''\par
+\vspace{12pt}
+{\hfill\upshape\normalsize\color{gsvblue}\rule{0.6em}{0.4pt}\;
+\textsc{coenraad esveld},\;\itshape Modern Railway Track\hfill}\par
+\end{minipage}
+
+\vspace{1.8cm}
+
+\begin{minipage}{0.74\textwidth}
+\itshape\large\color{gsvblue!90!black}
+``Without data you're just another person with an opinion.''\par
+\vspace{12pt}
+{\hfill\upshape\normalsize\color{gsvblue}\rule{0.6em}{0.4pt}\;
+\textsc{w.\ edwards deming}\hfill}\par
+\end{minipage}
+
+\vspace{1.8cm}
+
+\begin{minipage}{0.74\textwidth}
+\itshape\large\color{gsvblue!90!black}
+``We see further by standing on the shoulders of those who laid the
+sleepers before us.''\par
+\vspace{12pt}
+{\hfill\upshape\normalsize\color{gsvblue}\rule{0.6em}{0.4pt}\;
+\itshape{after \textsc{Bernard of Chartres}}\hfill}\par
+\end{minipage}
+\end{center}
+\vfill
+\null
+\cleardoublepage

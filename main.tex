@@ -14,15 +14,43 @@
 % -----------------------------------------------------------------------------
 %  Page geometry, encoding, typography
 % -----------------------------------------------------------------------------
-\usepackage[a4paper,top=2.5cm,bottom=2.6cm,left=3.2cm,right=2.6cm,
-            headheight=26pt,headsep=12pt,footskip=18pt]{geometry}
+\usepackage[a4paper,top=2.6cm,bottom=2.7cm,left=3.3cm,right=2.7cm,
+            headheight=42pt,headsep=14pt,footskip=22pt]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \usepackage{textcomp}
-\usepackage[protrusion=true,expansion=true,final]{microtype}
+\usepackage[protrusion=true,expansion=true,final,
+            tracking=true,kerning=true,spacing=true]{microtype}
 \usepackage{setspace}
 \onehalfspacing
+
+% Drop caps for chapter openings
+\usepackage{lettrine}
+\renewcommand{\LettrineFontHook}{\color{gsvblue}\bfseries}
+\setlength{\DefaultNindent}{0pt}
+\setcounter{DefaultLines}{3}
+
+% Pretty quotes / epigraphs
+\usepackage{epigraph}
+\setlength{\epigraphwidth}{0.62\textwidth}
+\renewcommand{\epigraphsize}{\small\itshape}
+\renewcommand{\epigraphflush}{flushright}
+\renewcommand{\sourceflush}{flushright}
+\renewcommand{\textflush}{flushleft}
+
+% TOC styling -- chapter titles in blue, dotted leaders
+\usepackage{tocloft}
+\renewcommand{\cfttoctitlefont}{\Huge\bfseries\color{gsvblue}}
+\renewcommand{\cftloftitlefont}{\Huge\bfseries\color{gsvblue}}
+\renewcommand{\cftlottitlefont}{\Huge\bfseries\color{gsvblue}}
+\renewcommand{\cftchapfont}{\bfseries\color{gsvblue}}
+\renewcommand{\cftchappagefont}{\bfseries\color{gsvblue}}
+\renewcommand{\cftsecfont}{\normalfont}
+\renewcommand{\cftchapdotsep}{\cftdotsep}
+\renewcommand{\cftchapleader}{\bfseries\color{gsvblue!40}\cftdotfill{\cftchapdotsep}}
+\setlength{\cftbeforechapskip}{8pt}
+\setlength{\cftbeforesecskip}{2pt}
 
 % Better orphan / widow control
 \widowpenalty=10000
@@ -133,15 +161,29 @@
 \usepackage{enumitem}
 \setlist{itemsep=2pt,topsep=4pt,parsep=0pt}
 
+% A short running title used in the right header
+\newcommand{\thesisshorttitle}{Ballast Degradation under Impact Loading}
+
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\renewcommand{\headrulewidth}{0.5pt}
-\renewcommand{\headrule}{\hbox to\headwidth{\color{gsvblue}\leaders\hrule height \headrulewidth\hfill}}
-\fancyhead[L]{\color{gsvblue}\nouppercase{\small\leftmark}}
-\fancyhead[R]{\color{gsvblue}\small\thepage}
-\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\color{gsvblue}\small\thepage}%
-    \renewcommand{\headrulewidth}{0pt}}
+\renewcommand{\headrulewidth}{0.7pt}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\headrule}{%
+    \hbox to\headwidth{%
+        \color{gsvblue}\leaders\hrule height \headrulewidth\hfill}%
+    \vspace{1pt}%
+    \hbox to\headwidth{%
+        \color{gsvaccent!70}\leaders\hrule height 0.3pt\hfill}}
+\fancyhead[L]{\color{gsvblue}\nouppercase{\small\textsc{\leftmark}}}
+\fancyhead[R]{\color{gsvblue}\small\textit{\thesisshorttitle}%
+              \;\textbar\;\textbf{\thepage}}
+\fancyfoot[C]{}
+\fancypagestyle{plain}{%
+    \fancyhf{}%
+    \fancyfoot[C]{\color{gsvblue}\small\thepage}%
+    \renewcommand{\headrulewidth}{0pt}%
+    \renewcommand{\footrulewidth}{0pt}}
 
 \usepackage{listings}
 \lstdefinestyle{pythonstyle}{
@@ -242,6 +284,51 @@
     #1
 }
 
+% Chapter-opening "In this chapter" preview panel
+\newtcolorbox{chapterpreview}[1][]{
+    enhanced,breakable,
+    colback=gsvblue!4,colframe=gsvblue!50,
+    coltitle=white,colbacktitle=gsvblue,
+    fonttitle=\bfseries\sffamily,
+    title=In this chapter,
+    boxrule=0.8pt,arc=2.5mm,
+    left=10pt,right=10pt,top=6pt,bottom=6pt,
+    before skip=14pt,after skip=18pt,
+    #1
+}
+
+% Chapter-closing "Chapter takeaways" panel
+\newtcolorbox{chaptertakeaways}[1][]{
+    enhanced,breakable,
+    colback=gsvaccent!6,colframe=gsvaccent!70,
+    coltitle=white,colbacktitle=gsvaccent!85!black,
+    fonttitle=\bfseries\sffamily,
+    title=Chapter takeaways,
+    boxrule=0.8pt,arc=2.5mm,
+    left=10pt,right=10pt,top=6pt,bottom=6pt,
+    before skip=18pt,after skip=10pt,
+    #1
+}
+
+% Chapter epigraph -- elegant ornamented quote
+\newcommand{\chapterquote}[2]{%
+    \vspace*{-0.4cm}
+    \begin{flushright}
+    \begin{minipage}{0.62\textwidth}
+        \itshape\small\color{gsvblue!85!black}#1
+        \vskip2pt
+        \hrule height 0.4pt
+        \vskip2pt
+        \upshape\footnotesize\color{gsvblue!80}\hfill --- #2
+    \end{minipage}
+    \end{flushright}
+    \vspace{1.2em}
+}
+
+% Drop-cap helper that uses the institutional palette
+\newcommand{\dropcap}[2]{\lettrine[lines=3,findent=2pt,nindent=0pt,
+    slope=2pt]{\color{gsvblue}\textbf{#1}}{#2}}
+
 % -----------------------------------------------------------------------------
 %  TikZ for the methodology flowchart
 % -----------------------------------------------------------------------------
@@ -327,6 +414,7 @@
 \include{chapters/01_declarations}
 \include{chapters/02_acknowledgements}
 \include{chapters/03_abstract}
+\include{chapters/03a_scholarly}
 \include{chapters/04_outcomes}
 
 % Table of contents, list of figures/tables

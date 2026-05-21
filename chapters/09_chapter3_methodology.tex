@@ -4,7 +4,26 @@
 \chapter{Materials and Methodology}
 \label{chap:methodology}
 
-This chapter documents the materials, the apparatus, the test protocol, and
+\chapterquote{If you cannot weigh, measure, or photograph it, you cannot
+yet engineer it.}{after Lord Kelvin, 1883}
+
+\begin{chapterpreview}
+This chapter documents in reproducible detail the apparatus, the
+materials, and the protocol used in the experimental programme.
+\cref{sec:meth-materials} characterises the basalt ballast and verifies
+its conformity to the \gls{RDSO} gradation envelope.
+\cref{sec:meth-PUBM,sec:meth-RUBM} specify the two under-ballast mat
+materials. \cref{sec:meth-apparatus} describes the modified large-scale
+drop-weight impact apparatus (Figure~\ref{fig:meth-flowchart}).
+\cref{sec:meth-calibration} calibrates the apparatus against the
+Indian Railways field-stress envelope. \cref{sec:meth-protocol} fixes
+the assembly and blow protocol; \cref{sec:meth-matrix} sets out the
+nine-cell factorial test matrix (Figure~\ref{fig:meth-matrix}). The
+chapter ends with the twenty-two-descriptor per-particle pipeline
+(\cref{sec:meth-morphology,sec:meth-descriptors}).
+\end{chapterpreview}
+
+\dropcap{T}{his} chapter documents the materials, the apparatus, the test protocol, and
 the per-particle morphological-analysis pipeline used in the experimental
 programme. The chapter is the longest in the thesis because the programme
 combines two methodological strands---bulk-index testing through a modified
@@ -901,3 +920,31 @@ unit-tested against synthetic reference meshes (sphere, ellipsoid, cube).
     \caption{Screenshot of the running morphological-analysis script.}
     \label{fig:meth-script}
 \end{figure}
+
+\begin{chaptertakeaways}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+    \item The basalt ballast conforms to the \gls{RDSO} gradation
+          envelope (Figure~\ref{fig:meth-psd}); the two under-ballast
+          mats (\gls{PUBM}, \gls{RUBM}) are identified, measured, and
+          instrumented in \cref{sec:meth-PUBM,sec:meth-RUBM}.
+    \item The modified drop-weight apparatus delivers
+          \SI{275}{\kilo\pascal} / \SI{147}{\joule} at
+          \SI{300}{\milli\metre} drop and \SI{523}{\kilo\pascal} /
+          \SI{221}{\joule} at \SI{450}{\milli\metre} drop, bracketing
+          the Indian Railways field-loading envelope
+          (Figure~\ref{fig:meth-calibration-ladder}).
+    \item The nine-cell factorial test matrix
+          (Figure~\ref{fig:meth-matrix}) crosses three pad conditions
+          with two base--energy combinations; the three
+          \gls{FB}--\SI{450}{\milli\metre} cells are excluded by
+          design.
+    \item Forty-five tracer particles (five per configuration) are
+          scanned before and after impact and reduced to a
+          twenty-two-descriptor per-particle record by the
+          \texttt{ballast\_analyzer.py} pipeline (\cref{chap:appB}).
+    \item Both methodological strands---bulk \FIIN\ and per-particle
+          paired morphology---can now be executed and analysed
+          (Chapters~\ref{chap:impact-results} and
+          \ref{chap:morph-results}).
+\end{itemize}
+\end{chaptertakeaways}
