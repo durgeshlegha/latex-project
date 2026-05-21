@@ -71,6 +71,63 @@ morphology; under-ballast mats; ballast degradation.
 
 The principal contributions of the thesis can be read in a single page.
 Each item is anchored to the chapter where it is developed in full.
+A reading roadmap is provided below for examiners who wish to navigate
+the thesis by interest area.
+
+\begin{center}
+\begin{tikzpicture}[
+    >=Stealth,
+    every node/.style={font=\footnotesize,align=center}]
+    % Backbone arrow
+    \draw[->,line width=2pt,gsvblue!60] (-0.2,0) -- (12.5,0);
+
+    % Chapter stations
+    \foreach \x/\name/\theme in {
+        0.5/Ch.~1/Background,
+        2.7/Ch.~2/Literature,
+        5.0/Ch.~3/Methods,
+        7.3/Ch.~4/Bulk,
+        9.6/Ch.~5/Grain,
+        11.9/Ch.~6/Outcomes} {
+        \fill[gsvblue] (\x, 0) circle (0.18);
+        \node[gsvblue,font=\scriptsize\bfseries,below=10pt] at (\x, 0)
+            {\name\\\textit{\theme}};
+    }
+
+    % Strand labels
+    \node[boxmech,font=\scriptsize\bfseries] at (0.7, 0.85)
+        {start here};
+    \draw[boxmech!80,->] (0.7, 0.65) -- (0.55, 0.25);
+
+    \node[gsvaccent!85!black,font=\scriptsize\bfseries] at (5.0, 0.85)
+        {experiment};
+    \draw[gsvaccent!80,->] (5.0, 0.65) -- (5.0, 0.25);
+
+    \node[boxfind,font=\scriptsize\bfseries] at (8.5, 0.85)
+        {results};
+    \draw[boxfind!80,->] (8.5, 0.65) -- (8.5, 0.25);
+
+    \node[boxcaveat,font=\scriptsize\bfseries] at (12.0, 0.85)
+        {takeaways};
+    \draw[boxcaveat,->] (12.0, 0.65) -- (12.0, 0.25);
+
+    % Append: side-trails
+    \draw[gsvaccent!50,dashed] (5.0, -0.92) -- (5.0, -1.55);
+    \node[gsvaccent!85!black,font=\scriptsize] at (5.0, -1.75)
+        {apparatus details};
+    \draw[gsvaccent!50,dashed,->] (4.5, -1.92) .. controls
+        (4.0, -2.3) and (3.5, -2.3) .. (3.0, -2.0)
+        node[at end,anchor=east] {App.~A};
+    \draw[gsvaccent!50,dashed,->] (5.5, -1.92) .. controls
+        (6.0, -2.3) and (6.5, -2.3) .. (7.0, -2.0)
+        node[at end,anchor=west] {App.~B};
+    \draw[gsvaccent!50,dashed,->] (5.0, -1.92) -- (5.0, -2.3)
+        node[at end,below] {App.~C\\\scriptsize statistical methods};
+
+\end{tikzpicture}
+\end{center}
+
+\bigskip
 
 \bigskip
 

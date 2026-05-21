@@ -1,6 +1,8 @@
 % =============================================================================
 %  Glossary / acronym definitions (auto-expanded on first use via \gls)
 % =============================================================================
+
+% ---- Acronyms (auto-expanded on first \gls{} or \acrshort{}) ---------------
 \newacronym{AAV}{AAV}{Aggregate Abrasion Value}
 \newacronym{AIV}{AIV}{Aggregate Impact Value}
 \newacronym{ANOVA}{ANOVA}{Analysis of Variance}
@@ -36,3 +38,89 @@
 \newacronym{UIC}{UIC}{Union Internationale des Chemins de Fer}
 \newacronym{UR}{UR}{Unreinforced (no pad)}
 \newacronym{USP}{USP}{Under-Sleeper Pad}
+
+% ---- Domain-specific terms (not acronyms) -- defined for the lay reader -----
+\newglossaryentry{ballast}{
+    name={ballast},
+    description={The layer of crushed, angular stone (typically
+        \SIrange{20}{65}{\milli\metre}) placed beneath and around the
+        sleepers of a railway track. It distributes wheel loads to the
+        subgrade, restrains lateral and longitudinal track movement,
+        and provides rapid drainage.}}
+\newglossaryentry{fouling}{
+    name={fouling},
+    description={The accumulation of fines (\SI{<0.075}{\milli\metre})
+        and small fragments within the ballast voids. Caused by
+        breakage of ballast particles under repeated loading,
+        infiltration of subgrade fines, atmospheric deposition, or
+        spillage of cargo. Reduces drainage and inter-particle friction.}}
+\newglossaryentry{shake-down}{
+    name={shake-down regime},
+    description={The post-densification steady state in which a
+        granular layer responds to additional cyclic loading with
+        small, near-elastic increments of permanent strain rather than
+        with continued plastic densification. Reaching the shake-down
+        regime is the conventional endpoint for laboratory cyclic-loading
+        tests.}}
+\newglossaryentry{tracer}{
+    name={tracer particle},
+    description={A ballast particle individually marked (here, with a
+        small acrylic paint patch and a hand-written number) so that
+        it can be recovered after a test and matched, one-to-one, with
+        its pre-test 3D scan. In this thesis, five tracer particles
+        are used per test, giving 45 tracers across the nine-cell
+        factorial matrix.}}
+\newglossaryentry{sphericity}{
+    name={sphericity},
+    description={A dimensionless particle-shape descriptor measuring
+        how closely a particle approaches a perfect sphere. Defined as
+        $\Psi = \pi^{1/3} (6V)^{2/3} / A$ (Wadell, 1932), where $V$ is
+        the particle volume and $A$ its surface area. Bounded above by
+        unity (a sphere); typical ballast values lie in the range
+        \numrange{0.68}{0.80}.}}
+\newglossaryentry{convexity}{
+    name={convexity},
+    description={A dimensionless particle-shape descriptor measuring
+        the fraction of the particle's convex-hull volume occupied by
+        the particle itself. Defined as $C = V/V_{\mathrm{ch}}$. Bounded
+        above by unity (a strictly convex particle).}}
+\newglossaryentry{rdso-gradation}{
+    name={\gls{RDSO} gradation},
+    description={The particle-size envelope specified by Indian
+        Railways for railway ballast: 100\,\% passing the
+        \SI{65}{\milli\metre} sieve and 0\,\% passing the
+        \SI{20}{\milli\metre} sieve, with intermediate retention
+        bands specified at \SI{40}{\milli\metre} and
+        \SI{25}{\milli\metre}.}}
+\newglossaryentry{fines}{
+    name={fines},
+    description={Particles passing the \SI{0.075}{\milli\metre} sieve.
+        Produced in ballast by attrition (corner-by-corner abrasion)
+        and, more dramatically, by single-particle fracture
+        (\gls{ModeB}). Accumulation of fines is the dominant driver
+        of ballast fouling.}}
+\newglossaryentry{transition-zone}{
+    name={transition zone},
+    description={A region of track where the support stiffness changes
+        abruptly, such as the approach to a bridge, a tunnel portal,
+        or a level crossing. The stiffness mismatch concentrates
+        impact loading and is a known accelerator of ballast
+        degradation. Transition zones are the principal use case for
+        \gls{UBM} reinforcement.}}
+\newglossaryentry{paired-protocol}{
+    name={paired (per-particle) protocol},
+    description={An experimental design in which the \emph{same}
+        physical specimen is measured before and after a treatment,
+        and the change is computed on a per-specimen basis. Reduces
+        between-specimen variability and is the appropriate test
+        when natural particle-to-particle scatter is large compared
+        to the expected effect.}}
+\newglossaryentry{tukey-fence}{
+    name={Tukey $1.5\times$\gls{IQR} fence},
+    description={A robust outlier-detection criterion that flags a
+        data point as an outlier if it falls below
+        $Q_1 - 1.5 \cdot \mathrm{IQR}$ or above
+        $Q_3 + 1.5 \cdot \mathrm{IQR}$, where $Q_1$ and $Q_3$ are
+        the first and third quartiles. Formally introduced in
+        Appendix~C; used in Chapter~5 to identify catastrophic
+        \gls{ModeB} fracture events.}}

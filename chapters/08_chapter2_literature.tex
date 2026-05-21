@@ -52,6 +52,75 @@ measurement framework used in \cref{chap:methodology} and applied in
 five sections together and identifies the two gaps---the apparatus gap
 and the characterisation gap---that this thesis addresses.
 
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+    every node/.style={font=\footnotesize},
+    grow=down,
+    level distance=1.0cm,
+    sibling distance=2.5cm,
+    edge from parent/.style={
+        draw=gsvblue!60,
+        line width=0.6pt,
+        edge from parent path={(\tikzparentnode.south)
+            -- ++(0,-0.25cm) -| (\tikzchildnode.north)}}
+]
+\node[fill=gsvblue,text=white,font=\bfseries\small,
+      rounded corners=3pt,inner sep=5pt,minimum width=4cm]
+      (root) {Ballast degradation literature}
+  child {node[fill=gsvlight,draw=gsvblue,rounded corners=2pt,
+              inner sep=3pt,minimum width=2.6cm,align=center]
+              {Track\\system}
+        child[grow=down,sibling distance=1.6cm]
+            {node[align=center,font=\scriptsize]
+                {functional\\requirements\\\textit{(\S2.1)}}}}
+  child {node[fill=gsvlight,draw=gsvblue,rounded corners=2pt,
+              inner sep=3pt,minimum width=2.6cm,align=center]
+              {Degradation\\mechanisms}
+        child[grow=down,sibling distance=1.6cm]
+            {node[align=center,font=\scriptsize]
+                {fouling, breakage,\\\FIIN\\\textit{(\S2.2)}}}}
+  child {node[fill=gsvlight,draw=gsvblue,rounded corners=2pt,
+              inner sep=3pt,minimum width=2.6cm,align=center]
+              {Laboratory\\characterisation}
+        child[grow=down,sibling distance=1.6cm]
+            {node[align=center,font=\scriptsize]
+                {drop-weight,\\cyclic-triaxial\\\textit{(\S2.3)}}}}
+  child {node[fill=gsvlight,draw=gsvblue,rounded corners=2pt,
+              inner sep=3pt,minimum width=2.6cm,align=center]
+              {Reinforcement\\methods}
+        child[grow=down,sibling distance=1.6cm]
+            {node[align=center,font=\scriptsize]
+                {under-ballast\\mats\\\textit{(\S2.4)}}}}
+  child {node[fill=gsvlight,draw=gsvblue,rounded corners=2pt,
+              inner sep=3pt,minimum width=2.6cm,align=center]
+              {3D particle\\morphology}
+        child[grow=down,sibling distance=1.6cm]
+            {node[align=center,font=\scriptsize]
+                {structured-light\\scanning, paired\\protocols
+                 \textit{(\S2.5)}}}};
+
+% Synthesis row
+\node[below=2.6cm of root,fill=boxmech!85,text=white,
+      font=\bfseries\small,rounded corners=3pt,inner sep=5pt,
+      minimum width=8cm,align=center]
+      (syn) {Synthesis: two gaps identified for the present work
+             \textit{(\S2.6)}};
+\draw[gsvblue!60,line width=0.8pt,->,>=Stealth,dashed]
+    ($(root.south)+(0,-0.4cm)$)
+    -- ++(0,-2.2cm);
+\end{tikzpicture}
+\caption{Taxonomy of the ballast-degradation literature reviewed in
+         this chapter. The five primary themes converge in
+         \cref{sec:lit-synthesis}, which identifies two open gaps---an
+         \emph{apparatus gap} (no large-scale drop-weight apparatus
+         calibrated to the Indian Railways stress envelope) and a
+         \emph{characterisation gap} (no paired bulk-and-grain
+         3D-morphology study across a factorial pad--base--energy
+         grid)---that the present thesis is designed to fill.}
+\label{fig:lit-taxonomy}
+\end{figure}
+
 \section{The ballast layer in the railway track system}
 \label{sec:lit-layer}
 
