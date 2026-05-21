@@ -175,8 +175,8 @@
     \vspace{1pt}%
     \hbox to\headwidth{%
         \color{gsvaccent!70}\leaders\hrule height 0.3pt\hfill}}
-\fancyhead[L]{\color{gsvblue}\nouppercase{\small\textsc{\leftmark}}}
-\fancyhead[R]{\color{gsvblue}\small\textit{\thesisshorttitle}%
+\fancyhead[L]{\color{gsvblue}\nouppercase{\footnotesize\textsc{\leftmark}}}
+\fancyhead[R]{\color{gsvblue}\footnotesize\textit{\thesisshorttitle}%
               \;\textbar\;\textbf{\thepage}}
 \fancyfoot[C]{}
 \fancypagestyle{plain}{%
@@ -389,6 +389,7 @@
 \newcommand{\dPsi}{\ensuremath{\%\Delta\Psi}}
 \newcommand{\dC}{\ensuremath{\%\Delta C}}
 \newcommand{\DegC}{\ensuremath{^{\circ}\mathrm{C}}}
+\newcommand{\IQR}{\ensuremath{\mathrm{IQR}}}
 
 % Test-label macros (canonical 9-test matrix)
 \newcommand{\testlabel}[1]{\textsf{\small #1}}
@@ -450,6 +451,7 @@
 \appendix
 \include{chapters/14_appendix_a}
 \include{chapters/15_appendix_b}
+\include{chapters/15a_appendix_c_statistics}
 
 % About-the-authors page (back matter)
 \include{chapters/16_about_authors}

@@ -1,7 +1,7 @@
 % =============================================================================
 %  CHAPTER 3 - MATERIALS AND METHODOLOGY
 % =============================================================================
-\chapter{Materials and Methodology}
+\chapter[Methodology]{Materials and Methodology}
 \label{chap:methodology}
 
 \chapterquote{If you cannot weigh, measure, or photograph it, you cannot
@@ -439,6 +439,116 @@ tolerance callouts, and the safety-interlock documentation are set out in
 the utility patent application filed for this apparatus.
 
 \begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=0.9,>=Stealth,every node/.style={font=\footnotesize}]
+    % --- Frame columns (4 guide rods) ---
+    \draw[gsvblue!40,line width=1.5pt] (-3.2,-3.2) -- (-3.2,7.2);
+    \draw[gsvblue!40,line width=1.5pt] ( 3.2,-3.2) -- ( 3.2,7.2);
+    \node[font=\scriptsize,gsvblue,rotate=90] at (-3.7,2)
+        {\bfseries Guide column (4)};
+
+    % --- Top crosshead ---
+    \fill[gsvblue!80] (-3.4, 7.0) rectangle (3.4, 7.4);
+    \draw[gsvblue,thick] (-3.4, 7.0) rectangle (3.4, 7.4);
+    \node[white,font=\scriptsize\bfseries] at (0,7.2) {Top crosshead};
+
+    % --- Release / lifting mechanism ---
+    \draw[gsvaccent,thick,fill=gsvaccent!20] (-0.5,6.3) rectangle (0.5,7.0);
+    \node[font=\tiny,gsvaccent!80!black] at (0,6.65) {release};
+    \node[font=\scriptsize,gsvblue!90!black,anchor=west]
+        at (0.8,6.65) {Mechanical release latch};
+
+    % --- Hammer (50 kg) ---
+    \draw[gsvblue,thick,fill=gsvblue!85,rounded corners=2pt]
+        (-1.7,4.6) rectangle (1.7,5.7);
+    \node[white,font=\bfseries\small] at (0,5.15) {Hammer (50\,kg)};
+    % Drop arrow
+    \draw[->,line width=1.4pt,red!70] (0,4.55) -- (0,3.65)
+        node[midway,right=4pt,red!80,font=\scriptsize] {drop $h$};
+    % Drop-height markings
+    \draw[gsvblue!50,dotted] (1.7,5.15) -- (3.3,5.15);
+    \node[font=\tiny,gsvblue!70,anchor=west] at (3.3,5.15)
+        {hammer release elevation};
+
+    % --- Striker plate ---
+    \draw[gray!60,thick,fill=gray!40] (-1.5,3.3) rectangle (1.5,3.55);
+    \node[font=\scriptsize,gsvblue!90!black,anchor=west] at (1.7,3.43)
+        {Striker plate (\SI{300}{\milli\metre})};
+
+    % --- In-line load cell ---
+    \draw[gsvaccent!80!black,thick,fill=gsvaccent!30]
+        (-0.85,3.0) rectangle (0.85,3.3);
+    \node[font=\tiny,gsvaccent!80!black] at (0,3.15) {load cell};
+    \node[font=\scriptsize,gsvblue!90!black,anchor=west] at (1.7,3.15)
+        {In-line \SI{5}{\tonne} load cell};
+
+    % --- Bearing plate ---
+    \draw[gray!60,thick,fill=gray!40] (-1.6,2.7) rectangle (1.6,3.0);
+    \node[font=\scriptsize,gsvblue!90!black,anchor=west] at (1.7,2.85)
+        {Bearing plate};
+
+    % --- Mould (cylindrical specimen container) ---
+    \draw[gsvblue,thick,fill=gsvblue!8]
+        (-2.3,0.5) -- (-2.3,2.7) -- (-2.0,2.7) -- (-2.0,0.5)
+        -- (2.0,0.5) -- (2.0,2.7) -- (2.3,2.7) -- (2.3,0.5)
+        -- cycle;
+    % Specimen contents -- ballast layer
+    \begin{scope}[clip]
+        \path (-2.0,0.9) rectangle (2.0,2.65);
+    \end{scope}
+    \foreach \x/\y/\r in {
+        -1.6/2.4/0.16, -1.1/2.45/0.18, -0.4/2.4/0.15, 0.3/2.5/0.17, 1.0/2.4/0.16, 1.55/2.45/0.16,
+        -1.7/2.0/0.18, -1.0/2.05/0.16, -0.2/2.0/0.18, 0.5/2.1/0.16, 1.2/2.0/0.17, 1.7/2.05/0.15,
+        -1.5/1.6/0.17, -0.7/1.55/0.18, 0.0/1.6/0.16, 0.7/1.55/0.18, 1.4/1.6/0.16,
+        -1.7/1.15/0.16, -1.0/1.2/0.17, -0.2/1.15/0.16, 0.5/1.2/0.18, 1.2/1.15/0.16, 1.7/1.2/0.15}
+        \fill[gray!55] (\x,\y) circle (\r);
+    \node[font=\scriptsize,gsvblue!90!black,anchor=west] at (2.6,2.0)
+        {Ballast fill (20\,kg)};
+    % Pad layer
+    \fill[orange!50] (-2.0,0.85) rectangle (2.0,0.95);
+    \node[font=\scriptsize,orange!80!black,anchor=west] at (2.6,0.9)
+        {Pad (PUBM/RUBM/UR)};
+    % Base layer
+    \fill[gsvblue!90] (-2.0,0.55) rectangle (2.0,0.85);
+    \node[font=\scriptsize,gsvblue!90!black,anchor=west] at (2.6,0.7)
+        {Base (FB / RB)};
+
+    % --- Floor / base of apparatus ---
+    \fill[gray!50] (-3.4,-0.2) rectangle (3.4,0.5);
+    \draw[gsvblue,thick] (-3.4,-0.2) rectangle (3.4,0.5);
+    \node[white,font=\scriptsize\bfseries] at (0,0.15) {Steel base plate};
+
+    % --- Concrete floor (hatched) ---
+    \fill[gray!30,pattern=north east lines] (-3.4,-1.5) rectangle (3.4,-0.2);
+    \node[font=\scriptsize,gray!50!black,anchor=west] at (-3.0,-0.85)
+        {Reinforced concrete floor};
+
+    % --- Dimensional callouts ---
+    \draw[<->,gsvblue!70] (-3.6, 5.15) -- (-3.6, 3.55)
+        node[midway,left,gsvblue,font=\scriptsize,align=right]
+        {200--450\,mm\\drop range};
+
+    % --- Digital indicator ---
+    \draw[gsvblue,thick,fill=white]
+        (3.9, 4.0) rectangle (5.1, 5.0);
+    \node[font=\scriptsize\bfseries,gsvblue] at (4.5, 4.7) {LCD};
+    \node[font=\tiny,red!80,font=\ttfamily] at (4.5, 4.4) {37.0\,kN};
+    \node[font=\tiny,gsvblue] at (4.5, 4.15) {peak force};
+    \draw[->,gsvblue!60,thick] (3.6, 3.15) -- (3.9, 4.0);
+\end{tikzpicture}
+\caption{Schematic of the modified large-scale drop-weight impact
+         apparatus. The hammer (\SI{50}{\kilogram}) is locked at a
+         release elevation between \SI{200}{\milli\metre} and
+         \SI{450}{\milli\metre} above the striker plate. The in-line
+         \SI{5}{\tonne} load cell records the peak contact force at
+         every blow and displays the value on the LCD indicator (right).
+         The specimen mould holds the layered base, pad, and
+         \SI{20}{\kilogram} ballast fill. Four guide columns ensure
+         vertical impact alignment.}
+\label{fig:meth-apparatus-schematic}
+\end{figure}
+
+\begin{figure}[ht]
     \centering
     \begin{subfigure}{0.46\textwidth}
         \centering
@@ -450,10 +560,11 @@ the utility patent application filed for this apparatus.
         \includegraphics[width=\linewidth]{image18.png}
         \caption{Load-transfer assembly.}
     \end{subfigure}
-    \caption{Modified drop-weight impact apparatus designed and commissioned
-             at \acrshort{GSV}. (a) Overall view of the apparatus and its
-             frame. (b) Close-up of the load-transfer assembly (bearing
-             plate, \SI{5}{\tonne} load cell, striker plate) and the digital
+    \caption{Modified drop-weight impact apparatus (photographs
+             matching Figure~\ref{fig:meth-apparatus-schematic}). (a)
+             Overall view of the apparatus and its frame. (b) Close-up
+             of the load-transfer assembly (bearing plate,
+             \SI{5}{\tonne} load cell, striker plate) and the digital
              peak-force display.}
     \label{fig:meth-apparatus}
 \end{figure}

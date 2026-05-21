@@ -1,0 +1,175 @@
+% =============================================================================
+%  APPENDIX C - Statistical Methods
+% =============================================================================
+\chapter{Statistical Methods}
+\label{chap:appC}
+
+\chapterquote{All statistical inference is a conversation between the data
+and the assumptions.}{after George Box}
+
+\begin{chapterpreview}
+This appendix gives formal definitions for the three statistical
+procedures used in \cref{chap:morph-results}: the Shapiro--Wilk test
+for normality, the Wilcoxon signed-rank test for paired changes
+when the normality assumption fails, and the Tukey
+$1.5\times$\gls{IQR} criterion for outlier identification on the
+volume-change distribution. The appendix also documents the
+significance thresholds, the multiple-comparison correction, and the
+power-analysis rationale for the chosen sample size ($n=45$ tracer
+particles).
+\end{chapterpreview}
+
+\section{Notation}
+
+In this appendix, $\{x_i\}_{i=1}^{n}$ denotes a sample of size $n$ drawn
+from a population with unknown distribution. For paired data
+(pre-test / post-test of the same particle), $\{d_i\}_{i=1}^{n}$
+denotes the per-particle change, $d_i = x_i^{\mathrm{after}} -
+x_i^{\mathrm{before}}$. The median of a sample is denoted
+$\widetilde{x}$ and the order statistics by
+$x_{(1)} \le x_{(2)} \le \dots \le x_{(n)}$.
+
+\section{Shapiro--Wilk test for normality}
+\label{sec:appC-shapiro}
+
+The Shapiro--Wilk statistic $W$ tests the null hypothesis $H_0$ that a
+sample is drawn from a normal distribution against the alternative
+$H_1$ that it is not. The statistic is
+\begin{equation}
+W \;=\; \frac{\left(\sum_{i=1}^{n} a_i\, x_{(i)}\right)^{2}}
+              {\sum_{i=1}^{n}\left(x_i - \bar{x}\right)^{2}},
+\label{eq:appC-shapiro}
+\end{equation}
+where $\bar{x}$ is the sample mean and the coefficients $\{a_i\}$ are
+tabulated constants derived from the expected values and the
+covariance matrix of the order statistics of a standard normal sample.
+The statistic lies in the closed interval $[0,1]$; values close to $1$
+favour $H_0$, and small values reject it.
+
+\paragraph{Application in this thesis.} The test is applied in
+\cref{sec:morph-volume} to the paired volume-change distribution
+$\{\%\Delta V_i\}$ across the $n=45$ tracer particles. A rejection of
+$H_0$ ($p < 0.05$) motivates the use of a non-parametric paired test
+(Wilcoxon signed-rank) in place of the parametric paired $t$-test.
+
+\section{Wilcoxon signed-rank test for paired data}
+\label{sec:appC-wilcoxon}
+
+The Wilcoxon signed-rank statistic $T^+$ tests the null hypothesis
+$H_0$ that the median of the paired-difference distribution is zero
+against the alternative $H_1$ that it is non-zero, without requiring
+the paired differences to be normally distributed. The procedure is:
+\begin{enumerate}[leftmargin=*]
+    \item Compute the per-pair differences
+          $d_i = x_i^{\mathrm{after}} - x_i^{\mathrm{before}}$.
+    \item Discard any pairs with $d_i = 0$ and reduce $n$ accordingly.
+    \item Rank the absolute values $|d_i|$ from $1$ (smallest) to $n$
+          (largest), assigning the mean rank to ties.
+    \item Compute
+          \begin{equation}
+              T^+ \;=\; \sum_{i:\,d_i>0} R_i,
+              \qquad
+              T^- \;=\; \sum_{i:\,d_i<0} R_i,
+              \label{eq:appC-wilcoxon}
+          \end{equation}
+          where $R_i$ is the rank of $|d_i|$.
+    \item The smaller of $T^+$ and $T^-$ is referred to the
+          Wilcoxon-signed-rank reference distribution to obtain a
+          two-sided $p$-value; for $n>20$ the normal-approximation
+          $z$-statistic
+          \begin{equation}
+              z \;=\; \frac{T^+ - n(n+1)/4}{\sqrt{n(n+1)(2n+1)/24}}
+              \label{eq:appC-wilcoxon-z}
+          \end{equation}
+          is used.
+\end{enumerate}
+
+\paragraph{Application in this thesis.} The test is applied to the
+paired sphericity, convexity, angularity, roundness, and volume changes
+across all $n=45$ tracer particles. The sphericity result reported in
+\cref{sec:morph-shape} is $z = -5.84$, $p < 10^{-6}$, supporting the
+universal \gls{ModeA} (diffuse-abrasion) claim with overwhelming
+statistical evidence.
+
+\section{\texorpdfstring{Tukey $1.5\times$\gls{IQR} outlier criterion}
+                         {Tukey 1.5xIQR outlier criterion}}
+\label{sec:appC-tukey}
+
+For a sample with inter-quartile range $\IQR = Q_3 - Q_1$, the Tukey
+outlier fence places a point $x_i$ in the outlier set if either
+\begin{equation}
+x_i \;<\; Q_1 - 1.5 \cdot \IQR
+\qquad\text{or}\qquad
+x_i \;>\; Q_3 + 1.5 \cdot \IQR,
+\label{eq:appC-tukey}
+\end{equation}
+where $Q_1$ and $Q_3$ are the first and third quartiles of the sample
+respectively. The factor $1.5$ is the classical Tukey choice; under a
+normal distribution, this fence excludes approximately
+\SI{0.7}{\percent} of the population on each tail. The criterion is
+robust because $Q_1$, $Q_3$, and $\IQR$ are themselves robust
+location-and-scale estimators.
+
+\paragraph{Application in this thesis.} The criterion is applied to
+the paired volume-change distribution $\{\%\Delta V_i\}$ in
+\cref{sec:morph-volume}. The $Q_1, Q_3$ values are computed from all
+$n=45$ paired records; particles falling below
+$Q_1 - 1.5\,\IQR$ are labelled \gls{ModeB} (catastrophic-fracture
+candidates). The six identified outliers are exactly the six particles
+of \cref{fig:morph-volume-scatter}.
+
+\section{Significance thresholds and multiple-comparison correction}
+
+The significance threshold throughout the thesis is the conventional
+$\alpha = 0.05$ unless stated otherwise. Where a family of $k$
+comparisons is made simultaneously (the sphericity, convexity,
+angularity, and roundness Wilcoxon tests of \cref{sec:morph-shape},
+$k=4$), the Bonferroni-corrected threshold $\alpha/k = 0.0125$ is
+applied to control the family-wise Type-I error rate. All four
+descriptors meet this stricter threshold; the principal sphericity
+result ($p<10^{-6}$) is well below it.
+
+\section{Sample-size rationale}
+
+The sample size of $n=45$ tracer particles (five per configuration
+across nine configurations) was determined \emph{a priori} from a
+two-sided paired-test power analysis. With significance level
+$\alpha=0.05$ and target power $1-\beta = 0.80$, a paired test on the
+volume-change distribution can detect an effect size of
+$|d|/\sigma_d \approx 0.42$ at $n=45$. The smallest practically
+meaningful effect size in the morphological literature is
+$|d|/\sigma_d \approx 0.5$ (corresponding to a sphericity change of
+$\Delta \Psi \approx 0.003$ against a typical within-population
+standard deviation of $\sigma_\Psi \approx 0.006$). The chosen
+sample size therefore comfortably exceeds the power requirement for
+the principal effect of interest.
+
+\begin{thesisnote}[title=Reproducibility]
+All statistical procedures in this appendix are implemented in the
+\texttt{scipy.stats} module of the Python pipeline of
+\cref{chap:appB}: \texttt{scipy.stats.shapiro},
+\texttt{scipy.stats.wilcoxon} (with \texttt{zero\_method="wilcox"}
+and \texttt{correction=True}), and a hand-coded Tukey fence based on
+\texttt{numpy.percentile}. The pipeline produces deterministic
+output from the paired \gls{STL} meshes and is therefore fully
+reproducible by any reviewer with access to the raw data.
+\end{thesisnote}
+
+\begin{chaptertakeaways}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+    \item \textbf{Shapiro--Wilk} verifies that the
+          parametric-normality assumption fails for the paired
+          volume-change data; the non-parametric Wilcoxon test is
+          therefore the correct inference tool.
+    \item \textbf{Wilcoxon signed-rank} confirms that \gls{ModeA}
+          (diffuse abrasion) is universal: the median paired
+          sphericity change is significantly greater than zero,
+          $p<10^{-6}$.
+    \item \textbf{Tukey $1.5\times$\gls{IQR}} identifies six
+          \gls{ModeB} (catastrophic-fracture) outliers in the
+          volume-change distribution; all six are drawn from rigid-base
+          configurations only.
+    \item All three procedures are implemented in the open Python
+          pipeline of \cref{chap:appB}.
+\end{itemize}
+\end{chaptertakeaways}

@@ -1,67 +1,143 @@
 % =============================================================================
-%  List of Symbols
+%  Notation -- consolidated symbols + units + dimensions, grouped by theme
 % =============================================================================
 \cleardoublepage
-\chapter*{List of Symbols}
-\addcontentsline{toc}{chapter}{List of Symbols}
+\chapter*{Notation}
+\addcontentsline{toc}{chapter}{Notation}
 \thispagestyle{plain}
-\markboth{List of Symbols}{}
+\markboth{Notation}{}
 
-\begin{longtable}{@{}p{0.22\textwidth}p{0.72\textwidth}@{}}
-    \toprule
-    \rowcolor{tablehdr}
-    {\color{white}\textbf{Symbol}}
-    & {\color{white}\textbf{Meaning (units)}}\\
-    \midrule
-    \endfirsthead
-    \toprule
-    \rowcolor{tablehdr}
-    {\color{white}\textbf{Symbol}}
-    & {\color{white}\textbf{Meaning (units)}}\\
-    \midrule
-    \endhead
-    \bottomrule
-    \endlastfoot
-    $A$           & Surface area of a particle (\si{\milli\metre\squared})\\
-    $\Ach$        & Convex-hull surface area (\si{\milli\metre\squared})\\
-    $a,b,c$       & Semi-axes of best-fit ellipsoid (\si{\milli\metre}),
-                    $a\ge b\ge c$\\
-    $C$           & Convexity $= V/\Vch$ (dimensionless)\\
-    $D$           & Mould internal diameter (\si{\milli\metre})\\
-    $\Deq$        & Equivalent spherical diameter
-                    $=\left(6V/\pi\right)^{1/3}$ (\si{\milli\metre})\\
-    $\dmax$       & Maximum particle size in a gradation (\si{\milli\metre})\\
-    $E$           & Elongation $= I/L$ (dimensionless)\\
-    $F$           & Flatness $= S/I$ (dimensionless); peak hammer force
-                    (\si{\kilo\newton})\\
-    $g$           & Gravitational acceleration,
-                    \SI{9.81}{\metre\per\second\squared}\\
-    $h$           & Drop height of hammer
-                    (\si{\milli\metre} or \si{\metre})\\
-    $I$           & Intermediate bounding-box dimension (\si{\milli\metre})\\
-    $\Ke$         & Kinetic energy of hammer at impact $= mgh$
-                    (\si{\joule})\\
-    $L$           & Long bounding-box dimension (\si{\milli\metre})\\
-    $L/S$         & Aspect ratio (dimensionless)\\
-    $(L+I)/(2S)$  & Flatness index (dimensionless)\\
-    $m$           & Hammer mass (\si{\kilogram})\\
-    $N$           & Number of blows (dimensionless)\\
-    $n$           & Sample size (dimensionless)\\
-    $p$           & Statistical $p$-value (dimensionless)\\
-    $R$           & Roundness descriptor (dimensionless, scanner-specific)\\
-    $S$           & Short bounding-box dimension (\si{\milli\metre})\\
-    $T$           & Surface-texture index $= A/\Ach$ (dimensionless)\\
-    $t$           & Student's $t$-statistic (dimensionless)\\
-    $V$           & Volume of a particle (\si{\milli\metre\cubed})\\
-    $\Vch$        & Convex-hull volume (\si{\milli\metre\cubed})\\
-    $\sigma$      & Nominal contact stress at specimen surface
-                    (\si{\kilo\pascal})\\
-    $\Delta X$    & Change in descriptor
-                    $X = X_{\text{after}} - X_{\text{before}}$\\
-    $\%\Delta X$  & Percentage change in
-                    $X = \Delta X / X_{\text{before}} \times 100$\\
-    $\Psi$        & Sphericity
-                    $= \pi^{1/3}\,(6V)^{2/3}/A$
-                    \citep{Wadell1932}\\
-    $\kappa_{s}$  & Sphericity ratio $= \Deq/L$ (dimensionless)\\
-\end{longtable}
+\noindent
+Symbols used throughout the thesis are listed below, grouped by theme.
+SI units follow the conventions of \texttt{siunitx}; dimensionless
+quantities are marked $[-]$. Acronyms (e.g.\ PUBM, RUBM, FIIN, RDSO,
+STL) are listed in the \emph{List of Abbreviations}.
+
+\vspace{0.6em}
+
+% -----------------------------------------------------------------------------
+\subsection*{\color{gsvblue}Apparatus and loading}
+
+{\small
+\renewcommand{\arraystretch}{1.12}
+\rowcolors{2}{rowbg}{white}
+\begin{tabular}{@{}p{0.18\textwidth}p{0.62\textwidth}p{0.14\textwidth}@{}}
+\toprule
+\rowcolor{tablehdr}
+{\color{white}\textbf{Symbol}} & {\color{white}\textbf{Meaning}} & {\color{white}\textbf{Units}}\\
+\midrule
+$m$            & Hammer mass                                         & \si{\kilogram} \\
+$h$            & Hammer drop height (above pad)                       & \si{\milli\metre} or \si{\metre} \\
+$g$            & Gravitational acceleration ($=9.81$)                 & \si{\metre\per\second\squared} \\
+$\Ke$          & Kinetic energy of hammer at impact, $mgh$            & \si{\joule} \\
+$D$            & Mould internal diameter                              & \si{\milli\metre} \\
+$\Ap$          & Cross-sectional area of pad/specimen                 & \si{\milli\metre\squared} \\
+$F$            & Peak hammer force (in-line load cell)                & \si{\kilo\newton} \\
+$\sigma$       & Nominal contact stress at specimen surface, $F/\Ap$  & \si{\kilo\pascal} \\
+$N$            & Cumulative number of impact blows                    & $[-]$ \\
+\bottomrule
+\end{tabular}}
+
+\vspace{0.7em}
+
+% -----------------------------------------------------------------------------
+\subsection*{\color{gsvblue}Bulk-specimen response}
+
+{\small
+\renewcommand{\arraystretch}{1.12}
+\rowcolors{2}{rowbg}{white}
+\begin{tabular}{@{}p{0.18\textwidth}p{0.62\textwidth}p{0.14\textwidth}@{}}
+\toprule
+\rowcolor{tablehdr}
+{\color{white}\textbf{Symbol}} & {\color{white}\textbf{Meaning}} & {\color{white}\textbf{Units}}\\
+\midrule
+$s$            & Net cumulative axial settlement (post-first-blow)   & \si{\milli\metre} \\
+$\Delta s/\Delta N$ & Incremental settlement per blow over a five-blow interval & \si{\milli\metre\per\blow} \\
+$\PoneM$       & Mass-percent passing the \SI{0.075}{\milli\metre} sieve & \si{\percent} \\
+$\PtwoM$       & Mass-percent passing the \SI{20}{\milli\metre} sieve   & \si{\percent} \\
+$\FIIN$        & Indian Railway Fouling Index, $\PoneM + \PtwoM$       & \si{\percent} \\
+\bottomrule
+\end{tabular}}
+
+\vspace{0.7em}
+
+% -----------------------------------------------------------------------------
+\subsection*{\color{gsvblue}Per-particle geometry (3D mesh-derived)}
+
+{\small
+\renewcommand{\arraystretch}{1.12}
+\rowcolors{2}{rowbg}{white}
+\begin{tabular}{@{}p{0.18\textwidth}p{0.62\textwidth}p{0.14\textwidth}@{}}
+\toprule
+\rowcolor{tablehdr}
+{\color{white}\textbf{Symbol}} & {\color{white}\textbf{Meaning}} & {\color{white}\textbf{Units}}\\
+\midrule
+$V$            & Particle volume                                     & \si{\milli\metre\cubed} \\
+$A$            & Particle surface area                               & \si{\milli\metre\squared} \\
+$\Vch$         & Convex-hull volume                                  & \si{\milli\metre\cubed} \\
+$\Ach$         & Convex-hull surface area                            & \si{\milli\metre\squared} \\
+$\Deq$         & Equivalent spherical diameter,
+                 $\left(6V/\pi\right)^{1/3}$                          & \si{\milli\metre} \\
+$L, I, S$      & Long, intermediate, and short bounding-box dimensions
+                 ($L\ge I\ge S$)                                      & \si{\milli\metre} \\
+$a,b,c$        & Semi-axes of best-fit ellipsoid ($a\ge b\ge c$)     & \si{\milli\metre} \\
+$\Psi$         & Sphericity = $\pi^{1/3}(6V)^{2/3}/A$
+                 \citep{Wadell1932}                                   & $[-]$ \\
+$\kappa_{s}$   & Sphericity ratio = $\Deq/L$                          & $[-]$ \\
+$C$            & Convexity = $V/\Vch$                                 & $[-]$ \\
+$T$            & Surface-texture index = $A/\Ach$                    & $[-]$ \\
+$E$            & Elongation = $I/L$                                  & $[-]$ \\
+$\Ab/\Ap$      & Flatness = $S/I$ (alternative form $(L+I)/(2S)$)    & $[-]$ \\
+$R$            & Roundness descriptor (scanner-specific)             & $[-]$ \\
+$\dmax$        & Maximum gradation particle size                      & \si{\milli\metre} \\
+\bottomrule
+\end{tabular}}
+
+\vspace{0.7em}
+
+% -----------------------------------------------------------------------------
+\subsection*{\color{gsvblue}Paired-change operators}
+
+{\small
+\renewcommand{\arraystretch}{1.12}
+\rowcolors{2}{rowbg}{white}
+\begin{tabular}{@{}p{0.18\textwidth}p{0.62\textwidth}p{0.14\textwidth}@{}}
+\toprule
+\rowcolor{tablehdr}
+{\color{white}\textbf{Symbol}} & {\color{white}\textbf{Meaning}} & {\color{white}\textbf{Units}}\\
+\midrule
+$\Delta X$     & Change in descriptor $X$:
+                 $X_{\text{after}} - X_{\text{before}}$                & units of $X$ \\
+$\%\Delta X$   & Percentage change in $X$:
+                 $\Delta X / X_{\text{before}} \times 100$             & \si{\percent} \\
+$\overline{\Delta X}$ & Population mean of paired changes              & units of $X$ \\
+$\widetilde{\Delta X}$ & Population median of paired changes           & units of $X$ \\
+\bottomrule
+\end{tabular}}
+
+\vspace{0.7em}
+
+% -----------------------------------------------------------------------------
+\subsection*{\color{gsvblue}Statistical quantities}
+
+{\small
+\renewcommand{\arraystretch}{1.12}
+\rowcolors{2}{rowbg}{white}
+\begin{tabular}{@{}p{0.18\textwidth}p{0.62\textwidth}p{0.14\textwidth}@{}}
+\toprule
+\rowcolor{tablehdr}
+{\color{white}\textbf{Symbol}} & {\color{white}\textbf{Meaning}} & {\color{white}\textbf{Units}}\\
+\midrule
+$n$            & Sample size                                          & $[-]$ \\
+$\bar{x}$      & Sample arithmetic mean                               & units of $x$ \\
+$\widetilde{x}$& Sample median                                        & units of $x$ \\
+$Q_1, Q_3$     & First and third quartiles                            & units of $x$ \\
+$\IQR$         & Inter-quartile range = $Q_3 - Q_1$                   & units of $x$ \\
+$W$            & Shapiro--Wilk statistic                              & $[-]$ \\
+$T^+, T^-$     & Wilcoxon signed-rank sums                            & $[-]$ \\
+$z$            & Standard-normal test statistic                       & $[-]$ \\
+$t$            & Student's $t$-statistic                              & $[-]$ \\
+$p$            & Statistical $p$-value                                & $[-]$ \\
+$\alpha$       & Significance threshold (= 0.05 unless stated)        & $[-]$ \\
+\bottomrule
+\end{tabular}}
