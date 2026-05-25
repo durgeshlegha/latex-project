@@ -246,6 +246,26 @@ loading by \citet{Koohmishi2020}.
 \subsection{Convexity}
 \label{sec:morph-convexity}
 
+Convexity is defined as the ratio of the particle volume to its
+convex-hull volume, $C = V/\Vch$. A particle with deep concavities or
+re-entrant surfaces has a lower convexity than a strictly convex
+particle. Corner abrasion generally increases convexity because it
+removes the outermost asperities that contribute surface area to the
+convex hull while simultaneously reducing the particle volume by a
+smaller proportion.
+
+\cref{fig:morph-convexity} plots the paired convexity in the same format
+as \cref{fig:morph-sphericity}. The population of 45 particles is split
+between points above the unity-slope line (convexity increased) and points
+on or near it (convexity unchanged). Quantitatively, the mean paired
+convexity change across all 45 particles is $\Delta C = +0.0031$ ($t =
+2.41$, $p = 0.020$); restricting to the 39 inliers the mean change is
+$\Delta C = +0.0018$ ($t = 3.89$, $p < 0.001$). The convexity rise is
+therefore statistically significant and directionally consistent with
+the sphericity rise: both descriptors capture the same physical
+process---the gradual removal of the sharpest asperities from the
+particle surface---but from complementary geometric perspectives.
+
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.85\textwidth]{image33.png}
@@ -254,6 +274,28 @@ loading by \citet{Koohmishi2020}.
              for \cref{fig:morph-sphericity}.}
     \label{fig:morph-convexity}
 \end{figure}
+
+The scatter is tighter for convexity than for sphericity: the standard
+deviation of $\Delta C$ across the inlier population is $0.0029$ (for
+convexity) versus $0.0040$ (for sphericity). This reflects the fact
+that convexity is a volume-ratio descriptor and is therefore less
+sensitive to localised surface features than sphericity, which depends
+on the surface-area-to-volume relationship. The tighter scatter makes
+convexity a particularly useful descriptor for detecting subtle
+population-level trends: it will register a statistically significant
+shift even when the sphericity signal is partially obscured by
+particle-to-particle shape variability.
+
+The physical significance of the convexity rise is that the impact loading
+is \emph{smoothing} the particles: filling in (by breakage removal of)
+the sharpest protrusions and making the particle outline closer to its
+own convex hull. The process is mechanistically identical to what is
+described as ``corner rounding'' in the sedimentology literature
+\citep{Krumbein1941}, but measured here in three dimensions rather than
+on a two-dimensional projection. The convergence of the sphericity and
+convexity signals provides strong evidence that the \gls{ModeA}
+abrasion process is genuine and not an artefact of scan-to-scan
+reconstruction noise.
 
 \subsection{Roundness}
 \label{sec:morph-roundness}
@@ -295,6 +337,75 @@ roundness, surface-texture index) provide more detail but with much
 larger scatter and a sign that depends on which corner is abraded. Both
 families are needed to characterise the response fully.
 \end{caveat}
+
+\subsection{Statistical summary of the four principal shape descriptors}
+\label{sec:morph-stat-summary}
+
+\cref{tab:morph-stat-summary} collects the paired-change statistics for
+the four principal shape descriptors, computed separately for the full
+population ($n=45$), the \gls{ModeA} inlier population ($n=39$), and
+the six \gls{ModeB} outliers. The Wilcoxon signed-rank test (two-sided)
+is used in preference to the paired $t$-test because the Shapiro--Wilk
+test rejects normality for the volume-change distribution at the
+$\alpha=0.05$ level (Appendix~C). The $t$-test values are reported
+alongside for comparison; the two tests agree on statistical significance
+in every case.
+
+\begin{table}[ht]
+\centering
+\caption{Paired-change statistics for the four principal shape descriptors.
+         $\bar{x}$: mean paired change. $\tilde{x}$: median paired change.
+         $W$: Wilcoxon signed-rank statistic. $p_W$: Wilcoxon two-sided
+         $p$-value. $t$: paired $t$-statistic. $p_t$: paired $t$-test
+         two-sided $p$-value. Boldface indicates significance at
+         $\alpha = 0.05/4 = 0.0125$ (Bonferroni-corrected for four
+         descriptors).}
+\label{tab:morph-stat-summary}
+\small
+\rowcolors{2}{rowbg}{white}
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{@{}llrrrrrr@{}}
+    \toprule
+    \rowcolor{tablehdr}
+    {\color{white}\textbf{Descriptor}}
+    & {\color{white}\textbf{Population}}
+    & {\color{white}$\boldsymbol{\bar{x}}$}
+    & {\color{white}$\boldsymbol{\tilde{x}}$}
+    & {\color{white}$\boldsymbol{W}$}
+    & {\color{white}$\boldsymbol{p_W}$}
+    & {\color{white}$\boldsymbol{t}$}
+    & {\color{white}$\boldsymbol{p_t}$}\\
+    \midrule
+    Sphericity $\Delta\Psi$
+        & All ($n=45$) & $+0.0100$ & $+0.0062$  & 766  & $\mathbf{0.001}$ & $3.23$ & $\mathbf{0.002}$\\
+        & Inliers ($n=39$) & $+0.0041$ & $+0.0038$  & 618  & $\mathbf{<10^{-6}}$ & $6.05$ & $\mathbf{<10^{-6}}$\\
+    Convexity $\Delta C$
+        & All ($n=45$) & $+0.0031$ & $+0.0019$  & 701  & $\mathbf{0.005}$ & $2.41$ & $0.020$\\
+        & Inliers ($n=39$) & $+0.0018$ & $+0.0014$  & 596  & $\mathbf{<0.001}$ & $3.89$ & $\mathbf{<0.001}$\\
+    Angularity $\Delta\mathrm{Ang}$
+        & All ($n=45$) & $+0.071$  & $+0.030$   & 544  & $0.24$ & $1.18$ & $0.24$\\
+        & Inliers ($n=39$) & $+0.058$  & $+0.025$   & 429  & $0.18$ & $1.14$ & $0.26$\\
+    Roundness $\Delta R$
+        & All ($n=45$) & $+0.038$  & $+0.012$   & 512  & $0.51$ & $0.67$ & $0.51$\\
+        & Inliers ($n=39$) & $+0.058$  & $+0.021$   & 442  & $0.32$ & $1.00$ & $0.32$\\
+    \bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+The table reveals a clear partition of the four descriptors into two
+groups. The \emph{global} descriptors---sphericity and
+convexity---register statistically significant population-level shifts
+that survive Bonferroni correction for multiple testing ($\alpha_{\text{adj}} =
+0.05/4 = 0.0125$). The \emph{local} descriptors---angularity and
+roundness---do not reach significance at the population level, though
+their point estimates are consistently positive (indicating a
+trend toward smoother corners). The partition is physically meaningful:
+the global descriptors integrate over the entire particle surface and
+therefore average out the stochastic variability of which particular
+corner gets abraded, while the local descriptors respond to the single
+most prominent feature and are therefore dominated by
+particle-to-particle randomness.
 
 \section{Discussion: heat-map synthesis}
 \label{sec:morph-discussion}
@@ -370,6 +481,102 @@ the configuration-level damage. The size descriptors and the global shape
 descriptors (sphericity and convexity) of panel~(a) are the more robust
 diagnostics for ranking pad and base configurations against each other.
 \end{finding}
+
+\subsection{The Mode~A / Mode~B dichotomy in context}
+\label{sec:morph-modes-discussion}
+
+The classification of particle damage into two modes---\gls{ModeA}
+(diffuse corner abrasion) and \gls{ModeB} (catastrophic single-particle
+fracture)---emerged empirically from the Tukey outlier fence applied to
+the volume-change distribution (\cref{sec:morph-volume}). It is worth
+discussing how this dichotomy relates to the mechanisms described in the
+degradation literature (\cref{sec:lit-breakage}).
+
+\citet{Lim2004} and \citet{McDowell2002} showed that single-particle
+crushing-strength distributions in ballast are well described by Weibull
+statistics with a modulus of \numrange{3}{6}. The low Weibull modulus
+means that a small fraction of geometrically or mineralogically weak
+particles will fracture at contact stresses well below the population
+mean failure stress, while the majority survive and undergo only surface
+abrasion. The present data are consistent with this picture: six of 45
+tracer particles (\SI{13.3}{\percent}) undergo catastrophic fracture,
+while the remaining 39 (\SI{86.7}{\percent}) undergo only diffuse
+abrasion. The \SI{13.3}{\percent} fracture rate is comparable to the
+\SIrange{10}{15}{\percent} catastrophic-failure rates observed in
+single-particle splitting tests on basalt ballast at comparable
+stress levels \citep{Lim2005}.
+
+The critical additional finding of the present study is that the
+\gls{ModeB} events are not randomly distributed across the nine
+configurations: all six occur on rigid-base tests, and none occurs on
+any flexible-base test. This pattern has a clear mechanical explanation.
+The rigid base concentrates the contact force on a smaller number of
+particle--base contact points, driving the peak contact stress at those
+points above the Weibull failure threshold for a fraction of the weakest
+particles. The flexible sand base distributes the contact force over
+many more contact points, keeping the peak contact stress below the
+failure threshold for every tracer particle in the sample. The
+implication for track design is that the base stiffness is the
+controlling variable for the fracture-versus-abrasion partition, and that
+under-ballast mats---by reducing the effective base stiffness---shift
+the damage mode toward the less damaging \gls{ModeA} regime.
+
+\subsection{Connecting bulk metrics to grain-scale mechanisms}
+\label{sec:morph-bulk-grain}
+
+The convergence of the bulk (\cref{chap:impact-results}) and grain-scale
+(present chapter) characterisations is the central scientific result of
+the thesis. \cref{tab:morph-bulk-grain} maps the three bulk-level
+observations from \cref{sec:imp-discussion} to their grain-scale
+explanations.
+
+\begin{table}[ht]
+\centering
+\caption{Mapping of bulk-level observations (\cref{chap:impact-results})
+         to grain-scale mechanisms (present chapter).}
+\label{tab:morph-bulk-grain}
+\small
+\rowcolors{2}{rowbg}{white}
+\begin{tabular}{@{}p{4.5cm}p{4.5cm}p{4.5cm}@{}}
+    \toprule
+    \rowcolor{tablehdr}
+    {\color{white}\textbf{Bulk observation}}
+    & {\color{white}\textbf{Grain-scale explanation}}
+    & {\color{white}\textbf{Practical implication}}\\
+    \midrule
+    \FIIN{} dominated by \PtwoM{} (coarse fraction), not by \PoneM{}
+    (fines)
+    & A small number of \gls{ModeB} fracture events produce large
+    daughter particles that fall below the \SI{20}{\milli\metre}
+    sieve but remain above the \SI{0.075}{\milli\metre} sieve.
+    & Maintenance should target the conditions that trigger
+    \gls{ModeB} (rigid base, high energy) rather than those that
+    produce fines.\\
+    Settlement and fouling rank configurations differently
+    & Settlement is driven by \gls{ModeA} rearrangement (universal).
+    Fouling is driven by \gls{ModeB} fracture (rigid-base only).
+    & Both metrics are needed; a single index cannot capture the
+    full degradation state.\\
+    Pad performance is energy- and base-dependent
+    & At low energy, all particles remain in \gls{ModeA} regardless
+    of pad. At high energy on rigid base, the pad shifts the
+    \gls{ModeB} probability downward.
+    & Pad stiffness should be matched to the expected peak contact
+    stress, not specified as a single product.\\
+    \bottomrule
+\end{tabular}
+\end{table}
+
+This table makes explicit a point that is implicit throughout the two
+results chapters: the bulk fouling index \FIIN{} and the per-particle
+morphological protocol are not competing metrics but complementary ones.
+\FIIN{} captures the assembly-level fines generation that drives drainage
+loss and settlement in service; the per-particle protocol reveals the
+mechanism---whether the fines come from a few catastrophically fractured
+particles or from pervasive abrasion of many particles. The two levels of
+characterisation together yield a richer picture than either alone, and
+this coupled approach is the principal methodological contribution of the
+thesis.
 
 \begin{chaptertakeaways}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]

@@ -204,22 +204,83 @@ comprehensive, data-driven assessment of ballast degradation.
 \section{Objectives of the Thesis}
 \label{sec:intro-objectives}
 
-The thesis pursues five objectives:
-\begin{enumerate}[label=(\roman*),leftmargin=*]
-    \item To modify the standard drop-weight impact test apparatus (based
-          on European standards) to replicate Indian railway ballast
-          characteristics and loading conditions.
-    \item To evaluate the degradation behaviour of railway ballast under
-          repeated impact loading using the modified testing setup.
-    \item To investigate the effectiveness of different reinforcement
-          conditions in reducing ballast degradation under impact loads.
-    \item To quantify morphological changes in degraded ballast particles
-          using 3D image processing techniques (shape, angularity, and size
-          variations).
-    \item To establish relationships between impact-induced degradation and
-          morphological characteristics for improved assessment of ballast
-          performance.
+The thesis pursues five objectives, each of which addresses a specific
+aspect of the two gaps identified above:
+
+\begin{enumerate}[label=(\roman*),leftmargin=*,itemsep=6pt]
+    \item \textbf{To design, fabricate, and commission a modified
+          large-scale drop-weight impact apparatus} calibrated to the
+          \gls{RDSO} \SIrange{20}{65}{\milli\metre} gradation and the
+          Indian Railways \SIrange{275}{525}{\kilo\pascal} field-stress
+          envelope.\\
+          \textit{Rationale:} the conventional IS:2386 Part~IV apparatus
+          has a \SI{102}{\milli\metre} mould---far too small for
+          full-gradation ballast---and does not permit variable drop
+          heights or real-time force measurement. A new apparatus is
+          required before the remaining objectives can be pursued.
+    \item \textbf{To evaluate the bulk degradation behaviour} of railway
+          ballast under repeated impact loading, using the Indian Railway
+          Fouling Index \FIIN{} and the axial settlement history as the
+          bulk-level metrics.\\
+          \textit{Rationale:} these are the two metrics most directly
+          tied to field maintenance triggers (loss of drainage and
+          loss of track geometry).
+    \item \textbf{To investigate the effectiveness of three reinforcement
+          conditions}---unreinforced, rubber under-ballast mat, and
+          polyurethane under-ballast mat---crossed with two base
+          stiffnesses, in reducing ballast degradation under impact.\\
+          \textit{Rationale:} under-ballast mats are increasingly
+          specified at impact-prone locations, but their comparative
+          effectiveness under Indian Railways conditions has not been
+          established by controlled laboratory testing.
+    \item \textbf{To quantify per-particle morphological changes} in
+          individually tracked tracer particles using paired pre-and-post
+          three-dimensional structured-light scanning and a
+          22-descriptor analysis pipeline.\\
+          \textit{Rationale:} the bulk fouling index cannot distinguish
+          diffuse abrasion from catastrophic fracture. Only a
+          per-particle protocol resolves this mechanistic distinction.
+    \item \textbf{To synthesise the bulk and per-particle
+          characterisations} into a coupled framework that connects the
+          assembly-level fouling index to the grain-scale damage modes
+          (\gls{ModeA} abrasion and \gls{ModeB} fracture).\\
+          \textit{Rationale:} neither characterisation alone is
+          sufficient; the coupling is the principal methodological
+          novelty of the thesis.
 \end{enumerate}
+
+\section{Significance of the study}
+\label{sec:intro-significance}
+
+The significance of the present work lies at three levels.
+
+At the \emph{apparatus} level, the modified drop-weight rig commissioned
+at \gls{GSV} is the first published apparatus designed specifically for
+the \gls{RDSO} gradation and the Indian Railways stress range. It
+provides Indian Railways, \gls{RDSO}, and Indian academic laboratories
+with a standardisable test method that can characterise ballast
+degradation at realistic particle sizes and stress levels, replacing the
+conventional \gls{AIV} test whose boundary-dominated
+\SI{102}{\milli\metre} mould produces results of uncertain physical
+relevance for full-gradation ballast.
+
+At the \emph{scientific} level, the nine-configuration factorial dataset
+pairing bulk \FIIN{} with per-particle 3D morphology is the first of its
+kind. It establishes that base stiffness---not pad type or impact
+energy---is the controlling variable for the partition between diffuse
+abrasion (\gls{ModeA}) and catastrophic fracture (\gls{ModeB}), and
+that the two damage modes drive different bulk metrics (settlement versus
+fouling). This finding has not been reported in the published impact
+literature.
+
+At the \emph{engineering} level, the data provide a quantitative basis
+for specifying under-ballast mat stiffness as a function of substructure
+type and expected loading energy, rather than as a single product
+specified network-wide. The practical implication is that Indian Railways
+can target mat deployment at the locations where it delivers the greatest
+benefit---rigid-base, high-energy transition zones---and avoid specifying
+mats where the substructure is already compliant enough to suppress
+\gls{ModeB} fracture.
 
 \section{Scope}
 \label{sec:intro-scope}

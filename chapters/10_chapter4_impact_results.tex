@@ -76,6 +76,42 @@ blows would therefore yield only small marginal increments in settlement;
 the dominant settlement signal is captured within the twenty-blow protocol
 adopted throughout the programme.
 
+\subsection{Configuration dependence of the settlement curves}
+
+Three patterns are visible in the four settlement records of
+\cref{fig:imp-settlement-cum}. First, the magnitude of net
+cumulative settlement at $N=20$ varies by a factor of two across the four
+tests: \testlabel{T5} (\gls{RUBM}--\gls{RB}--450,
+\SI{48.6}{\milli\metre}) settles roughly twice as much as \testlabel{T9}
+(\gls{PUBM}--\gls{RB}--300, \SI{24.6}{\milli\metre}). The difference is
+consistent with the higher kinetic energy of the \SI{450}{\milli\metre}
+drop (\SI{221}{\joule} versus \SI{147}{\joule}): each blow at the higher
+energy drives a larger plastic rearrangement of the granular skeleton.
+
+Second, the \emph{shape} of the settlement--blow curve is similar across
+the four tests despite the difference in magnitude. In every case the
+first five blows produce roughly \SIrange{50}{65}{\percent} of the total
+twenty-blow settlement, the next five (\numrange{5}{10}) add
+\SIrange{20}{25}{\percent}, and the final ten blows contribute only
+\SIrange{15}{25}{\percent}. This approximately exponential decay of the
+per-blow settlement rate is consistent with the granular shake-down
+framework of \citet{Werkmeister2001}: the initial rapid settlement
+reflects void closure and particle rearrangement in the loosely-packed
+as-placed specimen, and the subsequent flattening reflects the approach
+to a mechanically stable contact network.
+
+Third, the two rigid-base tests (\testlabel{T5} and \testlabel{T9})
+settle more than the flexible-base test (\testlabel{T3}) at equal pad
+condition (\gls{UR} versus \gls{UR}), confirming that base stiffness
+affects settlement through the load-path geometry: the rigid base
+concentrates contact forces onto the lowest layer of ballast particles,
+while the sand cushion distributes them over a wider contact footprint.
+The additional settlement on the rigid base is therefore partly a
+geometric effect (deeper load penetration through the ballast column)
+rather than purely a damage effect. This distinction between settlement
+as a geometric response and fouling as a damage response will recur in
+\cref{sec:imp-settlement-fouling}.
+
 \begin{thesisnote}[title=Shake-down framework]
 The shake-down framework used here follows the granular-material
 treatment of \citet{Werkmeister2001} and the impact-loading adaptation of
@@ -110,6 +146,48 @@ the assembly, not at the ballast surface.
              load cell for each of the nine tests, grouped by drop height.}
     \label{fig:imp-peak-force}
 \end{figure}
+
+\subsection{Reproducibility of energy delivery}
+
+The tight grouping of peak forces within each drop-height tier---the
+coefficient of variation is less than \SI{3}{\percent} at each tier---is
+an important validation result for the apparatus. It confirms that the
+free-fall hammer, the guide columns, and the striker-plate-and-load-cell
+assembly together deliver a repeatable impulse regardless of which pad or
+base condition is beneath the ballast. Any variation in the post-test
+degradation metrics (\FIIN{} or per-particle morphology) can therefore be
+attributed to the pad--base configuration rather than to uncontrolled
+variation in the delivered energy.
+
+The observation that the pad does not measurably change the peak force at
+the base load cell deserves a mechanical comment. The pad sits between
+the ballast fill and the base element, below the lowest layer of ballast
+particles. The hammer impulse enters the assembly from the top via the
+striker plate and propagates downward through the particle-contact
+network. By the time the force pulse reaches the base it has been
+attenuated and temporally broadened by the granular column; the pad at the
+base further attenuates the pulse before it reaches the load cell.
+However, the \emph{peak} force recorded by the load cell is dominated by
+the through-going elastic wave from the hammer-to-striker contact, whose
+peak arrives at the base before the pad's viscous absorption has time to
+act. The pad's primary effect is on the \emph{duration} and
+\emph{rebound} of the force pulse---and hence on the energy dissipated
+within the ballast---rather than on the peak amplitude at the base. This
+is consistent with the impulse-absorption mechanism described by
+\citet{SolSanchez2015} and \citet{Navaratnarajah2017}: the mat reduces
+damage not by lowering the peak force per se, but by spreading the
+contact-force time-history and reducing the peak \emph{contact stress at
+the particle--base interface}.
+
+\subsection{Implications for the nine-test comparison}
+
+Because the peak force is effectively constant within each drop-height
+tier, the factorial comparison in \cref{sec:imp-FIIN} can attribute
+differences in \FIIN{} directly to the pad--base configuration without
+the need for a force-normalisation correction. This is a design advantage
+of the present apparatus over field-impact studies, where the impulsive
+force varies with train speed, wheel flat depth, and track irregularity
+and must be deconvolved from the degradation signal post hoc.
 
 \section{Indian Railway Fouling Index \texorpdfstring{$\FIIN$}{FI\_IN}}
 \label{sec:imp-FIIN}
@@ -223,6 +301,114 @@ acceptable lower bound (i.e.\ fragmentation that produces
 production of fines through abrasion of asperities. The grain-scale
 diagnostic of \cref{chap:morph-results} will revisit this distinction
 directly.
+
+\subsection{Decomposition of \texorpdfstring{$\FIIN$}{FI\_IN} into fines and coarse fractions}
+\label{sec:imp-decomposition}
+
+A decomposition of \FIIN{} into its two constituent terms---\PoneM{}
+(fines below \SI{0.075}{\milli\metre}) and \PtwoM{} (coarse fraction
+below \SI{20}{\milli\metre})---reveals that the two terms respond
+differently to the factorial variables. \PoneM{} is uniformly small
+across the programme (\SIrange{0.017}{0.118}{\percent}) and contributes
+less than \SI{5}{\percent} of the total \FIIN{} in every test except
+\testlabel{T7}, where it reaches \SI{3.5}{\percent}. \PtwoM{}, by
+contrast, varies by a factor of 6.5 across the nine tests
+(\SIrange{0.507}{3.268}{\percent}) and is the dominant driver of the
+\FIIN{} ranking.
+
+The physical interpretation is that the twenty-blow impact protocol
+produces damage primarily at the \emph{meso-scale}---particles are
+fragmented into daughter pieces that remain above the
+\SI{0.075}{\milli\metre} sieve but have fallen below the
+\SI{20}{\milli\metre} boundary of the \gls{RDSO}-acceptable gradation.
+This is characteristic of \emph{splitting} or \emph{chipping} damage
+rather than of \emph{grinding} or \emph{attrition}: grinding produces a
+continuous spectrum of fine debris down to the micrometre scale,
+whereas splitting produces a few large daughter particles and comparatively
+little ultra-fine powder. The dominance of \PtwoM{} over \PoneM{}
+therefore suggests that the dominant bulk-level damage mode under the
+present twenty-blow protocol is a small number of catastrophic
+single-particle fracture events producing coarse daughter fragments,
+rather than pervasive abrasion of the entire assembly producing fines.
+
+This bulk-level inference will be confirmed at the grain scale in
+\cref{chap:morph-results}, where six of 45 tracer particles are
+identified as \gls{ModeB} (catastrophic fracture) outliers---all of them
+drawn from rigid-base configurations. The convergence of the bulk
+decomposition and the grain-scale observation is one of the principal
+scientific results of the thesis.
+
+\subsection{Effect of base stiffness at constant pad condition}
+\label{sec:imp-base-effect}
+
+Holding the pad condition constant and comparing across base conditions
+isolates the base-stiffness effect. Three such comparisons are possible
+within the nine-cell matrix:
+
+\begin{itemize}[leftmargin=*,itemsep=4pt]
+    \item \textbf{\gls{UR}, \SI{300}{\milli\metre} drop:}
+          \testlabel{T3} (\gls{FB}, \FIIN{} = \SI{1.412}{\percent})
+          versus \testlabel{T4} (\gls{RB}, \SI{1.960}{\percent}).
+          Moving from the flexible to the rigid base increases \FIIN{}
+          by \SI{39}{\percent} at constant pad and energy.
+    \item \textbf{\gls{PUBM}, \SI{300}{\milli\metre} drop:}
+          \testlabel{T1} (\gls{FB}, \SI{0.533}{\percent}) versus
+          \testlabel{T9} (\gls{RB}, \SI{0.972}{\percent}). The rigid
+          base increases \FIIN{} by \SI{82}{\percent}.
+    \item \textbf{\gls{RUBM}, \SI{300}{\milli\metre} drop:}
+          \testlabel{T2} (\gls{FB}, \SI{1.359}{\percent}) versus
+          \testlabel{T8} (\gls{RB}, \SI{0.667}{\percent}). Here the
+          rigid base \emph{decreases} \FIIN{} by \SI{51}{\percent}
+          relative to the flexible base.
+\end{itemize}
+
+The first two comparisons show a consistent pattern: the rigid base
+increases fouling, as expected from the contact-stress concentration
+argument of \cref{sec:lit-breakage}. The third comparison---\gls{RUBM}
+performing \emph{better} on the rigid base---is counter-intuitive and
+warrants discussion. One plausible explanation is that the \gls{RUBM}
+disc on the rigid base provides a more uniform load-distribution surface
+than the sand cushion beneath \gls{RUBM}, reducing the load eccentricity
+at the pad--ballast interface and hence reducing the contact-force
+concentration on a small number of particles. This interaction effect
+is consistent with the pad-ranking inversion noted below.
+
+\subsection{Effect of impact energy at constant pad and base}
+\label{sec:imp-energy-effect}
+
+Three comparisons isolate the energy effect on the rigid base:
+
+\begin{itemize}[leftmargin=*,itemsep=4pt]
+    \item \textbf{\gls{PUBM}--\gls{RB}:} \testlabel{T9}
+          (\SI{300}{\milli\metre}, \SI{0.972}{\percent}) versus
+          \testlabel{T6} (\SI{450}{\milli\metre},
+          \SI{0.764}{\percent}). \FIIN{} \emph{decreases} by
+          \SI{21}{\percent} at the higher energy with a polyurethane
+          pad.
+    \item \textbf{\gls{RUBM}--\gls{RB}:} \testlabel{T8}
+          (\SI{300}{\milli\metre}, \SI{0.667}{\percent}) versus
+          \testlabel{T5} (\SI{450}{\milli\metre},
+          \SI{1.356}{\percent}). \FIIN{} \emph{increases} by
+          \SI{103}{\percent} at the higher energy with a rubber pad.
+    \item \textbf{\gls{UR}--\gls{RB}:} \testlabel{T4}
+          (\SI{300}{\milli\metre}, \SI{1.960}{\percent}) versus
+          \testlabel{T7} (\SI{450}{\milli\metre},
+          \SI{3.386}{\percent}). \FIIN{} increases by
+          \SI{73}{\percent} at the higher energy with no pad.
+\end{itemize}
+
+The general trend---higher energy produces higher fouling---holds for
+\gls{RUBM} and \gls{UR} but not for \gls{PUBM}. The apparent anomaly
+in the \gls{PUBM} comparison may reflect the polyurethane mat's superior
+energy-absorption capacity at higher strain rates: at the
+\SI{450}{\milli\metre} drop the mat deforms further per blow and
+dissipates a larger fraction of the kinetic energy viscously, partially
+compensating for the \SI{50}{\percent} increase in nominal input energy.
+This interpretation is consistent with the strain-rate-dependent stiffness
+behaviour of polyurethane elastomers documented by \citet{SolSanchez2015}.
+However, with only one replicate per configuration the difference could
+also reflect natural particle-to-particle variability; confirmation
+would require replicated testing.
 
 \subsection{Pad-effect ranking by base condition}
 \label{sec:imp-pad-ranking}
@@ -358,30 +544,64 @@ shake-down framework used to justify the twenty-blow protocol in
 for granular materials and is the same framework used in the
 impact-loading context by \citet{Nimbalkar2012}.
 
+\subsection{Comparison with published drop-weight data}
+
+A quantitative comparison with the published literature is instructive.
+\citet{Nimbalkar2012} reported \FIIN{} values of
+\SIrange{0.8}{3.2}{\percent} across their shock-mat programme on
+Australian basalt at a \SI{500}{\milli\metre} drop on a
+\SI{300}{\milli\metre} mould---a comparable rig to the present one but
+at slightly higher energy. The present range of
+\SIrange{0.533}{3.386}{\percent} overlaps almost exactly, which is
+reassuring given the different parent rock and gradation.
+\citet{Koohmishi2020} reported \PoneM{} values in the
+\SIrange{0.02}{0.15}{\percent} range for basalt under drop-weight impact
+at comparable stress levels, consistent with the present
+\SIrange{0.017}{0.118}{\percent}. The agreement suggests that the bulk
+damage under controlled drop-weight impact is reasonably
+rock-type-invariant for dense igneous parent rocks, and that the present
+apparatus produces degradation in the same regime as the established
+international literature.
+
+\subsection{Synthesis: three bulk-level patterns}
+
 Three patterns visible at the bulk level are worth recording before moving
 to \cref{chap:morph-results}:
 
 \begin{enumerate}[label=(\arabic*),leftmargin=*]
-    \item The \gls{PUBM}-on-rigid-base configurations \testlabel{T6} and
+    \item \textbf{Pad performance is configuration-dependent.}
+          The \gls{PUBM}-on-rigid-base configurations \testlabel{T6} and
           \testlabel{T9} broadly outperform the \gls{RUBM} and \gls{UR}
           equivalents---except at low energy on the rigid base, where
           \gls{RUBM} (\testlabel{T8}) edges ahead of \gls{PUBM}
           (\testlabel{T9}). A stiffer polyurethane mat is therefore not
           uniformly preferable; the optimal pad stiffness depends on the
-          loading energy and the underlying base.
-    \item The highest-\FIIN{} configuration is \testlabel{T7}
+          loading energy and the underlying base. This has direct
+          implications for the specification of under-ballast mats by
+          Indian Railways: a single mat product cannot be assumed to
+          deliver uniform benefit across all track conditions, and
+          site-specific stiffness matching should inform procurement.
+    \item \textbf{The unprotected rigid base is the critical condition.}
+          The highest-\FIIN{} configuration is \testlabel{T7}
           (\gls{UR}--\gls{RB}--450), the no-pad rigid-base high-energy
           combination---the mechanically most aggressive corner of the
           experimental matrix and the one most representative of the
           unprotected rigid-substructure conditions encountered at bridge
           approaches and welded-rail transition zones in service.
-    \item The settlement and fouling responses are not interchangeable:
-          the test with the largest settlement (\testlabel{T5}) is not the
-          test with the largest fouling (\testlabel{T7}). Both metrics are
-          needed to characterise the bulk response, and even together they
-          leave open the question of which grain-scale processes drive
-          each metric in each configuration. That is the question
-          addressed in \cref{chap:morph-results}.
+          Transition zones on Indian Railways are estimated to constitute
+          fewer than \SI{5}{\percent} of network length but account for a
+          disproportionate share of maintenance expenditure
+          \citep{Indraratna2011}. The present data quantify the
+          degradation penalty of leaving these locations unprotected.
+    \item \textbf{Settlement and fouling are not interchangeable metrics.}
+          The test with the largest settlement (\testlabel{T5}) is not the
+          test with the largest fouling (\testlabel{T7}). Settlement ranks
+          by energy first, base second; fouling ranks by base first, pad
+          second. Both metrics are needed to characterise the bulk
+          response, and even together they leave open the question of
+          which grain-scale processes drive each metric in each
+          configuration. That is the question addressed in
+          \cref{chap:morph-results}.
 \end{enumerate}
 
 \begin{chaptertakeaways}

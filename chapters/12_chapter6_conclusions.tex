@@ -79,12 +79,17 @@ Both metrics are required for full bulk-level assessment.
 \begin{finding}[title=Conclusion 5 -- Two damage modes]
 \textbf{Mode~A (abrasion):} all 45 tracer particles undergo gradual
 corner abrasion, increasing sphericity ($\Delta\Psi = +0.0041$ for
-inliers, $p < 10^{-6}$) and reducing size across all
-configurations.\par
+inliers, $p < 10^{-6}$, Wilcoxon signed-rank) and reducing size across
+all configurations. This is consistent with the abrasion-driven rounding
+observed by \citet{Qian2014} and \citet{Guo2018} under cyclic loading
+and by \citet{Koohmishi2020} under drop-weight impact.\par
 \textbf{Mode~B (fracture):} catastrophic particle breakage occurs in
-6/45 tracer particles, and \emph{all six are drawn from rigid-base
-configurations}. The compliant sand base attenuates the impulsive force
-enough to keep every tracer in the abrasion-only regime.
+6/45 tracer particles (\SI{13.3}{\percent}), and \emph{all six are
+drawn from rigid-base configurations}. The fraction is consistent with
+the Weibull failure statistics reported by \citet{McDowell2002} and
+\citet{Lim2004} for single-particle crushing of basalt. The compliant
+sand base attenuates the impulsive force enough to keep every tracer in
+the abrasion-only regime.
 \end{finding}
 
 \begin{finding}[title=Conclusion 6 -- Complementary characterisation]
@@ -94,6 +99,80 @@ characterisation: \FIIN{} alone cannot distinguish diffuse abrasion from
 catastrophic fracture, and the per-particle protocol alone cannot speak
 to assembly-level fines generation.
 \end{finding}
+
+\subsection{Mapping conclusions to objectives}
+
+\cref{tab:concl-obj-map} maps the six conclusions stated above to the
+five thesis objectives set out in \cref{sec:intro-objectives}. Every
+objective is addressed by at least one conclusion; Objective~(v)
+(synthesis) is addressed jointly by Conclusions~4, 5, and 6.
+
+\begin{table}[ht]
+\centering
+\caption{Mapping of conclusions to the thesis objectives
+         (\cref{sec:intro-objectives}).}
+\label{tab:concl-obj-map}
+\small
+\rowcolors{2}{rowbg}{white}
+\begin{tabular}{@{}clcl@{}}
+    \toprule
+    \rowcolor{tablehdr}
+    {\color{white}\textbf{Conclusion}}
+    & {\color{white}\textbf{Topic}}
+    & {\color{white}\textbf{Objective(s)}}
+    & {\color{white}\textbf{Chapter(s)}}\\
+    \midrule
+    1 & Apparatus commissioned     & (i)        & 3\\
+    2 & Settlement shake-down      & (ii)       & 4\\
+    3 & \FIIN{} 6.4-fold range     & (ii), (iii)& 4\\
+    4 & Settlement $\neq$ fouling  & (v)        & 4\\
+    5 & Two damage modes           & (iv), (v)  & 5\\
+    6 & Complementary metrics      & (v)        & 4, 5\\
+    \bottomrule
+\end{tabular}
+\end{table}
+
+\section{Engineering implications}
+\label{sec:concl-engineering}
+
+The experimental findings have three direct implications for the design
+and maintenance of ballasted track on Indian Railways.
+
+\paragraph{1. Targeted deployment of under-ballast mats.}
+The data show that the benefit of under-ballast mats is greatest on
+rigid-base substructures at high impact energy---precisely the conditions
+encountered at bridge approaches, tunnel portals, and level crossings
+(\cref{sec:imp-pad-ranking}). On flexible substructures (well-compacted
+granular sub-ballast), the mat provides a smaller incremental benefit
+because the base is already compliant enough to suppress \gls{ModeB}
+fracture. Indian Railways could therefore prioritise mat installation at
+the \SI{<5}{\percent} of network length that accounts for the majority
+of impact-related maintenance, rather than specifying mats network-wide.
+
+\paragraph{2. Stiffness-matched mat selection.}
+The inversion of the \gls{PUBM}--\gls{RUBM} ranking on the rigid base
+at low energy (\cref{sec:imp-pad-ranking}) shows that a single mat
+product is not universally optimal. The implication is that procurement
+specifications should include a stiffness-matching criterion: the mat
+should be stiff enough to maintain ballast stability but compliant enough
+to attenuate the peak contact stress below the \gls{ModeB} fracture
+threshold for the expected loading conditions. The present data provide
+a first calibration dataset for such a criterion at the Indian Railways
+\SIrange{275}{523}{\kilo\pascal} stress band.
+
+\paragraph{3. Dual-metric quality assurance.}
+The finding that settlement and fouling rank the nine configurations
+differently---and that the discrepancy is explained by the
+\gls{ModeA}~/~\gls{ModeB} dichotomy---implies that a single post-test
+metric (whether \gls{AIV}, \FIIN, or settlement alone) cannot fully
+characterise the degradation state of a ballast sample under impact
+loading. For laboratory quality-assurance testing of ballast procured by
+Indian Railways, the present results recommend a dual-metric protocol:
+\FIIN{} to capture the fines and coarse-fraction response, plus a
+per-particle morphological characterisation (even at reduced tracer count)
+to detect the presence of \gls{ModeB} events. The Python pipeline of
+\cref{chap:appB} makes the second metric computationally inexpensive once
+the scanning infrastructure is in place.
 
 \section{Novel contributions}
 \label{sec:concl-novel}
@@ -182,33 +261,67 @@ Five concrete directions for follow-up research are identified, in rough
 order of increasing scope. Each would usefully build on the methodological
 platform established by the present thesis.
 
-\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=4pt]
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=6pt]
     \item \textbf{Expanded tracer-count study.} Repeat the present
           nine-configuration programme with \numrange{15}{20} tracer
           particles per configuration to support per-configuration
           ANOVA and tighter estimates of \gls{ModeB} event probabilities.
+          With five tracers per configuration, the present study supports
+          pooled significance testing but not per-configuration effect-size
+          estimation. Increasing to 15 tracers would reduce the
+          \SI{95}{\percent} confidence interval on the mean sphericity
+          change by a factor of $\sqrt{3}$ and would permit a formal
+          two-way ANOVA with pad and base as factors---the standard
+          statistical framework for factorial experiments
+          \citep{Montgomery2013}. This is the single most effective
+          follow-up improvement.
+
     \item \textbf{Multi-rock-type extension.} Extend the programme to
           granite and quartzite ballast, using the same nine-configuration
           matrix and the same per-particle morphology pipeline, to map
           the parent-rock dependence of the \gls{ModeA}~/~\gls{ModeB}
-          crossover.
+          crossover. The Weibull modulus of the parent rock governs the
+          fraction of particles that fracture at a given stress
+          \citep{McDowell2002}; testing a second rock type would
+          establish whether the rigid-base-only \gls{ModeB} finding
+          of the present study is specific to basalt or general.
+
     \item \textbf{AI/ML-based prediction of degradation behaviour.} Use
           the per-particle paired morphological dataset to train
-          supervised machine-learning models. A trained surrogate would
+          supervised machine-learning models (random forest,
+          gradient-boosted trees, or a shallow neural network).
+          \citet{Koohmishi2023} demonstrated that random-forest models
+          trained on post-test morphological features can predict bulk
+          fouling with $R^{2} > 0.85$ for crumb-rubber-modified ballast.
+          A trained surrogate on the present factorial dataset would
           allow rapid screening of pad--base combinations without
           running the full impact campaign, and feature-importance
-          analysis would identify which morphological descriptors most
-          strongly govern degradation outcomes.
+          analysis would identify which of the 22 morphological
+          descriptors most strongly govern degradation outcomes.
+
     \item \textbf{Cyclic-plus-impact combined loading.} Develop a
           composite loading method that applies cyclic-triaxial loading
           (mimicking ordinary traffic) interrupted periodically by
           drop-weight impact events (mimicking transition-zone hot-spots),
           and report the corresponding
           \gls{ModeA}~/~\gls{ModeB} evolution. This is the closest
-          laboratory analogue to real service loading.
+          laboratory analogue to real service loading, where a ballast
+          layer experiences thousands of routine axle passages interspersed
+          with occasional high-energy impacts at joints and crossings.
+          The apparatus designed in the present thesis is mechanically
+          compatible with a cyclic-loading frame mounted on the same
+          base plate, so the combined protocol requires no new
+          infrastructure.
+
     \item \textbf{Field correlation.} Couple the laboratory degradation
           metrics with in-situ measurements at instrumented bridge
           approaches, rail joints, or transition zones on Indian
           Railways, to calibrate the laboratory predictions against
-          observed track-geometry degradation rates.
+          observed track-geometry degradation rates. Ground-penetrating
+          radar and settlement-gauge arrays at two or three transition
+          zones on a heavy-haul corridor would provide the field anchor
+          needed to convert the laboratory \FIIN{} and \gls{ModeA}~/~\gls{ModeB}
+          classifications into maintenance-scheduling inputs. This is
+          the bridge between the present laboratory-scale study and its
+          application in track-asset-management systems.
 \end{enumerate}
