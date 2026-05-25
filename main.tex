@@ -59,6 +59,39 @@
 \raggedbottom
 
 % -----------------------------------------------------------------------------
+%  Chapter thumb tabs (right-margin colour indicators)
+% -----------------------------------------------------------------------------
+\usepackage{eso-pic}
+\usepackage{afterpage}
+\newcounter{thumbchap}
+\newcommand{\thumbtab}{%
+    \AddToShipoutPictureBG{%
+        \ifnum\value{thumbchap}>0\relax
+            \begingroup
+            \newdimen\thumby
+            \thumby=-20mm
+            \advance\thumby by -\value{thumbchap}\thumby
+            \endgroup
+        \fi
+    }%
+}
+% Use a TikZ overlay instead (robust against dimension arithmetic)
+\AddToShipoutPictureBG{%
+    \ifnum\value{thumbchap}>0\relax
+        \begin{tikzpicture}[remember picture,overlay]
+            \pgfmathsetmacro{\yoff}{-2.0 - (\value{thumbchap}-1)*1.4}
+            \fill[gsvblue]
+                ([xshift=-6mm,yshift=\yoff cm]current page.north east)
+                rectangle
+                ([yshift=\yoff cm + 1.2cm]current page.north east);
+            \node[rotate=90,white,font=\sffamily\fontsize{6}{7}\selectfont]
+                at ([xshift=-3mm,yshift=\yoff cm + 0.6cm]current page.north east)
+                {Ch.\,\arabic{thumbchap}};
+        \end{tikzpicture}%
+    \fi
+}
+
+% -----------------------------------------------------------------------------
 %  Mathematics, science, units
 % -----------------------------------------------------------------------------
 \usepackage{amsmath,amssymb,amsfonts,mathtools}
@@ -431,14 +464,15 @@
 % ------------------------ MAIN MATTER ----------------------------------------
 \cleardoublepage\pagenumbering{arabic}\setcounter{page}{1}
 
-\include{chapters/07_chapter1_introduction}
-\include{chapters/08_chapter2_literature}
-\include{chapters/09_chapter3_methodology}
-\include{chapters/10_chapter4_impact_results}
-\include{chapters/11_chapter5_morphology}
-\include{chapters/12_chapter6_conclusions}
+\setcounter{thumbchap}{1}\include{chapters/07_chapter1_introduction}
+\setcounter{thumbchap}{2}\include{chapters/08_chapter2_literature}
+\setcounter{thumbchap}{3}\include{chapters/09_chapter3_methodology}
+\setcounter{thumbchap}{4}\include{chapters/10_chapter4_impact_results}
+\setcounter{thumbchap}{5}\include{chapters/11_chapter5_morphology}
+\setcounter{thumbchap}{6}\include{chapters/12_chapter6_conclusions}
 
 % ------------------------ BACK MATTER ----------------------------------------
+\setcounter{thumbchap}{0}% disable thumb tabs for back matter
 % Bibliography
 \cleardoublepage
 \phantomsection
@@ -453,7 +487,13 @@
 \include{chapters/15_appendix_b}
 \include{chapters/15a_appendix_c_statistics}
 
+% List of publications arising from this thesis
+\include{chapters/17_publications}
+
 % About-the-authors page (back matter)
 \include{chapters/16_about_authors}
+
+% Back cover
+\include{chapters/18_backcover}
 
 \end{document}
